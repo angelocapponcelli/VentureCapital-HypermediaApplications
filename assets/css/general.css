@@ -1,0 +1,10 @@
+html, body
+{
+    height: 100%; 
+}
+
+body
+{
+    background-color: lightgoldenrodyellow;
+    margin: 0;
+}
