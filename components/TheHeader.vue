@@ -6,11 +6,11 @@
         <!-- desktop Menu -->
         <div class="bg-white drop-shadow-md">
             <div class="max-w-7xl mx-auto">
-                <div class="flex justify-between py-5 px-2">
+                <div class="flex justify-between">
                     <!-- menu -->
                     <div>
                         <!-- logo -->
-                        <div class="flex items-center">
+                        <div class="flex items-center py-5 px-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
