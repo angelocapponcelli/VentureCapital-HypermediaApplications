@@ -3,13 +3,13 @@
 -->
 <template>
     <div class='page'>
-        <TheHeader />
+        <Navbar />
         <slot />
         <TheFooter />
     </div>
 </template>
 
-<style>
+<!--style>
 .page {
     min-height: 100vh;
     display: flex;
@@ -17,4 +17,4 @@
     background-color: lightgoldenrodyellow;
     margin: 0;
 }
-</style>
+</style-->
