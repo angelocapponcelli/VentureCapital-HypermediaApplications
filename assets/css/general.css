@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    @apply text-headings-black; /* Apply the default color to text in evry html file  */
+}
 /*html, body
 {
     height: 100%; 
