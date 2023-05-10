@@ -3,18 +3,29 @@
 -->
 <template>
     <header>
-        <h1>The Dog Shelter</h1>
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <nav>
+                    <NuxtLink to="/">HOME</NuxtLink>
+                    <NuxtLink to="/dogs">DOGS</NuxtLink>
+                    <NuxtLink to="/locations">LOCATIONS</NuxtLink>
+                    <NuxtLink to="/about">ABOUT US</NuxtLink>
+                    <NuxtLink to="/contact">CONTACT US</NuxtLink>
+                </nav>
+        </div>
+    </div>
+    <!--h1>The Dog Shelter </h1>
         <nav>
             <NuxtLink to="/">HOME</NuxtLink>
             <NuxtLink to="/dogs">DOGS</NuxtLink>
             <NuxtLink to="/locations">LOCATIONS</NuxtLink>
-            <NuxtLink to="/about">ABOUT US</NuxtLink>
-            <NuxtLink to="/contact">CONTACT US</NuxtLink>
-        </nav>
+                <NuxtLink to="/about">ABOUT US</NuxtLink>
+                <NuxtLink to="/contact">CONTACT US</NuxtLink>
+            </nav-->
     </header>
 </template>
 
-<style>
+<!--style>
 header {
     background-color: rgb(254, 206, 117);
 }
@@ -35,4 +46,4 @@ nav {
     font-size: 17pt;
     font-weight: bold;
 }
-</style>
+</style-->
