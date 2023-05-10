@@ -92,7 +92,7 @@ const navigation = [
 
 <!--
     Header of the page
-
+-- >
 <template>
   <header>
     <h1>The Dog Shelter</h1>
