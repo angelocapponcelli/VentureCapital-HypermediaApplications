@@ -22,7 +22,10 @@
                         <NuxtLink to="/dogs" class="py-5 px-2 hover:text-color-700">Portfolio</NuxtLink>
                         <NuxtLink to="/locations" class="py-5 px-2 hover:text-color-700">Areas</NuxtLink>
                         <NuxtLink to="/about" class="py-5 px-2 hover:text-color-700">Our team</NuxtLink>
-                        <NuxtLink to="/contact" class="py-5 px-2 hover:text-color-700">Contacts</NuxtLink>
+                        <NuxtLink to="/about" class="py-5 px-2 hover:text-color-700">About us</NuxtLink>
+                        <NuxtLink to="/contact"
+                            class="py-2 px-4 hover:text-headings-black bg-primary-color hover:bg-white text-white text-sm  border border-primary-color rounded-full">
+                            Contacts</NuxtLink>
                     </div>
                 </div>
             </div>
