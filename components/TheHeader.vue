@@ -4,7 +4,7 @@
 <template>
     <nav>
         <!-- desktop Menu -->
-        <div class="bg-white drop-shadow-md">
+        <div class="bg-black drop-shadow-md">
             <div class="max-w-7xl mx-auto">
                 <div class="flex justify-between">
                     <!-- menu -->
