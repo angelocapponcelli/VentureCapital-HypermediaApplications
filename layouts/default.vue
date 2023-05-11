@@ -3,7 +3,7 @@
 -->
 <template>
     <div class='page'>
-        <TheHeader />
+        <Navbar />
         <slot />
         <TheFooter />
     </div>

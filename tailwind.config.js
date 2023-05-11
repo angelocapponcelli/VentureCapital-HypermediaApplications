@@ -8,8 +8,10 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   theme: {
+    // custom color palette
     colors: {
-      // custom color palette
+      transparent: "transparent",
+      current: "currentColor",
       white: "#ffffff",
       "primary-color": "#5B45F8",
       "headings-black": "#494850",
