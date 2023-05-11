@@ -71,7 +71,7 @@
                                 <NuxtLink to="/locations">
                                     <div
                                         class="h-full px-2 flex items-center hover:text-color-900 border-b-4
-                                                                            border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                                                border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         <spam>Areas</spam>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
