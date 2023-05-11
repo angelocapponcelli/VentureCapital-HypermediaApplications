@@ -19,19 +19,130 @@
                     </NuxtLink>
                     <!-- menu -->
                     <div class="flex items-center space-x-1">
-                        <div class="space-x-1 mr-8 h-full flex items-center">
-                            <NuxtLink to="/dogs"
-                                class="h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                <div class="h-full flex items-center">Portfolio</div>
-                            </NuxtLink>
-                            <NuxtLink to="/locations"
-                                class="h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                <div class="h-full flex items-center">Areas</div>
-                            </NuxtLink>
+                        <div class="mr-8 h-full flex items-center relative">
+                            <!-- Portfolio -->
+                            <div @mouseover="setPortfolioDropdownVisible" @mouseleave="setPortfolioDropdownHidden"
+                                class="h-full">
+                                <NuxtLink to="/dogs">
+                                    <div
+                                        class="h-full px-2 flex items-center hover:text-color-900 border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                        <spam>Portfolio</spam>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </div>
+                                </NuxtLink>
+                                <!-- Portfolio dropdown -->
+                                <div v-if="isPortfolioDropdownVisible"
+                                    class="w-64 overflow-hidden bg-white rounded-b-lg shadow absolute top-24 z-20">
+                                    <ul>
+                                        <li>
+                                            <NuxtLink to="/dogs"
+                                                class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                Most relevant projects</NuxtLink>
+                                        </li>
+                                        <li>
+                                            <NuxtLink to="/dogs"
+                                                class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                Machine learning projects</NuxtLink>
+                                        </li>
+                                        <li>
+                                            <NuxtLink to="/dogs"
+                                                class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                Artificial intelligence projects</NuxtLink>
+                                        </li>
+                                        <li>
+                                            <NuxtLink to="/dogs"
+                                                class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                Neural Network projects</NuxtLink>
+                                        </li>
+                                        <li>
+                                            <NuxtLink to="/dogs"
+                                                class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                Blockchains projects</NuxtLink>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Areas -->
+                            <div @mouseover="setAreasDropdownVisible" @mouseleave="setAreasDropdownHidden" class="h-full">
+                                <NuxtLink to="/locations">
+                                    <div
+                                        class="h-full px-2 flex items-center hover:text-color-900 border-b-4
+                                                                            border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                        <spam>Areas</spam>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </div>
+                                    <div v-if="isVisible" @mouseover="setVisible" @mouseleave="setHidden"
+                                        class="w-64 overflow-hidden bg-white rounded-b-lg shadow absolute top-24 z-20">
+                                        <ul>
+                                            <li>
+                                                <NuxtLink to="/dogs"
+                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                    Most relevant projects</NuxtLink>
+                                            </li>
+                                            <li>
+                                                <NuxtLink to="/dogs"
+                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                    Machine learning projects</NuxtLink>
+                                            </li>
+                                            <li>
+                                                <NuxtLink to="/dogs"
+                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                    Artificial intelligence projects</NuxtLink>
+                                            </li>
+                                            <li>
+                                                <NuxtLink to="/dogs"
+                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                    Neural Network projects</NuxtLink>
+                                            </li>
+                                            <li>
+                                                <NuxtLink to="/dogs"
+                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                    Blockchains projects</NuxtLink>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </NuxtLink>
+                                <!-- Areas dropdown -->
+                                <div v-if="isAreasDropdownVisible"
+                                    class="w-52 overflow-hidden bg-white rounded-b-lg shadow absolute top-24 z-20">
+                                    <ul>
+                                        <li>
+                                            <NuxtLink to="/dogs"
+                                                class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                Machine learning</NuxtLink>
+                                        </li>
+                                        <li>
+                                            <NuxtLink to="/dogs"
+                                                class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                Artificial intelligence</NuxtLink>
+                                        </li>
+                                        <li>
+                                            <NuxtLink to="/dogs"
+                                                class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                Neural Network</NuxtLink>
+                                        </li>
+                                        <li>
+                                            <NuxtLink to="/dogs"
+                                                class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                Blockchains</NuxtLink>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Our team -->
                             <NuxtLink to="/about"
                                 class="h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                 <div class="h-full flex items-center">Our team</div>
                             </NuxtLink>
+                            <!-- About us -->
                             <NuxtLink to="/about"
                                 class="h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                 <div class="h-full flex items-center">About us</div>
@@ -42,11 +153,37 @@
                             Contacts
                         </NuxtLink>
                     </div>
+
                 </div>
             </div>
         </div>
     </nav>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            isPortfolioDropdownVisible: false,
+            isAreasDropdownVisible: false,
+        };
+    },
+    methods: {
+        setPortfolioDropdownVisible() {
+            this.isPortfolioDropdownVisible = true;
+        },
+        setPortfolioDropdownHidden() {
+            this.isPortfolioDropdownVisible = false;
+        },
+        setAreasDropdownVisible() {
+            this.isAreasDropdownVisible = true;
+        },
+        setAreasDropdownHidden() {
+            this.isAreasDropdownVisible = false;
+        },
+    },
+};
+</script>
 
 <!--style>
 header {
