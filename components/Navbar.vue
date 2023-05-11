@@ -71,43 +71,13 @@
                                 <NuxtLink to="/locations">
                                     <div
                                         class="h-full px-2 flex items-center hover:text-color-900 border-b-4
-                                                                                border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                                                                        border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         <spam>Areas</spam>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                 d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </svg>
-                                    </div>
-                                    <div v-if="isVisible" @mouseover="setVisible" @mouseleave="setHidden"
-                                        class="w-64 overflow-hidden bg-white rounded-b-lg shadow absolute top-24 z-20">
-                                        <ul>
-                                            <li>
-                                                <NuxtLink to="/dogs"
-                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                                    Most relevant projects</NuxtLink>
-                                            </li>
-                                            <li>
-                                                <NuxtLink to="/dogs"
-                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                                    Machine learning projects</NuxtLink>
-                                            </li>
-                                            <li>
-                                                <NuxtLink to="/dogs"
-                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                                    Artificial intelligence projects</NuxtLink>
-                                            </li>
-                                            <li>
-                                                <NuxtLink to="/dogs"
-                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                                    Neural Network projects</NuxtLink>
-                                            </li>
-                                            <li>
-                                                <NuxtLink to="/dogs"
-                                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                                    Blockchains projects</NuxtLink>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </NuxtLink>
                                 <!-- Areas dropdown -->
