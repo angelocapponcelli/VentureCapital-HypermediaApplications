@@ -35,7 +35,7 @@
                             class="w-64 overflow-hidden bg-white rounded-b-lg shadow absolute top-24 z-20">
                             <ul>
                                 <li>
-                                    <NuxtLink to="/portfolio/mostRelevantProjects"
+                                    <NuxtLink to="/portfolio/most-relevant-projects"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Most relevant projects</NuxtLink>
                                 </li>

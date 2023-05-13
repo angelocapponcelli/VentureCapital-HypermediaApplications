@@ -2,7 +2,7 @@
   <main>
     <Breadcrumb :crumbs="[
       { label: 'Portfolio', link: '/portfolio' },
-      { label: 'Most relevant projects', link: '/mostRelevantProjects' }]" />
+      { label: 'Most relevant projects', link: '/most-relevant-projects' }]" />
     <h1 class="text-4xl font-extrabold">
       Most relevant projects page
     </h1>
