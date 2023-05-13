@@ -9,6 +9,7 @@
     </div>
 </template>
 
+
 <!--style>
 .page {
     min-height: 100vh;
