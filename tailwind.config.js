@@ -31,7 +31,11 @@ module.exports = {
     fontFamily: {
       sans: ['"DM Sans"', "sans-serif"],
     },
-    extend: {},
+    extend: {
+      scale: {
+        101: "1.01",
+      },
+    },
   },
   plugins: [],
 };
