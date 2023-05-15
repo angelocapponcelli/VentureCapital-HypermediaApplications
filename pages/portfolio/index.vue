@@ -5,10 +5,14 @@
     <!-- content -->
     <div class="flex flex-col space-y-16 px-36 py-20 w-full">
 
-      <!-- title -->
-      <h1 class="text-5xl font-extrabold">
-        Portfolio
-      </h1>
+      <div class="flex justify-between">
+        <!-- title -->
+        <h1 class="text-5xl font-extrabold">
+          Portfolio
+        </h1>
+        <!-- searchBar -->
+        <SearchBar />
+      </div>
 
       <div class="flex space-x-5">
         <!-- side drawer section -->

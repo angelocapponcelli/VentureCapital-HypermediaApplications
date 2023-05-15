@@ -8,14 +8,18 @@
     <!-- content -->
     <div class="flex flex-col space-y-16 px-36 py-20 w-full">
 
-      <!-- title -->
-      <h1 class="text-5xl font-extrabold">
-        Portfolio
-      </h1>
+      <div class="flex justify-between">
+        <!-- title -->
+        <h1 class="text-5xl font-extrabold">
+          Portfolio
+        </h1>
+        <!-- searchBar -->
+        <SearchBar />
+      </div>
 
       <div class="flex space-x-5">
         <!-- side drawer section -->
-        <SideDrawer class="basis-1/5 sticky" :pageIndex=1 />
+        <SideDrawer class="basis-1/5" :pageIndex=1 />
 
         <!-- cards projects section -->
         <div class="flex flex-col space-y-5 basis-4/5">
