@@ -3,7 +3,7 @@
     <Breadcrumb :crumbs="[
       { label: 'Portfolio', link: '/portfolio' }]" />
     <!-- content -->
-    <div class="flex flex-col space-y-16 px-36 py-20 w-full">
+    <div class="flex flex-col space-y-16 px-x_padding_page py-y_padding_page w-full">
 
       <div class="flex justify-between">
         <!-- title -->
@@ -22,7 +22,7 @@
         <div class="basis-4/5 grid grid-cols-3 gap-4">
           <!-- single card project -->
           <SmallProjectCard v-for="project of projects" :title="project.title" :overview="project.overview"
-            :startupId="project.startup.id" />
+            :startupId="project.startup.id" :link="'/portfolio/' + project.id" />
         </div>
 
       </div>

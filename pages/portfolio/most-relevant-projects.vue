@@ -6,7 +6,7 @@
       { label: 'Most relevant projects', link: '/most-relevant-projects' }]" />
 
     <!-- content -->
-    <div class="flex flex-col space-y-16 px-36 py-20 w-full">
+    <div class="flex flex-col space-y-16 px-x_padding_page py-y_padding_page w-full">
 
       <div class="flex justify-between">
         <!-- title -->

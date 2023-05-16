@@ -33,8 +33,9 @@ module.exports = {
     },
     extend: {
       spacing: {
-        'height_footer': '28rem', // 448 pixels
-        'padding_page_border': '7rem' // 112 pixels
+        height_footer: "28rem", // 448 pixels
+        x_padding_page: "9rem", // 112 pixels
+        y_padding_page: "5rem",
       },
       scale: {
         101: "1.01",

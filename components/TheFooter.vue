@@ -4,8 +4,8 @@
 
 <template>
     <footer>
-        <div class="h-height_footer bg-color-200">
-            <div class="pb-8 pt-16 px-padding_page_border">
+        <div class="bg-color-200 pt-16 pb-8"> <!-- h-height_footer -->
+            <div class="pb-8 px-x_padding_page">
                 <!-- A grid with 4 columns with large displays -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                     <div>
@@ -16,47 +16,57 @@
                             that are at the forefront of disruptive technologies
                         </p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="flex justify-between md:grid-cols-2 lg:grid-cols-3">
                         <div>
                             <h1 class="text-headings-black font-bold pb-10">Pages</h1>
 
-                            <ul class="h-16">
-                                <NuxtLink to="/team">
-                                    <li class="text-gray hover:text-primary-color active:font-bold">Team</li>
-                                </NuxtLink>
-                                <li class="text-gray">Strategy</li>
-                                <NuxtLink to="/portfolio">
-                                    <li class="text-gray hover:text-primary-color active:font-bold">Portfolio</li>
-                                </NuxtLink>
-                                <NuxtLink to="/locations">
-                                    <li class="text-gray hover:text-primary-color active:font-bold">Areas</li>
-                                </NuxtLink>
+                            <ul class="space-y-2">
+                                <li class="text-color-900 hover:text-color-700 active:font-bold">
+                                    <NuxtLink to="/portfolio">
+                                        Portfolio
+                                    </NuxtLink>
+                                </li>
+                                <li class="text-color-900 hover:text-color-700 active:font-bold">
+                                    <NuxtLink to="/locations">
+                                        Areas
+                                    </NuxtLink>
+                                </li>
+                                <li class="text-color-900 hover:text-color-700 active:font-bold">
+                                    <NuxtLink to="/team">
+                                        Our team
+                                    </NuxtLink>
+                                </li>
+                                <li class="text-color-900 hover:text-color-700 active:font-bold">
+                                    <NuxtLink to="/about">
+                                        About us
+                                    </NuxtLink>
+                                </li>
                             </ul>
 
                         </div>
                         <div>
                             <h1 class="text-headings-black font-bold pb-10">Contacts</h1>
 
-                            <ul class="h-16">
-                                <li class="text-gray">email: example@email.org</li>
-                                <li class="text-gray">tel: +12 123 456 789</li>
-                                <li class="text-gray">Via Larga 12, Milan Italy</li>
-                                <div>
+                            <ul class="space-y-2">
+                                <li class="text-color-900">email: example@email.org</li>
+                                <li class="text-color-900">tel: +12 123 456 789</li>
+                                <li class="text-color-900">Via Larga 12, Milan Italy</li>
+                                <li class="py-2">
                                     <NuxtLink to="/contact"
-                                        class="py-2 px-4 bg-primary-color text-white hover:text-headings-black hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+                                        class="py-2 px-4 my-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
                                         Stay on touch
                                     </NuxtLink>
-                                </div>
+                                </li>
                             </ul>
                         </div>
                         <div>
                             <h1 class="text-headings-black font-bold pb-10">Follow us</h1>
 
-                            <ul class="h-16">
-                                <li class="text-gray">Facebook</li>
-                                <li class="text-gray">Twitter</li>
-                                <li class="text-gray">Instagram</li>
-                                <li class="text-gray">Linkedin</li>
+                            <ul class="space-y-2">
+                                <li class="text-color-900">Facebook</li>
+                                <li class="text-color-900">Twitter</li>
+                                <li class="text-color-900">Instagram</li>
+                                <li class="text-color-900">Linkedin</li>
                             </ul>
                         </div>
                     </div>

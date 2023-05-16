@@ -4,7 +4,7 @@
 <template>
     <nav class="sticky top-0 z-50">
         <!-- desktop Menu -->
-        <div class="bg-white drop-shadow-md px-36 flex justify-between">
+        <div class="bg-white drop-shadow-md px-x_padding_page flex justify-between">
             <!-- logo -->
             <Logo />
             <!-- menu -->
@@ -101,7 +101,7 @@
                     </NuxtLink>
                 </div>
                 <NuxtLink to="/contact"
-                    class="py-3 px-10 bg-primary-color text-white hover:text-headings-black hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+                    class="py-3 px-10 bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
                     Contacts
                 </NuxtLink>
             </div>
