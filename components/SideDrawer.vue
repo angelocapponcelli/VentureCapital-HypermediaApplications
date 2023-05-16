@@ -1,5 +1,5 @@
 <template>
-  <aside class="h-screen sticky top-36 w-full">
+  <aside class="h-full sticky top-36 w-full">
     <ul>
       <li>
         <NuxtLink to="/portfolio"

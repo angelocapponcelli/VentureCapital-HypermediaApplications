@@ -32,6 +32,10 @@ module.exports = {
       sans: ['"DM Sans"', "sans-serif"],
     },
     extend: {
+      spacing: {
+        'height_footer': '28rem', // 448 pixels
+        'padding_page_border': '7rem' // 112 pixels
+      },
       scale: {
         101: "1.01",
       },

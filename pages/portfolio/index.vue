@@ -5,10 +5,14 @@
     <!-- content -->
     <div class="flex flex-col space-y-16 px-36 py-20 w-full">
 
-      <!-- title -->
-      <h1 class="text-5xl font-extrabold">
-        Portfolio
-      </h1>
+      <div class="flex justify-between">
+        <!-- title -->
+        <h1 class="text-5xl font-extrabold">
+          Portfolio
+        </h1>
+        <!-- searchBar -->
+        <SearchBar />
+      </div>
 
       <div class="flex space-x-5">
         <!-- side drawer section -->
@@ -16,33 +20,9 @@
 
         <!-- cards projects section -->
         <div class="basis-4/5 grid grid-cols-3 gap-4">
-
           <!-- single card project -->
-          <NuxtLink to="#" v-for="n in 25"
-            class="p-5 space-y-2 flex flex-col rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
-
-            <!-- cover image -->
-            <img class="object-center object-cover h-56 w-full rounded-xl" src="~/assets/img/home-image.jpg"
-              alt="cover image">
-
-            <!-- project overview -->
-            <h2 class="text-2xl font-extrabold">
-              Robot Assist AI
-            </h2>
-            <p class="text-sm text-color-900">
-              Ambitious startup venture that aims to transform the way people interact with personal assistants
-            </p>
-            <div
-              class="text-primary-color text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
-              <span>Learn more</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
-                stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </div>
-
-          </NuxtLink>
-
+          <SmallProjectCard v-for="project of projects" :title="project.title" :overview="project.overview"
+            :startupId="project.startup.id" />
         </div>
 
       </div>
@@ -50,3 +30,21 @@
 
   </main>
 </template>
+
+<script>
+/*
+    The defineNuxtComponent gets us access to the asyncData property.
+    This is the first function that is called by nuxt when the page is called.
+    We can use this to pre-load the data to make it available to the user.
+*/
+export default defineNuxtComponent({
+  async asyncData() {
+    // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
+    const projects = await $fetch('/api/portfolio')
+
+    return {
+      projects
+    }
+  }
+})
+</script>
