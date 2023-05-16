@@ -24,7 +24,6 @@
                                 <NuxtLink to="/team">
                                     <li class="text-gray hover:text-primary-color active:font-bold">Team</li>
                                 </NuxtLink>
-                                <li class="text-gray">Strategy</li>
                                 <NuxtLink to="/portfolio">
                                     <li class="text-gray hover:text-primary-color active:font-bold">Portfolio</li>
                                 </NuxtLink>
