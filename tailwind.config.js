@@ -31,7 +31,15 @@ module.exports = {
     fontFamily: {
       sans: ['"DM Sans"', "sans-serif"],
     },
-    extend: {},
+    extend: {
+      spacing: {
+        'height_footer': '28rem', // 448 pixels
+        'padding_page_border': '7rem' // 112 pixels
+      },
+      scale: {
+        101: "1.01",
+      },
+    },
   },
   plugins: [],
 };
