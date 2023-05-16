@@ -4,8 +4,7 @@
     class="p-5 space-y-2 flex flex-col rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
 
     <!-- cover image TODO: :src="pathImage" -->
-    <img class="object-center object-cover h-56 w-full rounded-xl"
-      :src="require(`~/assets/img/startup/${this.startupId}.png`)" alt="cover image">
+    <img class="object-center object-cover h-56 w-full rounded-xl" src="~/assets/img/startup/1.png" alt="cover image">
     <!-- project overview -->
     <h2 class="text-2xl font-extrabold">
       {{ title }}
