@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     },
   },
   modules: ["@nuxtjs/supabase"],
-  ssr: true,
+  ssr: false,
   app: {
     head: {
       link: [

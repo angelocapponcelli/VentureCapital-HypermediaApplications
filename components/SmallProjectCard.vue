@@ -32,6 +32,8 @@ export default {
 
   computed: {
     imageUrl() {
+      var url = new URL('../assets/img/startup/' + this.startupId + '.png', import.meta.url).href;
+      console.log(url.toString())
       return new URL('../assets/img/startup/' + this.startupId + '.png', import.meta.url).href;
     }
   },
