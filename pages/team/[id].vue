@@ -4,22 +4,25 @@
 -->
 <template>
     <main>
-        <div class = "info-group">
-            <img id = "main-img" src = "~/assets/img/home-image.jpg" />
-            <div id = "data-container">
-                <p class = "data">Name: <span>{{ dog.name }}</span></p>
-                <p class = "data">Breed: <span>{{ dog.breed }}</span></p>
-                <p class = "data">Age: <span>{{ dog.age }}</span></p>
+        <Breadcrumb :crumbs="[{ label: 'Our team', link: '/team' }, { label: person.full_name, link: '/team/' + id }]"/>
+
+        <BigPersonCard :name="person.full_name" :position="person.position" :description="person.description" cvLink="#" :id="person.id" />
+        
+        <div class="related-projects-container">
+            <div class="flex flex-col space-y-8 px-32 pt-10 pb-16 w-full">
+                <h1>
+                    Related projects
+                </h1>
+                <div class="flex flex-row justify-center space-x-10">
+                    <!-- single project card -->
+                    <!-- TODO fetch related projects to person -->
+                    <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
+                    <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="project.overview" startupId="1" />
+                    <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="project.overview" startupId="1" />
+                </div>
             </div>
         </div>
-        <h2>Description</h2>
-        <!--
-            v-html allows us to change the structure of a HTML element.
-            It used because of the 'newLineOnFullStop' function that returns a string with the <br> tags.
-            This function is a composable that is available anywhere, without requiring to be imported.
-        -->
-        <p id = "description" v-html = "description"></p>
-        <SmallCard :title = "dog.locations.name" :subtitle = "dog.locations.city" :link = "'/locations/' + dog.locations.id" />
+        
     </main>
 </template>
 
@@ -28,44 +31,28 @@
     const id = route.params.id
     // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
     const { data: person } = await useFetch('/api/team/' + id)
-
-    const description = ref(newLineOnFullStop(person.value.description))
 </script>
 
 <style>
-    #main-img {
-    width: 30%;
-    height: auto;
+    .related-projects-container {
+        box-sizing: border-box;
+        width: 100vw;
+        height: auto;
+        /* Neutral Colors/Color 500 */
+        background: #E7E6F2;
+        /* Neutral Colors/Color 300 */
+        border: 1px solid #F9F9FF;
+        margin: 25px;
+        margin-bottom: 30px;
     }
 
-    main {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .info-group {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .data {
-        font-weight: bolder;
-        font-size: 20pt
-    }
-
-    .data span {
-        font-weight: 100;
-        font-size: 15pt;
-    }
-
-    #description {
-        padding: 0 20px 0 20px;
-        font-size: 15pt;
+    .related-projects-container h1 {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 50px;
+        /* Neutral Colors/Headings Black */
+        color: #494850;
     }
 </style>

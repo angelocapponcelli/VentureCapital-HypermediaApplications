@@ -1,27 +1,28 @@
 <template>
-    <NuxtLink :to = "link"
+    <NuxtLink :to = "'/team/' + id"
     class="p-6 flex flex-col space-y-2 rounded-2xl bg-[#F2F1FA] hover:shadow-md hover:transform hover:scale-101 transition duration-500">
-        
-        <img class="object-center object-cover h-80 w-full rounded-2xl" src='~/assets/img/home-image.jpg' alt="cover image"/>
+        <!-- TODO add dynamic person image -->
+        <img class="object-center object-cover h-80 w-full rounded-2xl" src='~/assets/img/people/1.png' alt="cover image"/>
 
         <!-- person name and position -->
         <div class="name">{{ name }}</div>
         <div class="position">{{ position }}</div>
     </NuxtLink>
-
-    <!-- <div class="person-card"> -->
-        <!-- <div class="person-image-container">
-            <img class="person-img" src='~/assets/img/home-image.jpg' />
-        </div>
-        <span class="name">{{ title }}</span>
-        <span class="position">{{ subtitle }}</span> -->
-        <!-- <NuxtLink :to = "link" ><button>Open description</button></NuxtLink> -->
-    <!-- </div> -->
 </template>
 
 <script>
 export default {
-    props: ['name', 'position', 'link']
+    props: ['name', 'position', 'id'],
+
+    /* computed: {
+        pathImage() {
+        // Request the image as a webpack module by using `require`
+        return require(`~/assets/img/people/${this.id}.png`);
+        },
+        imageUrl() {
+        return new URL('../assets/img/people/' + this.id + '.png', import.meta.url).href;
+        }
+    }, */
 }
 </script>
 
