@@ -32,11 +32,6 @@
                                     </NuxtLink>
                                 </li>
                                 <li class="text-color-900 hover:text-color-700 active:font-bold">
-                                    <NuxtLink to="/strategy">
-                                        Strategy
-                                    </NuxtLink>
-                                </li>
-                                <li class="text-color-900 hover:text-color-700 active:font-bold">
                                     <NuxtLink to="/team">
                                         Our team
                                     </NuxtLink>
