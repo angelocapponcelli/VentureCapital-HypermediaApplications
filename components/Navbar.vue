@@ -89,11 +89,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Strategy -->
-                    <NuxtLink to="/strategy"
-                        class="flex items-center h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                        Strategy
-                    </NuxtLink>
                     <!-- Our team -->
                     <NuxtLink to="/team"
                         class="flex items-center h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
