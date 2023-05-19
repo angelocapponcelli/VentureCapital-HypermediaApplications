@@ -45,22 +45,22 @@
         {{ titleLabel }}
       </p>
     </div>
-    <NuxtLink v-for="item of links" :to="item.url"
+    <NuxtLink v-for="item of links" :to="'areas/' + item.name"
       class="text-primary-color text-lg font-bold hover:text-color-700 transition duration-200">
-      {{ item.label }}
+      {{ item.name }}
     </NuxtLink>
   </div>
 </template>
 
 <script>
-
+let name
 export default {
   props: ["tabType" /* tabType = 0 for startup/supervisor, tabType = 1 for areas */,
     "title", "titleLabel", "subtitle", "subtitleLabel", "image", "links"],
   computed: {
     imageUrl() {
       return new URL("../assets/img/" + this.image + ".png", import.meta.url).href;
-    }
+    },
   }
 };
 </script>

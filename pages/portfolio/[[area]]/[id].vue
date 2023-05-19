@@ -20,9 +20,7 @@
             {{ project.title }}
           </h1>
           <p class="text-xl">
-            {{ project.overview }} + RoboAssist AI is an ambitious startup venture that aims to transform the way people
-            interact with personal assistants through the power of artificial intelligence (AI), machine learning, and
-            robotics.
+            {{ project.overview }}
           </p>
           <div class="flex justify-between">
             <NuxtLink v-if="previousProject" :to="'/portfolio/' + linkPrevious" @click="refreshAll"
@@ -46,7 +44,7 @@
           </div>
         </div>
         <!-- cover image -->
-        <img class="h-64 w-full rounded-xl object-cover aspect-video" :src="coverImage"
+        <img class="h-64 max-w-min rounded-xl object-cover aspect-video" :src="coverImage"
           :alt="'Cover image project ' + project.id" />
       </div>
 
@@ -59,10 +57,8 @@
           :subtitle="project.supervisor.position" :subtitleLabel="'Role'" :image="'startup/' + project.startup.id"
           :links="{ url: '/team/' + project.supervisor.id, label: 'Visit profile' }" />
 
-        <ProjectTab class="basis-1/5" :tabType="1" :title="'Areas'" :titleLabel="'Related to this project'" :links="[
-          { url: '#', label: 'Machine learning' },
-          { url: '#', label: 'Neural network' },
-          { url: '#', label: 'Artificial intelligence' }]" />
+        <ProjectTab class="basis-1/5" :tabType="1" :title="'Areas'" :titleLabel="'Related to this project'"
+          :links="project.area" />
       </div>
 
       <div class="flex flex-col space-y-5">
@@ -163,7 +159,6 @@
         </div>
 
       </div>
-
     </div>
   </main>
 </template>
@@ -178,8 +173,9 @@ let project, previousProject, nextProject, coverImage, linkPrevious, linkNext, l
 let projectList, indexDrawer = 0, projectExist = false;
 
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
+
 if (pageTypeProject && !area) { //project from 'All projects' page
-  const { data: dataProject } = await useFetch('/api/portfolio/all/' + id)
+  const { data: dataProject } = await useFetch('/api/portfolio/all/' + id, { initialCache: false })
 
   project = dataProject.value.project
   //return id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position)
@@ -212,8 +208,9 @@ if (pageTypeProject && !area) { //project from 'All projects' page
   linkBack = '/portfolio/' + area
 } else {
 
-  projectList = await $fetch('/api/portfolio/' + areaLabel + '/undefined')
-
+  //projectList = await $fetch('/api/portfolio/' + areaLabel + '/undefined')
+  const { data } = await useFetch('/api/portfolio/' + areaLabel + '/undefined')
+  projectList = data.value
   if (projectList[0]) { //todo verifica che ci siano progetti
     projectExist = true
     indexDrawer = projectList[0].area[0].id + 1
@@ -222,7 +219,6 @@ if (pageTypeProject && !area) { //project from 'All projects' page
     indexDrawer = projectList.id + 1
   }
 }
-
 
 // To refresh the page
 const refreshing = ref(false)
