@@ -1,20 +1,15 @@
 import { serverSupabaseClient } from "#supabase/server";
 
 export default defineEventHandler(async (event) => {
-  const id = event.context.params.id;
-
   const client = serverSupabaseClient(event);
 
   const { data, error } = await client
-    .from("project")
-    .select("id, title, overview, startup (id, name, headquarter)")
-    .eq("id", id)
-    .limit(1)
-    .single();
+    .from("area")
+    .select("id, name")
+    .order("id", { ascending: true });
 
   if (error) {
     throw createError({ statusCode: 400, statusMessage: error.message });
   }
-
   return data;
 });

@@ -1,10 +1,10 @@
 <template>
   <!-- TODO: add to link -->
-  <NuxtLink to="#"
+  <NuxtLink :to="link"
     class="p-6 flex space-x-12 rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
 
     <!-- cover image TODO: :src="pathImage" -->
-    <img class="object-center object-cover h-56 w-56 rounded-xl" src="~/assets/img/startup/1.png" alt="cover image">
+    <img class="object-center object-cover h-56 w-56 rounded-xl" :src="imageUrl" alt="cover image">
 
     <!-- project overview -->
     <div class="flex-auto content-center flex-col space-y-5 align-middle m-auto">
@@ -29,11 +29,12 @@
 
 <script>
 export default {
-  props: ['title', 'overview', 'startupId'],
+  props: ['title', 'overview', 'startupId', 'link'],
   computed: {
-    pathImage() {
-      // Request the image as a webpack module by using `require`
-      return require(`~/assets/img/startup/${this.startupId}.png`);
+    imageUrl() {
+      var url = new URL('../assets/img/startup/' + this.startupId + '.png', import.meta.url).href;
+      //console.log(url.toString())
+      return "/_nuxt/assets/img/startup/" + this.startupId + '.png'
     }
   },
 };

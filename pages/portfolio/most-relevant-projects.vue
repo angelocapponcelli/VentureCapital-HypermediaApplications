@@ -25,7 +25,8 @@
         <div class="flex flex-col space-y-5 basis-4/5">
 
           <!-- single card project -->
-          <BigProjectCard v-for="n in 5" :title="'Project title ' + n" :overview="'Project overview...'" :startupId="1" />
+          <BigProjectCard v-for="project of projects" :title="project.title" :overview="project.overview"
+            :startupId="project.startup.id" :link="'/portfolio/most-relevant-projects/' + project.id" />
 
         </div>
 
@@ -33,3 +34,21 @@
     </div>
   </main>
 </template>
+
+<script>
+/*
+    The defineNuxtComponent gets us access to the asyncData property.
+    This is the first function that is called by nuxt when the page is called.
+    We can use this to pre-load the data to make it available to the user.
+*/
+export default defineNuxtComponent({
+  async asyncData() {
+    // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
+    const projects = await $fetch('/api/portfolio/most-relevant-projects')
+
+    return {
+      projects
+    }
+  }
+})
+</script>
