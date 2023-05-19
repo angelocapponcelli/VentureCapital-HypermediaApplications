@@ -12,16 +12,19 @@
       { label: areaLabel }]" />
 
     <!-- Page of a single project -->
-    <div v-if="pageTypeProject" class="flex flex-col w-full px-x_padding_page py-y_padding_page space-y-16">
-      <div class="flex justify-between space-x-12">
-        <div class="flex flex-col justify-between">
-          <!-- title -->
-          <h1 class="text-5xl font-extrabold">
-            {{ project.title }}
-          </h1>
-          <p class="text-xl">
-            {{ project.overview }}
-          </p>
+    <div v-if="pageTypeProject"
+      class="flex flex-col w-full md:px-x_padding_page px-x_padding_page_mobile md:py-y_padding_page py-y_padding_page_mobile md:space-y-16">
+      <div class="flex flex-col md:flex-row justify-between md:space-x-12">
+        <div class="flex flex-col space-y-4 md:space-y-6 justify-between">
+          <div class="space-y-4">
+            <!-- title -->
+            <h1 class="text-3xl md:text-5xl font-extrabold">
+              {{ project.title }}
+            </h1>
+            <p class="text-xl">
+              {{ project.overview }}
+            </p>
+          </div>
           <div class="flex justify-between">
             <NuxtLink v-if="previousProject" :to="'/portfolio/' + linkPrevious" @click="refreshAll"
               class="text-color-1000 text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
