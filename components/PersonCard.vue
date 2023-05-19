@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink :to = "'/team/' + id"
+    <NuxtLink :to ="'/team/' + id"
     class="p-6 flex flex-col space-y-2 rounded-2xl bg-[#F2F1FA] hover:shadow-md hover:transform hover:scale-101 transition duration-500">
         <!-- TODO add dynamic person image -->
         <img class="object-center object-cover h-80 w-full rounded-2xl" src='~/assets/img/people/1.png' alt="cover image"/>
@@ -83,7 +83,7 @@ export default {
         font-family: 'DM Sans';
         font-style: normal;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 15px;
         line-height: 20px;
         /* identical to box height, or 111% */
         letter-spacing: 0.1em;

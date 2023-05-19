@@ -2,8 +2,8 @@
     <main>
         <Breadcrumb :crumbs="[{ label: 'Our team', link: '/team' }]"/>
         <!-- content -->
-        <TitleWithImage title="Meet our team" subtitle="Lorem ipsum dolor sit amet consectetur 
-        adipiscing elit volutpat gravida malesuada quam commodo id integer nam."/>
+        <TitleWithImage title="Meet our team" subtitle="A collective of passionate and experienced professionals driving 
+        visionary investments and empowering startups to thrive in the world of venture capital."/>
         
         <div class="flex flex-col space-y-16 px-36 py-20 w-full">
 
@@ -18,7 +18,6 @@
                     :id="person.id" />
             </div>
         </div>
-
     </main>
 </template>
 
@@ -29,22 +28,27 @@
     We can use this to pre-load the data to make it available to the user.
 */
 export default defineNuxtComponent({
-  async asyncData() {
-    // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
-    const people = (await $fetch('/api/team')).sort((a, b) => {
-        if (a.id < b.id) {
-            return -1;
-        }
-        if (a.id > b.id) {
-            return 1;
-        }
-        // a must be equal to b
-        return 0;
-    })
+    async asyncData() {
+        // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
+        const people = (await $fetch('/api/team')).sort((a, b) => {
+            if (a.id < b.id) {
+                return -1;
+            }
+            if (a.id > b.id) {
+                return 1;
+            }
+            // a must be equal to b
+            return 0;
+        })
 
-    return {
-        people
+        /* const route = useRoute()
+
+        route.push({name: '[id]', params: {peopleNum: people.length}}) */
+        //this.$router.push({name: '[id]', params: {peopleNum: people.length}})
+
+        return {
+            people
+        }
     }
-  }
 })
 </script>
