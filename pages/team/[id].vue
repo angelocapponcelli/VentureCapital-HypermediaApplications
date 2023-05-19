@@ -16,7 +16,8 @@
                 <div class="flex flex-row justify-center space-x-10">
                     <!-- single project card -->
                     <!-- TODO fetch related projects to person -->
-                    <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
+                    <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
+                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
                     <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="project.overview" startupId="1" />
                     <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="project.overview" startupId="1" />
                 </div>

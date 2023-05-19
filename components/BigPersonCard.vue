@@ -20,8 +20,7 @@
                 </NuxtLink>
             </div>
             <span class="previous-next-links-container">
-                <!-- TODO add check for 0 -->
-                <NuxtLink :to = "'/team/' + (id-1)" class="flex flex-row justify-start items-center" >
+                <NuxtLink v-if="id > 1" :to = "'/team/' + (id-1)" class="flex flex-row justify-start items-center" >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-color-1000">
                         <path fill-rule="evenodd" 
                         d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" 
@@ -29,6 +28,7 @@
                     </svg>
                     <button id="previous">Previous</button>
                 </NuxtLink>
+                <div v-else></div>
                 <!-- TODO add check for last person -->
                 <NuxtLink :to = "'/team/' + (id+1)" class="flex flex-row justify-end items-center" >
                     <button id="next">Next</button>
@@ -121,7 +121,7 @@ export default {
         font-family: 'DM Sans';
         font-style: normal;
         font-weight: 700;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 20px;
         letter-spacing: 0.1em;
         text-transform: uppercase;
