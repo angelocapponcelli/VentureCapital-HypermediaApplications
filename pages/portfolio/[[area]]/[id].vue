@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Breadcrumb v-if="pageTypeProject && area" @click="refreshAll" :crumbs="[
+    <Breadcrumb v-if="pageTypeProject && area" :crumbs="[
       { label: 'Portfolio', link: '/portfolio' },
       { label: areaLabel, link: '/portfolio/' + area },
       { label: project.title }]" />
@@ -26,7 +26,7 @@
             </p>
           </div>
           <div class="flex justify-between">
-            <NuxtLink v-if="previousProject" :to="'/portfolio/' + linkPrevious" @click="refreshAll"
+            <NuxtLink v-if="previousProject" :to="'/portfolio/' + linkPrevious"
               class="text-color-1000 md:text-lg text-sm font-bold flex md:space-x-2 items-center hover:text-color-700 transition duration-200">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
@@ -35,7 +35,7 @@
               <span>Previous project</span>
             </NuxtLink>
             <div v-else />
-            <NuxtLink v-if="nextProject" :to="'/portfolio/' + linkNext" @click="refreshAll"
+            <NuxtLink v-if="nextProject" :to="'/portfolio/' + linkNext"
               class="justify-end text-primary-color md:text-lg text-sm font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
               <span>Next project</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -109,7 +109,7 @@
         </NuxtLink>
         <div v-else class="flex-1" />
 
-        <NuxtLink :to="linkBack" @click="refreshAll"
+        <NuxtLink :to="linkBack"
           class="md:order-none order-last flex-none py-2 px-4 mx-auto items-center justify-center flex space-x-2 bg-white text-primary-color hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
           <span>Return to portfolio</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -151,7 +151,7 @@
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
         <!-- side drawer section -->
-        <SideDrawer class="basis-1/5" :pageIndex="indexDrawer" @click="refreshAll" />
+        <SideDrawer class="basis-1/5" :pageIndex="indexDrawer" />
 
         <!-- cards projects section -->
         <div v-if="projectExist" class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -213,9 +213,8 @@ if (pageTypeProject && !area) { //project from 'All projects' page
   coverImage = "/_nuxt/assets/img/project/" + project.id + '.png'
   linkBack = '/portfolio/' + area
 } else {
-
-  //projectList = await $fetch('/api/portfolio/' + areaLabel + '/undefined')
   const { data } = await useFetch('/api/portfolio/' + areaLabel + '/undefined')
+
   projectList = data.value
   if (projectList[0]) { //todo verifica che ci siano progetti
     projectExist = true
@@ -226,7 +225,7 @@ if (pageTypeProject && !area) { //project from 'All projects' page
   }
 }
 
-// To refresh the page
+/* To refresh the page todo remove not usefull
 const refreshing = ref(false)
 const refreshAll = async () => {
   refreshing.value = true
@@ -235,7 +234,7 @@ const refreshAll = async () => {
   } finally {
     refreshing.value = false
   }
-}
+}*/
 
 //const description = ref(newLineOnFullStop(dog.value.description))
 </script>
