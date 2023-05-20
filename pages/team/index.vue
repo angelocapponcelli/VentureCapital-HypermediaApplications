@@ -2,20 +2,22 @@
     <main>
         <Breadcrumb :crumbs="[{ label: 'Our team', link: '/team' }]"/>
         <!-- content -->
-        <TitleWithImage title="Meet our team" subtitle="A collective of passionate and experienced professionals driving 
-        visionary investments and empowering startups to thrive in the world of venture capital."/>
-        
-        <div class="flex flex-col space-y-16 px-36 py-20 w-full">
+        <div class="w-full" >
+            <TitleWithImage title="Meet our team" subtitle="A collective of passionate and experienced professionals driving 
+            visionary investments and empowering startups to thrive in the world of venture capital."/>
+            
+            <div class="flex flex-col space-y-16 px-36 py-20 w-full">
 
-            <!-- title -->
-            <!-- <h1 class="text-5xl font-extrabold text-center">
-            Our Team
-            </h1> -->
+                <!-- title -->
+                <!-- <h1 class="text-5xl font-extrabold text-center">
+                Our Team
+                </h1> -->
 
-            <div class="basis-4/5 grid grid-cols-3 gap-4">
-                <!-- single person card -->
-                <PersonCard v-for="person of people" :name="person.full_name" :position="person.position" 
-                    :id="person.id" />
+                <div class="basis-4/5 grid grid-cols-3 gap-4">
+                    <!-- single person card -->
+                    <PersonCard v-for="person of people" :name="person.full_name" :position="person.position" 
+                        :id="person.id" />
+                </div>
             </div>
         </div>
     </main>
@@ -41,8 +43,9 @@ export default defineNuxtComponent({
             return 0;
         })
 
-        /* const route = useRoute()
+        /*const route = useRoute()
 
+        route.params.peopleNum = people.length
         route.push({name: '[id]', params: {peopleNum: people.length}}) */
         //this.$router.push({name: '[id]', params: {peopleNum: people.length}})
 

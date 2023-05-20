@@ -29,8 +29,7 @@
                     <button id="previous">Previous</button>
                 </NuxtLink>
                 <div v-else></div>
-                <!-- TODO add check for last person -->
-                <NuxtLink :to = "'/team/' + (id+1)" class="flex flex-row justify-end items-center" >
+                <NuxtLink v-if="next" :to = "'/team/' + (id+1)" class="flex flex-row justify-end items-center" >
                     <button id="next">Next</button>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-color-1000">
                         <path fill-rule="evenodd" 
@@ -38,6 +37,7 @@
                         clip-rule="evenodd" />
                     </svg>
                 </NuxtLink>
+                <div v-else></div>
             </span>
         </div>
     </div>
@@ -45,7 +45,7 @@
 
 <script>
 export default {
-    props: ['name', 'position', 'description', 'cvLink', 'id'],
+    props: ['name', 'position', 'description', 'cvLink', 'id', 'next'],
 
     /* computed: {
         pathImage() {
