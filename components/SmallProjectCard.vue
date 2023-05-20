@@ -1,6 +1,6 @@
 <template>
   <!-- TODO: add to link -->
-  <NuxtLink :to="link"
+  <NuxtLink :to="link" :id="id"
     class="p-5 space-y-2 flex flex-col rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
 
     <!-- cover image TODO: :src="pathImage" -->
@@ -28,12 +28,12 @@
 <script>
 
 export default {
-  props: ['title', 'overview', 'startupId', 'link'],
+  props: ['title', 'overview', 'startupId', 'link', 'id'],
 
   computed: {
     imageUrl() {
       var url = new URL('../assets/img/startup/' + this.startupId + '.png', import.meta.url).href;
-      console.log(url.toString())
+      //console.log(url.toString())
       return "/_nuxt/assets/img/startup/" + this.startupId + '.png'
     }
   },

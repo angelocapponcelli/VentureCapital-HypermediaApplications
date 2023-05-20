@@ -15,7 +15,7 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar class="invisible md:visible" />
+        <SearchBar class="invisible md:visible" @search-filter="receiveEmit" />
       </div>
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
@@ -26,8 +26,23 @@
         <div class="flex flex-col space-y-5 basis-4/5">
 
           <!-- single card project -->
-          <BigProjectCard v-for="project of projects" :title="project.title" :overview="project.overview"
-            :startupId="project.startup.id" :link="'/portfolio/most-relevant-projects/' + project.id" />
+          <BigProjectCard v-if="filteredProjects.length > 0" v-for="project of filteredProjects" :title="project.title"
+            :overview="project.overview" :startupId="project.startup.id"
+            :link="'/portfolio/most-relevant-projects/' + project.id" :id="project.id" />
+
+          <div v-else class="w-[50rem] absolute m-auto text-2xl flex flex-row space-x-5 items-center text-color-1000">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-14 h-full">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>
+              Sorry, but there are <b>no projects</b> in <b>most relevant section</b> matching your search criteria.
+              Please
+              try
+              again with different keywords.
+            </span>
+          </div>
 
         </div>
 
@@ -43,12 +58,33 @@
     We can use this to pre-load the data to make it available to the user.
 */
 export default defineNuxtComponent({
+  data() {
+    return {
+      search: ""
+    };
+  },
   async asyncData() {
     // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
     const projects = await $fetch('/api/portfolio/most-relevant-projects')
 
     return {
       projects
+    }
+  },
+  computed: {
+    filteredProjects() {
+      return this.projects.filter(p => {
+        // return true if the product should be visible
+
+        // in this example we just check if the search string
+        // is a substring of the product name (case insensitive)
+        return p.title.toUpperCase().indexOf(this.search) != -1;
+      });
+    }
+  },
+  methods: {
+    receiveEmit(value) {
+      this.search = value
     }
   }
 })

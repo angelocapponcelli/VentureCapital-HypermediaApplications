@@ -34,17 +34,17 @@ export default defineEventHandler(async (event) => {
         return areaId;
       }
     } catch (error) {
-      /*throw createError({
+      throw createError({
         statusCode: 500,
         statusMessage: "Internal Server Error",
-      });*/
+      });
     }
   } else if (area == "all") {
     try {
       var { data: project, error } = await client
         .from("project")
         .select(
-          "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name)"
+          "id, title, overview, product, team, gallery, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name)"
         )
         .eq("id", id)
         .limit(1)
@@ -83,10 +83,10 @@ export default defineEventHandler(async (event) => {
 
       return { project, previousProject, nextProject };
     } catch (error) {
-      /*throw createError({
+      throw createError({
         statusCode: 500,
         statusMessage: "Internal Server Error",
-      });*/
+      });
     }
   } else if (area == "Most relevant projects") {
     var { data: project, error } = await client
@@ -143,7 +143,7 @@ export default defineEventHandler(async (event) => {
     var { data: project, error } = await client
       .from("project")
       .select(
-        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name)"
+        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name), gallery"
       )
       .eq("area.name", area)
       .eq("id", id)

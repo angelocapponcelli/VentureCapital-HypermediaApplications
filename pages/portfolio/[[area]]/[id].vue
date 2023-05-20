@@ -77,7 +77,7 @@
         <p class="text-lg md:text-xl">
           {{ project.team }}
         </p>
-        <h1 class="text-3xl md:text-4xl font-extrabold">
+        <h1 v-if="project.gallery" class="text-3xl md:text-4xl font-extrabold">
           Gallery
         </h1>
         <!--div class="grid grid-cols-3 grid-flow-row gap-4">
@@ -88,10 +88,8 @@
           <img class="rounded-xl row-span-2 -mt-8" src="~/assets/img/home-image.jpg" />
           <img class="rounded-xl row-span-2" src="~/assets/img/home-image.jpg" />
         </div-->
-        <div class="grid md:grid-cols-3 gap-4 grid-cols-1">
-          <img class="rounded-xl" src="~/assets/img/home-image.jpg" />
-          <img class="rounded-xl" src="~/assets/img/home-image.jpg" />
-          <img class="rounded-xl" src="~/assets/img/home-image.jpg" />
+        <div v-if="project.gallery" class="grid md:grid-cols-3 gap-4 grid-cols-1">
+          <img v-for="img of project.gallery" class="rounded-xl" :src="imageUrl(img)" />
         </div>
       </div>
 
@@ -146,7 +144,7 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar class="invisible md:visible" />
+        <SearchBar class="invisible md:visible" @search-filter="receiveEmit" />
       </div>
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
@@ -157,7 +155,21 @@
         <div v-if="projectExist" class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
           <!-- single card project -->
           <SmallProjectCard v-for="project of projectList" :title="project.title" :overview="project.overview"
-            :startupId="project.startup.id" :link="'/portfolio/' + area + '/' + project.id" />
+            :startupId="project.startup.id" :link="'/portfolio/' + area + '/' + project.id" :id="project.id" />
+          <div id="no-projects"
+            class="w-[50rem] absolute m-auto text-2xl flex flex-row space-x-5 items-center text-color-1000"
+            style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-14 h-full">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>
+              Sorry, but there are <b>no {{ areaLabel.toLowerCase() }} projects</b> matching your search criteria. Please
+              try
+              again with different keywords.
+            </span>
+          </div>
         </div>
 
         <div v-else class="basis-4/5">
@@ -184,8 +196,8 @@ if (pageTypeProject && !area) { //project from 'All projects' page
   const { data: dataProject } = await useFetch('/api/portfolio/all/' + id, { initialCache: false })
 
   project = dataProject.value.project
-  //return id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position)
-
+  //return id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name), gallery
+  console.log(project.gallery)
   previousProject = dataProject.value.previousProject
   //return id, title
   linkPrevious = (previousProject) ? previousProject.id : undefined
@@ -196,11 +208,11 @@ if (pageTypeProject && !area) { //project from 'All projects' page
 
   coverImage = "/_nuxt/assets/img/project/" + project.id + '.png'
   linkBack = '/portfolio'
-} else if (pageTypeProject) {
+} else if (pageTypeProject) { //project from an area page
   const { data: dataProject } = await useFetch('/api/portfolio/' + areaLabel + '/' + id)
 
   project = dataProject.value.project
-  //return id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position)
+  //return id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name), gallery
 
   previousProject = dataProject.value.previousProject
   //return id, title
@@ -212,7 +224,7 @@ if (pageTypeProject && !area) { //project from 'All projects' page
 
   coverImage = "/_nuxt/assets/img/project/" + project.id + '.png'
   linkBack = '/portfolio/' + area
-} else {
+} else { //area page
   const { data } = await useFetch('/api/portfolio/' + areaLabel + '/undefined')
 
   projectList = data.value
@@ -223,6 +235,34 @@ if (pageTypeProject && !area) { //project from 'All projects' page
     projectExist = false
     indexDrawer = projectList.id + 1
   }
+}
+
+function imageUrl(id_image) {
+  var url = new URL('../assets/gallery/' + id_image + '.png', import.meta.url).href
+  url = '/_nuxt/assets/gallery/' + id_image + '.png'
+  return url
+}
+
+function search(value) {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  if (value.toUpperCase().indexOf(filter) > -1) {
+    return true
+  } else {
+    return false
+  }
+}
+function receiveEmit(value) {
+  var noProjects = true
+  for (var i = 0; i < projectList.length; i++) {
+    if (projectList[i].title.toUpperCase().indexOf(value) > -1) {
+      document.getElementById(projectList[i].id).style.display = "";
+      noProjects = false
+    } else document.getElementById(projectList[i].id).style.display = "none";
+  }
+  if (noProjects) document.getElementById("no-projects").style.display = "";
+  else document.getElementById("no-projects").style.display = "none";
 }
 
 /* To refresh the page todo remove not usefull
