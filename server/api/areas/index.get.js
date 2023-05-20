@@ -4,9 +4,8 @@ export default defineEventHandler(async (event) => {
   const client = serverSupabaseClient(event);
 
   const { data, error } = await client
-    .from("project")
-    .select("id, title, overview, startup (id)")
-    .order("id", { ascending: false });
+    .from("area")
+    .select("id, name, description");
 
   if (error) {
     throw createError({ statusCode: 400, statusMessage: error.message });

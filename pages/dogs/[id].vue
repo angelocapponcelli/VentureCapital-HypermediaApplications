@@ -19,7 +19,7 @@
             This function is a composable that is available anywhere, without requiring to be imported.
         -->
         <p id = "description" v-html = "description"></p>
-        <SmallCard :title = "dog.locations.name" :subtitle = "dog.locations.city" :link = "'/locations/' + dog.locations.id" />
+        <SmallCard :title = "dog.areas.name" :subtitle = "dog.areas.city" :link = "'/areas/' + dog.areas.id" />
     </main>
 </template>
 
