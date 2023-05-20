@@ -1,12 +1,12 @@
 <template>
   <NuxtLink v-if="!tabType" :to="links.url"
-    class="p-6 flex space-x-5 rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
+    class="p-6 flex md:flex-row flex-col md:space-x-5 space-x-0 rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
 
     <!-- cover image TODO: :src="pathImage" -->
-    <img class="object-center object-cover h-40 w-40 rounded-xl" :src=imageUrl alt="cover image">
+    <img class="object-center object-cover  md:w-40 w-full aspect-square rounded-xl" :src=imageUrl alt="cover image">
 
     <!-- startup overview -->
-    <div class="flex-auto content-center flex-col space-y-3 align-middle m-auto">
+    <div class="flex-auto content-center flex-col space-y-3 align-middle m-auto md:pt-0 pt-4">
 
       <div>
         <h2 class="text-2xl font-extrabold">

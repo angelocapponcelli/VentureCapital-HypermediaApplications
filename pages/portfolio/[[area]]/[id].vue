@@ -13,8 +13,8 @@
 
     <!-- Page of a single project -->
     <div v-if="pageTypeProject"
-      class="flex flex-col w-full md:px-x_padding_page px-x_padding_page_mobile md:py-y_padding_page py-y_padding_page_mobile md:space-y-16">
-      <div class="flex flex-col md:flex-row justify-between md:space-x-12">
+      class="flex flex-col w-full md:px-x_padding_page md:py-y_padding_page md:space-y-16 px-x_padding_page_mobile py-y_padding_page_mobile space-y-4">
+      <div class="flex md:flex-row md:justify-between md:space-y-0 md:space-x-12 flex-col space-y-4">
         <div class="flex flex-col space-y-4 md:space-y-6 justify-between">
           <div class="space-y-4">
             <!-- title -->
@@ -27,19 +27,19 @@
           </div>
           <div class="flex justify-between">
             <NuxtLink v-if="previousProject" :to="'/portfolio/' + linkPrevious" @click="refreshAll"
-              class="text-color-1000 text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
+              class="text-color-1000 md:text-lg text-sm font-bold flex md:space-x-2 items-center hover:text-color-700 transition duration-200">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
+                stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
               </svg>
               <span>Previous project</span>
             </NuxtLink>
             <div v-else />
             <NuxtLink v-if="nextProject" :to="'/portfolio/' + linkNext" @click="refreshAll"
-              class="text-primary-color text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
+              class="justify-end text-primary-color md:text-lg text-sm font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
               <span>Next project</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6">
+                stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
             </NuxtLink>
@@ -51,7 +51,7 @@
           :alt="'Cover image project ' + project.id" />
       </div>
 
-      <div class="flex flex-row space-x-4">
+      <div class="flex md:flex-row md:space-x-4 md:space-y-0 flex-col space-y-4">
         <ProjectTab class="basis-2/5" :tabType="0" :title="project.startup.name" :titleLabel="'Company'"
           :subtitle="project.startup.headquarter" :subtitleLabel="'Headquarter'" :image="'startup/' + project.startup.id"
           :links="{ url: project.startup.website, label: 'Visit website' }" />
@@ -65,19 +65,19 @@
       </div>
 
       <div class="flex flex-col space-y-5">
-        <h1 class="text-4xl font-extrabold">
+        <h1 class="text-3xl md:text-4xl font-extrabold">
           Product
         </h1>
-        <p class="text-xl">
+        <p class="text-lg md:text-xl">
           {{ project.product }}
         </p>
-        <h1 class="text-4xl font-extrabold">
+        <h1 class="text-3xl md:text-4xl font-extrabold">
           Team
         </h1>
-        <p class="text-xl">
+        <p class="text-lg md:text-xl">
           {{ project.team }}
         </p>
-        <h1 class="text-4xl font-extrabold">
+        <h1 class="text-3xl md:text-4xl font-extrabold">
           Gallery
         </h1>
         <!--div class="grid grid-cols-3 grid-flow-row gap-4">
@@ -88,16 +88,16 @@
           <img class="rounded-xl row-span-2 -mt-8" src="~/assets/img/home-image.jpg" />
           <img class="rounded-xl row-span-2" src="~/assets/img/home-image.jpg" />
         </div-->
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid md:grid-cols-3 gap-4 grid-cols-1">
           <img class="rounded-xl" src="~/assets/img/home-image.jpg" />
           <img class="rounded-xl" src="~/assets/img/home-image.jpg" />
           <img class="rounded-xl" src="~/assets/img/home-image.jpg" />
         </div>
       </div>
 
-      <div class="flex">
+      <div class="flex md:flex-row flex-col md:space-y-0 space-y-4">
         <NuxtLink v-if="previousProject" :to="'/portfolio/' + previousProject.id"
-          class="flex-1 text-color-1000 text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
+          class="md:order-none order-1 py-4 md:py-0 flex-1 text-color-1000 text-lg font-bold flex md:space-x-2 items-center hover:text-color-700 transition duration-200">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor"
             class="w-8 h-8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -110,7 +110,7 @@
         <div v-else class="flex-1" />
 
         <NuxtLink :to="linkBack" @click="refreshAll"
-          class="flex-none py-2 px-4 my-auto items-center flex space-x-2 bg-white text-primary-color hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+          class="md:order-none order-last flex-none py-2 px-4 mx-auto items-center justify-center flex space-x-2 bg-white text-primary-color hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
           <span>Return to portfolio</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="w-6 h-6">
@@ -120,7 +120,7 @@
         </NuxtLink>
 
         <NuxtLink v-if="nextProject" :to="'/portfolio/' + nextProject.id"
-          class="flex-1 justify-end text-primary-color text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
+          class="md:order-none order-0 flex-1 justify-end text-primary-color text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
           <div class="text-right">
             <p class="text-color-700">Next project</p>
             <h3 class="font-extrabold text-xl">{{ nextProject.title }}</h3>
@@ -132,10 +132,13 @@
         </NuxtLink>
         <div v-else class="flex-1" />
       </div>
+
+
     </div>
 
     <!-- Page of portfolio related to a specific area -->
-    <div v-else class="flex flex-col space-y-16 px-x_padding_page py-y_padding_page w-full">
+    <div v-else
+      class="flex flex-col space-y-2 md:space-y-16 md:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile  w-full">
 
       <div class="flex justify-between">
         <!-- title -->
@@ -143,15 +146,15 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar />
+        <SearchBar class="invisible md:visible" />
       </div>
 
-      <div class="flex space-x-5">
+      <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
         <!-- side drawer section -->
-        <SideDrawer class="basis-1/5 sticky" :pageIndex="indexDrawer" @click="refreshAll" />
+        <SideDrawer class="basis-1/5" :pageIndex="indexDrawer" @click="refreshAll" />
 
         <!-- cards projects section -->
-        <div v-if="projectExist" class="basis-4/5 grid grid-cols-3 gap-4">
+        <div v-if="projectExist" class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
           <!-- single card project -->
           <SmallProjectCard v-for="project of projectList" :title="project.title" :overview="project.overview"
             :startupId="project.startup.id" :link="'/portfolio/' + area + '/' + project.id" />

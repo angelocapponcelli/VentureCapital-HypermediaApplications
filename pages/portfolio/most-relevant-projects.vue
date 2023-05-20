@@ -6,7 +6,8 @@
       { label: 'Most relevant projects', link: '/most-relevant-projects' }]" />
 
     <!-- content -->
-    <div class="flex flex-col space-y-16 px-x_padding_page py-y_padding_page w-full">
+    <div
+      class="flex flex-col space-y-2 md:space-y-16 md:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile  w-full">
 
       <div class="flex justify-between">
         <!-- title -->
@@ -14,10 +15,10 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar />
+        <SearchBar class="invisible md:visible" />
       </div>
 
-      <div class="flex space-x-5">
+      <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
         <!-- side drawer section -->
         <SideDrawer class="basis-1/5" :pageIndex=1 />
 

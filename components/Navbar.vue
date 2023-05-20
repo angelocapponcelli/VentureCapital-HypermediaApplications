@@ -169,7 +169,6 @@ export default {
             this.isAreasDropdownVisible = false;
         },
         myFunction() {
-            console.log('ciao')
             this.isMobileVisible = !this.isMobileVisible;
         }
     },

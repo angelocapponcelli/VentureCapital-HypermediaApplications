@@ -5,7 +5,7 @@
 
     <!-- cover image TODO: :src="pathImage" -->
     <!-- <img class="object-center object-cover h-56 w-full rounded-xl" src="~/assets/img/startup/1.png" alt="cover image"> -->
-    <img class="object-center object-cover h-56 w-full rounded-xl" :src=imageUrl alt="cover image" />
+    <img class="object-center object-cover aspect-square w-full rounded-xl" :src=imageUrl alt="cover image" />
 
     <!-- project overview -->
     <h2 class="text-2xl font-extrabold">
@@ -34,7 +34,7 @@ export default {
     imageUrl() {
       var url = new URL('../assets/img/startup/' + this.startupId + '.png', import.meta.url).href;
       console.log(url.toString())
-      return "/_nuxt/assets/img/startup/"+this.startupId + '.png'
+      return "/_nuxt/assets/img/startup/" + this.startupId + '.png'
     }
   },
 };
