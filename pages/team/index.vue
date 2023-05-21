@@ -7,16 +7,10 @@
             visionary investments and empowering startups to thrive in the world of venture capital."/>
             
             <div class="flex flex-col space-y-16 px-36 py-20 w-full">
-
-                <!-- title -->
-                <!-- <h1 class="text-5xl font-extrabold text-center">
-                Our Team
-                </h1> -->
-
                 <div class="basis-4/5 grid grid-cols-3 gap-4">
                     <!-- single person card -->
                     <PersonCard v-for="person of people" :name="person.full_name" :position="person.position" 
-                        :id="person.id" />
+                        :id="person.id" :image="person.image"/>
                 </div>
             </div>
         </div>
@@ -32,22 +26,7 @@
 export default defineNuxtComponent({
     async asyncData() {
         // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
-        const people = (await $fetch('/api/team')).sort((a, b) => {
-            if (a.id < b.id) {
-                return -1;
-            }
-            if (a.id > b.id) {
-                return 1;
-            }
-            // a must be equal to b
-            return 0;
-        })
-
-        /*const route = useRoute()
-
-        route.params.peopleNum = people.length
-        route.push({name: '[id]', params: {peopleNum: people.length}}) */
-        //this.$router.push({name: '[id]', params: {peopleNum: people.length}})
+        const people = (await $fetch('/api/team'))
 
         return {
             people
