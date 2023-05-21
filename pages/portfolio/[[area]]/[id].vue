@@ -183,6 +183,14 @@
 
 <script setup>
 const route = useRoute()
+if (!(parseFloat(route.params.id) === route.params.id >>> 0) && route.params.area) {
+  throw createError({
+    statusCode: 400,
+    statusMessage: "Page does not exist",
+  });
+}
+
+
 const id = route.params.id
 const area = ((parseFloat(id) === id >>> 0) ? route.params.area : route.params.id)
 const areaLabel = area.charAt(0).toUpperCase() + area.slice(1).replaceAll("-", " ")
@@ -191,7 +199,6 @@ let project, previousProject, nextProject, coverImage, linkPrevious, linkNext, l
 let projectList, indexDrawer = 0, projectExist = false;
 
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
-
 if (pageTypeProject && !area) { //project from 'All projects' page
   const { data: dataProject } = await useFetch('/api/portfolio/all/' + id, { initialCache: false })
 
@@ -230,10 +237,14 @@ if (pageTypeProject && !area) { //project from 'All projects' page
   projectList = data.value
   if (projectList[0]) { //todo verifica che ci siano progetti
     projectExist = true
-    indexDrawer = projectList[0].area[0].id + 1
   } else {
     projectExist = false
-    indexDrawer = projectList.id + 1
+  }
+
+  indexDrawer = 2
+  const areas = await $fetch('/api/areas')
+  for (let index = 0; areas[index].name != areaLabel; index++) {
+    indexDrawer++
   }
 }
 
@@ -243,16 +254,6 @@ function imageUrl(id_image) {
   return url
 }
 
-function search(value) {
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  if (value.toUpperCase().indexOf(filter) > -1) {
-    return true
-  } else {
-    return false
-  }
-}
 function receiveEmit(value) {
   var noProjects = true
   for (var i = 0; i < projectList.length; i++) {

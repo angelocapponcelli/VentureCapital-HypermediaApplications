@@ -21,4 +21,9 @@ export default defineNuxtConfig({
       ],
     },
   },
+  runtimeConfig: {
+    public: {
+      SUPABASE_ASSETS_URL: process.env.SUPABASE_ASSETS_URL,
+    },
+  },
 });

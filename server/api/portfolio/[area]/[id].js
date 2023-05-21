@@ -7,6 +7,7 @@ export default defineEventHandler(async (event) => {
   const area = event.context.params.area.replaceAll("%20", " ");
 
   if (id == "undefined") {
+    // get the data for the areas page
     try {
       var { data: projects, error } = await client
         .from("project")
@@ -40,6 +41,7 @@ export default defineEventHandler(async (event) => {
       });
     }
   } else if (area == "all") {
+    // get the data for the project page coming from the portfolio
     try {
       var { data: project, error } = await client
         .from("project")
@@ -89,6 +91,7 @@ export default defineEventHandler(async (event) => {
       });
     }
   } else if (area == "Most relevant projects") {
+    // get the data for the project page coming from the page of most relevant projects
     var { data: project, error } = await client
       .from("project")
       .select(
@@ -140,6 +143,7 @@ export default defineEventHandler(async (event) => {
 
     return { project, previousProject, nextProject };
   } else {
+    //get the data for the project page coming from the page of a specific area
     var { data: project, error } = await client
       .from("project")
       .select(

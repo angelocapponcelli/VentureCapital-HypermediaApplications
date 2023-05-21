@@ -5,7 +5,7 @@
 
     <!-- cover image TODO: :src="pathImage" -->
     <!-- <img class="object-center object-cover h-56 w-full rounded-xl" src="~/assets/img/startup/1.png" alt="cover image"> -->
-    <img class="object-center object-cover aspect-square w-full rounded-xl" :src=imageUrl alt="cover image" />
+    <img class="object-center object-cover aspect-square w-full rounded-xl" :src="imageUrl" />
 
     <!-- project overview -->
     <h2 class="text-2xl font-extrabold">
@@ -26,15 +26,16 @@
 </template>
 
 <script>
+const supabaseUrl = import.meta.env.SUPABASE_URL
 
 export default {
   props: ['title', 'overview', 'startupId', 'link', 'id'],
 
   computed: {
     imageUrl() {
-      var url = new URL('../assets/img/startup/' + this.startupId + '.png', import.meta.url).href;
-      //console.log(url.toString())
-      return "/_nuxt/assets/img/startup/" + this.startupId + '.png'
+      //var url = new URL('../assets/img/startup/' + this.startupId + '.png', import.meta.url).href;
+      const config = useRuntimeConfig();
+      return config.SUPABASE_ASSETS_URL + "/startups/" + this.startupId + '.png'
     }
   },
 };
