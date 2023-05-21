@@ -4,7 +4,8 @@
     class="md:p-6 p-5 flex md:flex-row flex-col md:space-x-12 md:space-y-0 space-y-2 rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
 
     <!-- cover image TODO: :src="pathImage" -->
-    <img class="object-center object-cover md:w-56 aspect-square w-full rounded-xl" :src="imageUrl" alt="cover image">
+    <img class="object-center object-cover md:w-56 aspect-square w-full rounded-xl"
+      :src="config.SUPABASE_ASSETS_URL + '/startups/' + startupId + '.png'" alt="cover image">
 
     <!-- project overview -->
     <div class="flex content-center flex-col md:space-y-5 space-y-2 align-middle m-auto">
@@ -30,12 +31,9 @@
 <script>
 export default {
   props: ['title', 'overview', 'startupId', 'link'],
-  computed: {
-    imageUrl() {
-      var url = new URL('../assets/img/startup/' + this.startupId + '.png', import.meta.url).href;
-      //console.log(url.toString())
-      return "/_nuxt/assets/img/startup/" + this.startupId + '.png'
-    }
-  },
 };
+</script>
+
+<script setup>
+const config = useRuntimeConfig();
 </script>

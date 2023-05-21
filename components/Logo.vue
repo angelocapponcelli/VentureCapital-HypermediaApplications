@@ -9,9 +9,9 @@
                 <ellipse ry="70" rx="70" id="svg_19" cy="256" cx="345" fill="#5b45f8" />
             </g>
         </svg>
-        <span class="hidden md:flex text-4xl font-extrabold">Venture</span>
-        <span class="hidden md:flex text-4xl font-extrabold text-primary-color">Capital</span>
-        <div class="flex md:hidden">
+        <span class="hidden lg:flex text-4xl font-extrabold">Venture</span>
+        <span class="hidden lg:flex text-4xl font-extrabold text-primary-color">Capital</span>
+        <div class="flex lg:hidden">
             <span class="text-4xl font-extrabold">V</span>
             <span class="text-4xl font-extrabold text-primary-color">C</span>
         </div>

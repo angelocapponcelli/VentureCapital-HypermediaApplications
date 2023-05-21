@@ -11,6 +11,11 @@ export default defineNuxtConfig({
   ssr: true,
   app: {
     head: {
+      title: "Venture Capital",
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+      ],
       link: [
         { rel: "preconnect", href: "https://fonts.googleapis.com" }, //import from google font
         { rel: "preconnect", href: "https://fonts.gstatic.com" }, //import from google font

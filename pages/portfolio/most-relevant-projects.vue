@@ -38,9 +38,7 @@
             </svg>
             <span>
               Sorry, but there are <b>no projects</b> in <b>most relevant section</b> matching your search criteria.
-              Please
-              try
-              again with different keywords.
+              Please try again with different keywords.
             </span>
           </div>
 
