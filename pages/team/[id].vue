@@ -6,7 +6,7 @@
     <main>
         <Breadcrumb :crumbs="[{ label: 'Our team', link: '/team' }, { label: person.full_name, link: '/team/' + id }]"/>
 
-        <BigPersonCard :name="person.full_name" :position="person.position" :description="person.description" :image="person.image" cvLink="#" :id="person.id" :next="nextPerson" />
+        <BigPersonCard :name="person.full_name" :position="person.position" :description="person.description" cvLink="#" :id="person.id" :next="nextPerson" />
         
         <div class="related-projects-container">
             <div class="flex flex-col space-y-8 px-32 pt-10 pb-16 w-full">

@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
 
   const { data, error } = await client
     .from("person")
-    .select('id, full_name, position, image')
+    .select('id, full_name, position')
     .order("id", { ascending: true });
 
   if (error) {
