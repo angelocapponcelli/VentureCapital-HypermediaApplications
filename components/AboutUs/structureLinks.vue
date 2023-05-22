@@ -4,6 +4,8 @@
         <a class="link" @click="scroll(link.link)">{{ link.title }}</a>
       </div>
     </div>
+    <div :style="{ height: height }"></div>
+    
   </template>
   
   <script>
@@ -13,7 +15,8 @@
       return {
         isFixed: false,
         componentTop: 0,
-        scrollPosition: 0
+        scrollPosition: 0, 
+        height: '0'
       };
     },
     methods: {
@@ -31,11 +34,14 @@
         } else {
           this.isFixed = false;
         }
+        console.log(this.height)
       }
     },
     mounted() {
       this.componentTop = this.$el.offsetTop;
       window.addEventListener('scroll', this.handleScroll);
+      //this.height=document.getElementById("fixed").getBoundingClientRect().height;
+      this.height = `${this.$el.offsetHeight}px`
     },
     beforeDestroy() {
       window.removeEventListener('scroll', this.handleScroll);
