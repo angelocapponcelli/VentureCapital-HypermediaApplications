@@ -6,7 +6,7 @@
         <div class="bg-no-repeat bg-top bg-cover w-full h-[40rem]"
             style="background-image: url('https://images.unsplash.com/photo-1639174326326-6e2ef8d8ae39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80')">
             <div
-                class="justify-end py-16 bg-gradient-to-r from-black from-40% h-full flex flex-col space-y-10 px-x_padding_page_mobile md:px-x_padding_page w-11/12 md:w-7/12">
+                class="justify-end py-16 bg-gradient-to-r from-black from-40% h-full flex flex-col space-y-10 px-x_padding_page_mobile lg:px-x_padding_page w-11/12 md:w-7/12">
                 <h1 class="text-5xl md:text-7xl text-white">
                     Pioneering the Future, Today!
                 </h1>
@@ -28,12 +28,12 @@
         <div id="getStarted" class="w-full">
             <!-- first section -->
             <div
-                class="flex md:flex-row flex-col md:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile space-y-10 md:space-y-0">
+                class="flex md:flex-row flex-col lg:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile space-y-10 md:space-y-0">
                 <div class="basis-1/2 flex flex-col space-y-10 items-center my-auto">
-                    <div class="w-9/12 md:text-left text-center">
-                        <h2 class="text-2xl md:text-3xl font-semibold ">Discovering the Future: Introducing Our Latest
+                    <div class="w-9/12 lg:text-left text-center">
+                        <h2 class="text-2xl lg:text-3xl font-semibold ">Discovering the Future: Introducing Our Latest
                             Venture</h2>
-                        <h3 class="text-lg md:text-xl pt-4 ">We have found a remarkable company poised to reshape industries
+                        <h3 class="text-lg lg:text-xl pt-4 ">We have found a remarkable company poised to reshape industries
                             with
                             disruptive
                             innovation and unlimited potential.</h3>
@@ -48,7 +48,7 @@
                     </NuxtLink>
                 </div>
 
-                <div class="basis-1/2 grid grid-cols-3 md:gap-4 gap-2 w-full">
+                <div class="basis-1/2 grid grid-cols-3 lg:gap-4 gap-2 w-full">
                     <img v-for="i in Math.min(6, projects.length)"
                         :src="config.SUPABASE_ASSETS_URL + '/startups/' + projects[i - 1].startup.id + '.png'"
                         class="rounded-xl aspect-square object-cover" />
@@ -65,17 +65,17 @@
 
             <!-- second section -->
             <div
-                class="flex flex-col bg-primary-color md:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full space-y-10 ">
+                class="flex flex-col bg-primary-color lg:px-x_padding_page lg:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full space-y-10 ">
                 <div>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-white mx-auto text-center">Our dynamic team driving
+                    <h2 class="text-2xl lg:text-3xl font-semibold text-white mx-auto text-center">Our dynamic team driving
                         venture capital
                         success</h2>
-                    <h3 class="text-lg md:text-xl md:w-3/5 text-white mx-auto text-center pt-4">Meet the passionate experts
+                    <h3 class="text-lg lg:text-xl lg:w-3/5 text-white mx-auto text-center pt-4">Meet the passionate experts
                         fueling
                         innovation and making strategic investments for groundbreaking ventures.</h3>
                 </div>
                 <div
-                    class="grid md:grid-cols-4 grid-cols-2 md:gap-4 gap-2 w-auto md:mx-x_padding_page mx-x_padding_page_mobile bg-white md:p-10 p-2 rounded-xl">
+                    class="grid md:grid-cols-4 grid-cols-2 lg:gap-4 gap-2 w-auto md:mx-x_padding_page mx-x_padding_page_mobile bg-white lg:p-10 p-2 rounded-xl">
                     <img v-for="i in Math.min(8, people.length)"
                         :src="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.png'"
                         class="rounded-xl aspect-square object-cover md:flex hidden" />
@@ -97,9 +97,9 @@
 
             <!-- third section -->
             <div
-                class="flex flex-col md:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full space-y-10">
-                <h2 class="text-2xl md:text-3xl font-semibold mx-auto text-center">Our results in numbers</h2>
-                <div class="flex md:flex-row flex-col pt-8 md:space-x-20 space-x-0 space-y-10 md:space-y-0">
+                class="flex flex-col lg:px-x_padding_page lg:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full space-y-10">
+                <h2 class="text-2xl lg:text-3xl font-semibold mx-auto text-center">Our results in numbers</h2>
+                <div class="flex lg:flex-row flex-col pt-8 lg:space-x-20 space-x-0 space-y-10 lg:space-y-0">
                     <div class="basis-1/3 text-center space-y-2">
                         <h3 class="text-5xl font-bold">90<span class="text-color-700">%</span> </h3>
                         <h3 class="text-2xl font-semibold pt-4">Successful Investments</h3>
@@ -127,17 +127,17 @@
             </div>
             <!-- fourth section -->
             <div
-                class="flex flex-col bg-primary-color md:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full space-y-10 ">
+                class="flex flex-col bg-primary-color lg:px-x_padding_page lg:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full space-y-10 ">
                 <div>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-white mx-auto text-center">Areas</h2>
-                    <h3 class="text-lg md:text-xl w-3/5 text-white mx-auto text-center pt-4">Harnessing transformative
+                    <h2 class="text-2xl lg:text-3xl font-semibold text-white mx-auto text-center">Areas</h2>
+                    <h3 class="text-lg lg:text-xl w-3/5 text-white mx-auto text-center pt-4">Harnessing transformative
                         technologies
                         and disruptive innovations to drive exponential growth and global impact.</h3>
                 </div>
                 <div class="grid md:grid-cols-3 md:gap-4 grid-cols-1 gap-4">
 
                     <NuxtLink v-for="j in Math.min(3, areas.length)" :to="'/areas/' + areas[j - 1].id"
-                        class="bg-white md:p-6 p-2 rounded-xl text-center hover:shadow-md hover:transform hover:scale-101 transition duration-500">
+                        class="bg-white lg:p-6 p-2 rounded-xl text-center hover:shadow-md hover:transform hover:scale-101 transition duration-500">
                         <img class="rounded-xl aspect-video object-cover"
                             :src="config.SUPABASE_ASSETS_URL + '/areas/' + areas[j - 1].id + '.png'" />
                         <h3 class="text-2xl font-semibold pt-4">{{ areas[j - 1].name }}</h3>
