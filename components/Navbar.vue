@@ -4,7 +4,7 @@
 <template>
     <nav class="sticky top-0 z-50">
         <!-- desktop Menu -->
-        <div class="w-full bg-white drop-shadow-md md:px-x_padding_page px-x_padding_page_mobile flex justify-between">
+        <div class="w-full bg-white drop-shadow-md lg:px-x_padding_page px-x_padding_page_mobile flex justify-between">
             <!-- logo -->
             <Logo />
             <!-- menu -->

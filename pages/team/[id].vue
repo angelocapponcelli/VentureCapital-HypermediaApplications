@@ -6,7 +6,7 @@
     <main>
         <Breadcrumb :crumbs="[{ label: 'Our team', link: '/team' }, { label: person.full_name, link: '/team/' + id }]"/>
 
-        <BigPersonCard :name="person.full_name" :position="person.position" :description="person.description" cvLink="#" :id="person.id" />
+        <BigPersonCard :name="person.full_name" :position="person.position" :description="person.description" :image="person.image" cvLink="#" :id="person.id" :next="nextPerson" />
         
         <div class="related-projects-container">
             <div class="flex flex-col space-y-8 px-32 pt-10 pb-16 w-full">
@@ -16,10 +16,12 @@
                 <div class="flex flex-row justify-center space-x-10">
                     <!-- single project card -->
                     <!-- TODO fetch related projects to person -->
-                    <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
+                    <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
                     elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
-                    <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="project.overview" startupId="1" />
-                    <SmallProjectCard class="w-96 h-[420px]" title="project.title" overview="project.overview" startupId="1" />
+                    <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
+                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
+                    <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
+                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
                 </div>
             </div>
         </div>
@@ -30,8 +32,11 @@
 <script setup>
     const route = useRoute()
     const id = route.params.id
+
     // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
-    const { data: person } = await useFetch('/api/team/' + id)
+    const { data: dataPerson } = await useFetch('/api/team/' + id)
+    const person = dataPerson.value.person
+    const nextPerson = dataPerson.value.nextPerson
 </script>
 
 <style>

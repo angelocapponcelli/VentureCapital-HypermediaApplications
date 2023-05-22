@@ -1,11 +1,10 @@
 <template>
-  <!-- TODO: add to link -->
-  <NuxtLink :to="link"
+  <NuxtLink :to="link" :id="id"
     class="p-5 space-y-2 flex flex-col rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
 
-    <!-- cover image TODO: :src="pathImage" -->
-    <!-- <img class="object-center object-cover h-56 w-full rounded-xl" src="~/assets/img/startup/1.png" alt="cover image"> -->
-    <img class="object-center object-cover aspect-square w-full rounded-xl" :src=imageUrl alt="cover image" />
+    <!-- cover image -->
+    <img class="object-center object-cover aspect-square w-full rounded-xl"
+      :src="config.SUPABASE_ASSETS_URL + '/startups/' + startupId + '.png'" />
 
     <!-- project overview -->
     <h2 class="text-2xl font-extrabold">
@@ -25,17 +24,15 @@
   </NuxtLink>
 </template>
 
+
 <script>
+const supabaseUrl = import.meta.env.SUPABASE_URL
 
 export default {
-  props: ['title', 'overview', 'startupId', 'link'],
-
-  computed: {
-    imageUrl() {
-      var url = new URL('../assets/img/startup/' + this.startupId + '.png', import.meta.url).href;
-      console.log(url.toString())
-      return "/_nuxt/assets/img/startup/" + this.startupId + '.png'
-    }
-  },
+  props: ['title', 'overview', 'startupId', 'link', 'id']
 };
+</script>
+
+<script setup>
+const config = useRuntimeConfig();
 </script>

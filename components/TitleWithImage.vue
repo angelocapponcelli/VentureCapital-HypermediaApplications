@@ -1,5 +1,5 @@
 <template>
-    <div class="title-image-container">
+    <div class="relative text-center w-full h-[200px]">
         <!-- Uncomment this line to substitute the the background color with an image -->
         <!-- <img src='~/assets/img/home-image.jpg' /> -->
         <div class="flex flex-col space-y-20">
@@ -19,16 +19,6 @@
 </script>
 
 <style>
-    /* Image Placeholder */
-    .title-image-container {
-        position: relative;
-        text-align: center;
-        /* opacity: 0.7; */
-        /* background-color: #9795B5; */
-        width: 1440px;
-        height: 200px;
-    }
-
     /* Heading */
     .page-title {
         position: absolute;

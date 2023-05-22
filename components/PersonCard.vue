@@ -1,8 +1,10 @@
 <template>
+    <!-- <NuxtLink :to ="'/team/' + id"
+    class="p-6 flex flex-col space-y-2 rounded-2xl bg-[#F2F1FA] hover:shadow-md hover:transform hover:scale-101 transition duration-500"> -->
     <NuxtLink :to ="'/team/' + id"
-    class="p-6 flex flex-col space-y-2 rounded-2xl bg-[#F2F1FA] hover:shadow-md hover:transform hover:scale-101 transition duration-500">
-        <!-- TODO add dynamic person image -->
-        <img class="object-center object-cover h-80 w-full rounded-2xl" src='~/assets/img/people/1.png' alt="cover image"/>
+    class="p-6 space-y-2 flex flex-col rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
+    <!-- TODO add dynamic person image -->
+        <img class="object-center object-cover h-80 w-full rounded-2xl" :src="image" alt="person image"/>
 
         <!-- person name and position -->
         <div class="name">{{ name }}</div>
@@ -12,17 +14,38 @@
 
 <script>
 export default {
-    props: ['name', 'position', 'id'],
-
+    props: ['name', 'position', 'id', 'image'],
+    /* async asyncData() {
+            // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
+            const imageUrl = await $fetch('/api/team/image/' + image)
+    
+            return imageUrl
+    } */
+    /* data() {
+        return {
+            imageUrl: ''
+        };
+    },
+    created() {
+        $fetch('/api/team/image/' + image)
+        .then(response => this.imageUrl = response.data);
+    } */
+    
     /* computed: {
+        async asyncData() {
+            // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
+            const imageUrl = await $fetch('/api/team/image/' + image)
+    
+            return imageUrl
+        }/*  
         pathImage() {
-        // Request the image as a webpack module by using `require`
+            // Request the image as a webpack module by using `require`
         return require(`~/assets/img/people/${this.id}.png`);
         },
         imageUrl() {
         return new URL('../assets/img/people/' + this.id + '.png', import.meta.url).href;
-        }
-    }, */
+        }  
+    } */
 }
 </script>
 

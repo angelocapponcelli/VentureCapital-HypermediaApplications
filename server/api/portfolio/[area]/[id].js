@@ -7,6 +7,7 @@ export default defineEventHandler(async (event) => {
   const area = event.context.params.area.replaceAll("%20", " ");
 
   if (id == "undefined") {
+    // get the data for the areas page
     try {
       var { data: projects, error } = await client
         .from("project")
@@ -34,17 +35,18 @@ export default defineEventHandler(async (event) => {
         return areaId;
       }
     } catch (error) {
-      /*throw createError({
+      throw createError({
         statusCode: 500,
         statusMessage: "Internal Server Error",
-      });*/
+      });
     }
   } else if (area == "all") {
+    // get the data for the project page coming from the portfolio
     try {
       var { data: project, error } = await client
         .from("project")
         .select(
-          "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name)"
+          "id, title, overview, product, team, gallery, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name)"
         )
         .eq("id", id)
         .limit(1)
@@ -83,12 +85,13 @@ export default defineEventHandler(async (event) => {
 
       return { project, previousProject, nextProject };
     } catch (error) {
-      /*throw createError({
+      throw createError({
         statusCode: 500,
         statusMessage: "Internal Server Error",
-      });*/
+      });
     }
   } else if (area == "Most relevant projects") {
+    // get the data for the project page coming from the page of most relevant projects
     var { data: project, error } = await client
       .from("project")
       .select(
@@ -140,10 +143,11 @@ export default defineEventHandler(async (event) => {
 
     return { project, previousProject, nextProject };
   } else {
+    //get the data for the project page coming from the page of a specific area
     var { data: project, error } = await client
       .from("project")
       .select(
-        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name)"
+        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name), gallery"
       )
       .eq("area.name", area)
       .eq("id", id)
