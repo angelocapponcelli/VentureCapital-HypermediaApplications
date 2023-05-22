@@ -1,6 +1,5 @@
 <!--
-    Page description for a single dog.
-    As described in the SmallCard component, the same component was used for both Dog and Location since they have the same structure.
+    Page description for a single person.
 -->
 <template>
     <main>
@@ -8,22 +7,13 @@
 
         <BigPersonCard :name="person.full_name" :position="person.position" :description="person.description" :image="person.image" cvLink="#" :id="person.id" :next="nextPerson" />
         
-        <!-- <div v-if="Projects.length > 0" class="related-projects-container"> -->
         <div v-if="relatedProjects.length > 0" class="related-projects-container">
             <div class="flex flex-col space-y-8 px-32 pt-10 pb-16 w-full">
                 <h1>
                     Related projects
                 </h1>
                 <div class="flex flex-row justify-center space-x-10">
-                    <!-- single project card -->
-                    <!-- TODO fetch related projects to person -->
-                    <!-- <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
-                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." :startupId="project.startup.id" :link="'/portfolio/' + project.id"
-            :id="project.id" />
-                    <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
-                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
-                    <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
-                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" /> -->
+                    <!-- related projects cards -->
                     <SmallProjectCard class="w-96 h-[500px]" v-for="project of relatedProjects" :title="project.title"
             :overview="project.overview" :startupId="project.startup.id" :link="'/portfolio/' + project.id" :id="project.id" />
                 </div>

@@ -1,6 +1,5 @@
 <template>
     <div class="big-person-card">
-        <!-- TODO add dynamic person image -->
         <img class="img-container" :src="imageUrl">
         <div class="person-info-container">
             <div class="flex flex-col space-y-3">
