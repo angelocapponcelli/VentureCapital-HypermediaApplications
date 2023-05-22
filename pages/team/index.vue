@@ -10,7 +10,7 @@
                 <div class="basis-4/5 grid grid-cols-3 gap-4">
                     <!-- single person card -->
                     <PersonCard v-for="person of people" :name="person.full_name" :position="person.position" 
-                        :id="person.id" :image="person.image"/>
+                        :id="person.id" :image="person.image" />
                 </div>
             </div>
         </div>
