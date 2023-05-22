@@ -1,55 +1,94 @@
 <template>
-    <div class="structbar" >
-        
-        <div class="link" v-for="link in links" >
-            <a @click="scroll(link.link)">{{ link.title }}</a>
-        </div>
-        
+  <div :class="{'structbar': true, 'fixed': isFixed}" id="fixed">
+    <div class="link"  v-for="link in links" :key="link.title">
+      <a class ="innerlink" @click="scroll(link.link)">{{ link.title }}</a>
     </div>
+  </div>
+  <div v-if="isFixed===true"  :style="{ height: height }"></div>
+  
 </template>
 
 <script>
-export default{
-    props: ['links'],
-    //paragraphLinks has to be an object like {link: xxx, title: xxx }
-    methods:{
-        scroll(refName){
-            console.log(refName)
-            //document.getElementById(link).scrollIntoView({ behavior: 'smooth' });
-            var element = document.getElementById(refName)
-            element.scrollIntoView({block: "start", inline: "start", behavior:"smooth"})
-            
-        }
+export default {
+  props: ['links'],
+  data() {
+    return {
+      isFixed: false,
+      componentTop: 0,
+      scrollPosition: 0, 
+      height: '0'
+    };
+  },
+  methods: {
+    scroll(refName) {
+      const element = document.getElementById(refName);
+      element.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
+    },
+    handleScroll() {
+      this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Se la posizione corrente della pagina è maggiore della posizione iniziale del componente,
+      // impostiamo isFixed su true per applicare la classe 'fixed'
+      if (this.scrollPosition > this.componentTop) {
+        this.isFixed = true;
+      } else {
+        this.isFixed = false;
+      }
+      console.log(this.isFixed)
+      console.log(this.scrollPosition)
+      console.log(this.height)
+      console.log(this.componentTop)
+      
     }
-}
+  },
+  mounted() {
+    this.componentTop = document.getElementById("fixed").offsetTop;
+    window.addEventListener('scroll', this.handleScroll);
+    //this.height=document.getElementById("fixed").getBoundingClientRect().height;
+    this.height = document.getElementById("fixed").offsetHeight + document.getElementsByTagName("nav")[0].offsetHeight;
+    this.height = this.height+"px"; 
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+};
 </script>
 
 <style>
-.structbar{
-    background-color: #F2F1FA;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+.structbar {
+  background-color: #f2f1fa;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  width: 100%;
 }
 
-.link{
-    margin-left: 5vw;
-    margin-right: 5vw;
-    color:#7d7b97; 
-    font-weight: bold;
-    font-size:1.2em;
+.fixed {
+  position: fixed;
 }
 
-.link:hover{
-    border-bottom: solid 3px #a9a4cd;
+.link {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  color: #7d7b97;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-a:hover{
-    color: #a9a4cd;
-
+.innerlink:hover {
+  border-bottom: solid 3px #a9a4cd;
+  color: #a9a4cd;
 }
 
+
+@media (max-width: 767px) {
+    .innerlink:hover{
+      color: #a9a4cd;
+    }
+
+  }
 </style>
+
