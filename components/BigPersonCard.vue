@@ -45,12 +45,12 @@
 
 <script>
 export default {
-    props: ['name', 'position', 'description', 'cvLink', 'id', 'next'],
+    props: ['name', 'position', 'description', 'image', 'cvLink', 'id', 'next'],
 
     computed: {
         imageUrl() {
             const config = useRuntimeConfig();
-            return config.SUPABASE_ASSETS_URL + "/people/" + this.id + '.png'
+            return config.SUPABASE_ASSETS_URL + "/people/" + this.image + '.png'
         }
     },
 }
@@ -83,6 +83,7 @@ export default {
         /* Neutral Colors/Color 300 */
         background: #F9F9FF;
         border-radius: 20px 0px 0px 20px;
+        object-fit: cover;
     }
 
     .person-info-container {

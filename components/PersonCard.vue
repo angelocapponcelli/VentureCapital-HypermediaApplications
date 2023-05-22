@@ -14,27 +14,12 @@
 
 <script>
 export default {
-    props: ['name', 'position', 'id'],
-    /* async asyncData() {
-            // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
-            const imageUrl = await $fetch('/api/team/image/' + image)
-    
-            return imageUrl
-    } */
-    /* data() {
-        return {
-            imageUrl: ''
-        };
-    },
-    created() {
-        $fetch('/api/team/image/' + image)
-        .then(response => this.imageUrl = response.data);
-    } */
+    props: ['name', 'position', 'id', 'image'],
     
     computed: {
         imageUrl() {
             const config = useRuntimeConfig();
-            return config.SUPABASE_ASSETS_URL + "/people/" + this.id + ".png"
+            return config.SUPABASE_ASSETS_URL + "/people/" + this.image + ".png"
         }
     }
 }

@@ -11,7 +11,7 @@
     <h2 class="text-2xl font-extrabold">
       {{ title }}
     </h2>
-    <p class="text-sm text-color-900">
+    <p class="text-sm text-color-900 text-ellipsis">
       {{ overview }}
     </p>
     <div

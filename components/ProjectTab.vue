@@ -59,7 +59,9 @@ export default {
     "title", "titleLabel", "subtitle", "subtitleLabel", "image", "links"],
   computed: {
     imageUrl() {
-      return new URL("../assets/img/" + this.image + ".png", import.meta.url).href;
+      /* return new URL("../assets/img/" + this.image + ".png", import.meta.url).href; */
+      const config = useRuntimeConfig();
+      return config.SUPABASE_ASSETS_URL + this.image + ".png";
     },
   }
 };
