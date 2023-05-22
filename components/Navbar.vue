@@ -67,22 +67,22 @@
                             class="w-52 overflow-hidden bg-white rounded-b-lg shadow absolute top-24 z-20">
                             <ul>
                                 <li>
-                                    <NuxtLink to="/dogs"
+                                    <NuxtLink to="/about"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Machine learning</NuxtLink>
                                 </li>
                                 <li>
-                                    <NuxtLink to="/dogs"
+                                    <NuxtLink to="/about"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Artificial intelligence</NuxtLink>
                                 </li>
                                 <li>
-                                    <NuxtLink to="/dogs"
+                                    <NuxtLink to="/about"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Neural Network</NuxtLink>
                                 </li>
                                 <li>
-                                    <NuxtLink to="/dogs"
+                                    <NuxtLink to="/about"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Blockchains</NuxtLink>
                                 </li>
