@@ -1,7 +1,6 @@
 <template>
     <div class="big-person-card">
-        <!-- TODO add dynamic person image -->
-        <img class="img-container" :src="image">
+        <img class="img-container" :src="imageUrl">
         <div class="person-info-container">
             <div class="flex flex-col space-y-3">
                 <span class="person-name">
@@ -47,15 +46,12 @@
 export default {
     props: ['name', 'position', 'description', 'image', 'cvLink', 'id', 'next'],
 
-    /* computed: {
-        pathImage() {
-        // Request the image as a webpack module by using `require`
-        return require(`~/assets/img/people/${this.id}.png`);
-        },
+    computed: {
         imageUrl() {
-        return new URL('../assets/img/people/' + this.id + '.png', import.meta.url).href;
+            const config = useRuntimeConfig();
+            return config.SUPABASE_ASSETS_URL + "/people/" + this.image + '.png'
         }
-    }, */
+    },
 }
 </script>
 
@@ -86,6 +82,7 @@ export default {
         /* Neutral Colors/Color 300 */
         background: #F9F9FF;
         border-radius: 20px 0px 0px 20px;
+        object-fit: cover;
     }
 
     .person-info-container {

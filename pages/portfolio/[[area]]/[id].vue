@@ -54,11 +54,11 @@
 
       <div class="flex lg:flex-row lg:space-x-4 lg:space-y-0 flex-col space-y-4">
         <ProjectTab class="basis-2/5" :tabType="0" :title="project.startup.name" :titleLabel="'Company'"
-          :subtitle="project.startup.headquarter" :subtitleLabel="'Headquarter'" :image="'startups/' + project.startup.id"
-          :links="{ url: project.startup.website, label: 'Visit website' }" />
+          :subtitle="project.startup.headquarter" :subtitleLabel="'Headquarter'"
+          :image="'/startups/' + project.startup.id" :links="{ url: project.startup.website, label: 'Visit website' }" />
 
         <ProjectTab class="basis-2/5" :tabType="0" :title="project.supervisor.full_name" :titleLabel="'Supervisor'"
-          :subtitle="project.supervisor.position" :subtitleLabel="'Role'" :image="'startups/' + project.startup.id"
+          :subtitle="project.supervisor.position" :subtitleLabel="'Role'" :image="'/people/' + project.supervisor.image"
           :links="{ url: '/team/' + project.supervisor.id, label: 'Visit profile' }" />
 
         <ProjectTab class="basis-1/5" :tabType="1" :title="'Areas'" :titleLabel="'Related to this project'"
@@ -138,58 +138,69 @@
 
     <!-- Page of portfolio related to a specific area -->
     <div v-else
-      class="flex flex-col space-y-2 md:space-y-16 md:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile  w-full">
+      class="flex flex-col space-y-4 md:space-y-16 lg:px-x_padding_page lg:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile  w-full">
 
-      <div class="flex justify-between">
+      <div class="flex md:space-x-6 justify-between">
         <!-- title -->
         <h1 class="text-5xl font-extrabold">
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar v-if="projectExist" class="invisible md:visible" @search-filter="receiveEmit" />
+        <SearchBar v-if="projectExist" class="invisible md:visible" :id="'searchBar'" @search-filter="receiveEmit" />
       </div>
 
-      <div class="flex space-y-8 md:space-x-5 flex-col md:flex-row">
+      <div class="flex space-y-8 md:space-y-0 md:space-x-5 space-x-0 flex-col md:flex-row">
         <!-- side drawer section -->
         <SideDrawer class="basis-1/5" :pageIndex="indexDrawer" />
 
-        <!-- searchBar for mobile -->
-        <SearchBar v-if="projectExist" class="md:hidden" @search-filter="receiveEmit" />
+        <div class="basis-4/5 flex flex-col space-y-8">
 
-        <!-- cards projects section -->
-        <div v-if="projectExist" class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <!-- single card project -->
-          <SmallProjectCard v-for="project of projectList" :title="project.title" :overview="project.overview"
-            :startupId="project.startup.id" :link="'/portfolio/' + area + '/' + project.id" :id="project.id" />
-          <div id="no-projects"
-            class="md:w-[50rem] w-full absolute m-auto text-2xl flex flex-row space-x-5 items-center text-color-1000"
-            style="display: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-14 h-full">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <NuxtLink :to="'#'"
+            class="max-h-14 py-2 px-4 w-fit md:self-end self-center items-center flex space-x-2 bg-white text-primary-color hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+            <span>Read more about <b>{{ areaLabel.toLowerCase() }}</b></span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+              stroke="currentColor" class="w-4 h-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
-            <span>
-              Sorry, but there are <b>no {{ areaLabel.toLowerCase() }} projects</b> matching your search criteria.
-              Please try again with different keywords.
-            </span>
+          </NuxtLink>
+
+          <!-- searchBar for mobile -->
+          <SearchBar v-if="projectExist" class="md:hidden" :id="'mobileSearchBar'" @search-filter="receiveEmit" />
+
+          <!-- cards projects section -->
+          <div v-if="projectExist" class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto">
+            <!-- single card project -->
+            <SmallProjectCard v-for="project of projectList" :title="project.title" :overview="project.overview"
+              :startupId="project.startup.id" :link="'/portfolio/' + area + '/' + project.id" :id="project.id" />
+            <div id="no-projects"
+              class="lg:w-[40rem] md:w-[30rem] w-fit m-auto text-2xl flex md:flex-row flex-col md:space-x-5 space-x-0 text-color-1000 h-full"
+              style="display: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="md:w-24 h-full max-h-10">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>
+                Sorry, but there are <b>no {{ areaLabel.toLowerCase() }} projects</b> matching your search criteria.
+                Please try again with different keywords.
+              </span>
+            </div>
+          </div>
+
+          <div v-else class=" text-2xl text-color-1000">
+            <div class="lg:w-[45rem] md:w-[30rem] w-fit flex md:flex-row flex-col space-x-5 items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="md:w-24 h-full max-h-10">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>
+                Sorry, but there are <b>no {{ areaLabel.toLowerCase() }} projects</b>.<br>
+                Please try looking in another section.
+              </span>
+            </div>
           </div>
         </div>
-
-        <div v-else class="basis-4/5 text-2xl text-color-1000">
-          <div class="md:w-[50rem] w-full flex flex-row space-x-5 items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-10 h-full">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>
-              Sorry, but there are <b>no {{ areaLabel.toLowerCase() }} projects</b>.<br>
-              Please try looking in another section.
-            </span>
-          </div>
-        </div>
-
       </div>
     </div>
   </main>
@@ -203,7 +214,6 @@ if (!(parseFloat(route.params.id) === route.params.id >>> 0) && route.params.are
     statusMessage: "Page does not exist",
   });
 }
-
 const id = route.params.id
 const area = ((parseFloat(id) === id >>> 0) ? route.params.area : route.params.id)
 const areaLabel = area.charAt(0).toUpperCase() + area.slice(1).replaceAll("-", " ")

@@ -46,7 +46,7 @@ export default defineEventHandler(async (event) => {
       var { data: project, error } = await client
         .from("project")
         .select(
-          "id, title, overview, product, team, gallery, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name)"
+          "id, title, overview, product, team, gallery, startup (id, name, headquarter, website), supervisor (id, full_name, position, image), area(id, name)"
         )
         .eq("id", id)
         .limit(1)
@@ -90,12 +90,38 @@ export default defineEventHandler(async (event) => {
         statusMessage: "Internal Server Error",
       });
     }
+  } else if (area == "person"){
+    // get the related projects to the specific person
+    try {
+      var { data: projects, error } = await client
+        .from("project")
+        .select( "id, title, overview, startup (id)")
+        .eq("supervisor", id)
+        .limit(3);
+
+      if (error) {
+        throw createError({
+          statusCode: 400,
+          statusMessage: error.message,
+        });
+      }
+
+      console.log(projects)
+      
+      return { projects };
+    } catch (error) {
+      throw createError({
+        statusCode: 500,
+        statusMessage: "Internal Server Error",
+      });
+    }
+
   } else if (area == "Most relevant projects") {
     // get the data for the project page coming from the page of most relevant projects
     var { data: project, error } = await client
       .from("project")
       .select(
-        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name), isRelevant"
+        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position, image), area(id, name), isRelevant"
       )
       .eq("id", id)
       .eq("isRelevant", true)
@@ -147,7 +173,7 @@ export default defineEventHandler(async (event) => {
     var { data: project, error } = await client
       .from("project")
       .select(
-        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name), gallery"
+        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position, image), area(id, name), gallery"
       )
       .eq("area.name", area)
       .eq("id", id)

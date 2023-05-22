@@ -7,20 +7,23 @@
 
     <!-- content -->
     <div
-      class="flex flex-col space-y-2 md:space-y-16 md:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile  w-full">
+      class="flex flex-col space-y-4 md:space-y-16 lg:px-x_padding_page lg:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile  w-full">
 
-      <div class="flex justify-between">
+      <div class="flex md:space-x-6 justify-between">
         <!-- title -->
         <h1 class="text-5xl font-extrabold">
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar class="invisible md:visible" @search-filter="receiveEmit" />
+        <SearchBar class="invisible md:visible" :id="'searchBar'" @search-filter="receiveEmit" />
       </div>
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
         <!-- side drawer section -->
         <SideDrawer class="basis-1/5" :pageIndex=1 />
+
+        <!-- searchBar for mobile -->
+        <SearchBar class="md:hidden" :id="'mobileSearchBar'" @search-filter="receiveEmit" />
 
         <!-- cards projects section -->
         <div class="flex flex-col space-y-5 basis-4/5">
@@ -30,14 +33,15 @@
             :overview="project.overview" :startupId="project.startup.id"
             :link="'/portfolio/most-relevant-projects/' + project.id" :id="project.id" />
 
-          <div v-else class="w-[50rem] absolute m-auto text-2xl flex flex-row space-x-5 items-center text-color-1000">
+          <div v-else
+            class="lg:w-[40rem] md:w-[30rem] w-fit mx-0 m-auto text-2xl flex md:flex-row flex-col md:space-x-5 space-x-0 text-color-1000 h-full">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-14 h-full">
+              stroke="currentColor" class="md:w-24 h-full max-h-10">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>
-              Sorry, but there are <b>no projects</b> in <b>most relevant section</b> matching your search criteria.
+              Sorry, but there are <b>no projects</b> in <b>most relevant section</b> matching your search criteria.<br>
               Please try again with different keywords.
             </span>
           </div>
