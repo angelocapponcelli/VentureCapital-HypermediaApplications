@@ -8,7 +8,8 @@
 
         <BigPersonCard :name="person.full_name" :position="person.position" :description="person.description" :image="person.image" cvLink="#" :id="person.id" :next="nextPerson" />
         
-        <div class="related-projects-container">
+        <!-- <div v-if="Projects.length > 0" class="related-projects-container"> -->
+        <div v-if="relatedProjects.length > 0" class="related-projects-container">
             <div class="flex flex-col space-y-8 px-32 pt-10 pb-16 w-full">
                 <h1>
                     Related projects
@@ -16,12 +17,15 @@
                 <div class="flex flex-row justify-center space-x-10">
                     <!-- single project card -->
                     <!-- TODO fetch related projects to person -->
+                    <!-- <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
+                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." :startupId="project.startup.id" :link="'/portfolio/' + project.id"
+            :id="project.id" />
                     <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
                     elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
                     <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
-                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
-                    <SmallProjectCard title="project.title" overview="Lorem ipsum dolor sit amet consecte tur adipiscing 
-                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" />
+                    elit semper dalaracc lacus vel facilisis volutpat est velitolm." startupId="1" /> -->
+                    <SmallProjectCard class="w-96 h-[500px]" v-for="project of relatedProjects" :title="project.title"
+            :overview="project.overview" :startupId="project.startup.id" :link="'/portfolio/' + project.id" :id="project.id" />
                 </div>
             </div>
         </div>
@@ -37,6 +41,9 @@
     const { data: dataPerson } = await useFetch('/api/team/' + id)
     const person = dataPerson.value.person
     const nextPerson = dataPerson.value.nextPerson
+
+    const { data: dataProjects } = await useFetch('/api/portfolio/person/' + id)
+    const relatedProjects = dataProjects.value.projects
 </script>
 
 <style>

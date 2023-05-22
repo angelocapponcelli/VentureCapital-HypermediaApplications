@@ -54,11 +54,11 @@
 
       <div class="flex lg:flex-row lg:space-x-4 lg:space-y-0 flex-col space-y-4">
         <ProjectTab class="basis-2/5" :tabType="0" :title="project.startup.name" :titleLabel="'Company'"
-          :subtitle="project.startup.headquarter" :subtitleLabel="'Headquarter'" :image="'startups/' + project.startup.id"
+          :subtitle="project.startup.headquarter" :subtitleLabel="'Headquarter'" :image="'/startups/' + project.startup.id"
           :links="{ url: project.startup.website, label: 'Visit website' }" />
 
         <ProjectTab class="basis-2/5" :tabType="0" :title="project.supervisor.full_name" :titleLabel="'Supervisor'"
-          :subtitle="project.supervisor.position" :subtitleLabel="'Role'" :image="'startups/' + project.startup.id"
+          :subtitle="project.supervisor.position" :subtitleLabel="'Role'" :image="'/people/' + project.supervisor.image"
           :links="{ url: '/team/' + project.supervisor.id, label: 'Visit profile' }" />
 
         <ProjectTab class="basis-1/5" :tabType="1" :title="'Areas'" :titleLabel="'Related to this project'"
