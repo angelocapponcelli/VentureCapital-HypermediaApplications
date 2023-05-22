@@ -13,8 +13,8 @@
                 <h2 class="text-3xl text-white">
                     Unlocking limitless possibilities with groundbreaking innovation and disruptive solutions.
                 </h2>
-                <a href="#getStarted"
-                    class="py-3 px-5 flex space-x-2 items-center mx-auto bg-primary-color text-white hover:text-white hover:bg-transparent text-sm border-2 border-primary-color hover:border-white rounded-full transition ease-in-out duration-200">
+                <a @click="scroll('getStarted')"
+                    class="cursor-pointer py-3 px-5 flex space-x-2 items-center mx-auto bg-primary-color text-white hover:text-white hover:bg-transparent text-sm border-2 border-primary-color hover:border-white rounded-full transition ease-in-out duration-200">
                     <span>Get started</span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -46,19 +46,9 @@
                 </div>
 
                 <div class="basis-1/2 grid grid-cols-3 gap-4 w-full">
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/startups/2.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/startups/1.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/startups/2.png" />
-
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/startups/1.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/startups/2.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/startups/1.png" />
+                    <img v-for="i in Math.min(6, projects.length)"
+                        :src="config.SUPABASE_ASSETS_URL + '/startups/' + projects[i - 1].startup.id + '.png'"
+                        class="rounded-xl aspect-square object-cover" />
                 </div>
             </div>
 
@@ -69,25 +59,11 @@
                 <h3 class="text-xl w-3/5 text-white mx-auto text-center">Meet the passionate experts fueling
                     innovation and making strategic investments for groundbreaking ventures.</h3>
                 <div class="grid grid-cols-4 gap-4 w-auto mx-x_padding_page bg-white p-10 rounded-xl">
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/people/94093701-69f7-4b77-8ea7-08450c7c468c.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/people/1d533073-3eb9-4978-90c8-2c70b89b2b23.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/people/0d7f2158-cff7-47f8-bde9-cb086994f1bc.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/people/2660acac-0990-4f15-8fc2-7dcf337b177f.png" />
-
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/people/0d7f2158-cff7-47f8-bde9-cb086994f1bc.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/people/2660acac-0990-4f15-8fc2-7dcf337b177f.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/people/94093701-69f7-4b77-8ea7-08450c7c468c.png" />
-                    <img class="rounded-xl aspect-square object-cover"
-                        src="https://gdzyzugelaodiakwwjrt.supabase.co/storage/v1/object/public/images/people/1d533073-3eb9-4978-90c8-2c70b89b2b23.png" />
+                    <img v-for="i in Math.min(8, people.length)"
+                        :src="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.png'"
+                        class="rounded-xl aspect-square object-cover" />
                 </div>
-                <NuxtLink to="/portfolio"
+                <NuxtLink to="/team"
                     class="py-3 px-5 flex space-x-2 items-center mx-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-white rounded-full transition ease-in-out duration-200">
                     <span>Discover our team</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -102,22 +78,22 @@
                 <h2 class="text-3xl font-semibold mx-auto text-center">Our results in numbers</h2>
                 <div class="flex flex-row pt-8 space-x-20">
                     <div class="basis-1/3 text-center space-y-2">
-                        <h3 class="text-5xl font-bold">99<span class="text-color-700">%</span> </h3>
-                        <h3 class="text-2xl font-semibold pt-4">Costumer satisfaction</h3>
-                        <p>Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.</p>
+                        <h3 class="text-5xl font-bold">90<span class="text-color-700">%</span> </h3>
+                        <h3 class="text-2xl font-semibold pt-4">Successful Investments</h3>
+                        <p>Fueling growth and profitability for innovative startups.</p>
                     </div>
                     <div class="basis-1/3 text-center space-y-2">
-                        <h3 class="text-5xl font-bold">32<span class="text-color-700">M</span> </h3>
-                        <h3 class="text-2xl font-semibold pt-4">Active users</h3>
-                        <p>Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.</p>
+                        <h3 class="text-5xl font-bold">500<span class="text-color-700">mln$</span> </h3>
+                        <h3 class="text-2xl font-semibold pt-4">Capital Deployed</h3>
+                        <p>Driving the growth of promising ventures through strategic investments.</p>
                     </div>
                     <div class="basis-1/3 text-center space-y-2">
-                        <h3 class="text-5xl font-bold">240<span class="text-color-700">%</span> </h3>
-                        <h3 class="text-2xl font-semibold pt-4">Company growth</h3>
-                        <p>Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.</p>
+                        <h3 class="text-5xl font-bold">20<span class="text-color-700">+</span> </h3>
+                        <h3 class="text-2xl font-semibold pt-4">Portfolio Companies</h3>
+                        <p>Partnering with diverse startups to build a thriving entrepreneurial ecosystem.</p>
                     </div>
                 </div>
-                <NuxtLink to="/portfolio"
+                <NuxtLink to="/about"
                     class="py-3 px-5 flex space-x-2 items-center mx-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
                     <span>See more</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -126,11 +102,11 @@
                     </svg>
                 </NuxtLink>
             </div>
-            <!-- second section -->
+            <!-- fourth section -->
             <div class="flex flex-col bg-primary-color px-x_padding_page py-y_padding_page w-full space-y-10 ">
                 <h2 class="text-3xl font-semibold text-white mx-auto text-center">Areas</h2>
-                <h3 class="text-xl w-3/5 text-white mx-auto text-center">Lorem ipsum dolor sit amet consectet adipiscing
-                    elit eget quamumto dolor sit amet consectet elit eget quamumto.</h3>
+                <h3 class="text-xl w-3/5 text-white mx-auto text-center">Harnessing transformative technologies and
+                    disruptive innovations to drive exponential growth and global impact.</h3>
                 <div class="flex flex-row space-x-10">
                     <div class="basis-1/3 bg-white p-6 rounded-xl text-center">
                         <img class="rounded-xl aspect-video object-cover"
@@ -151,7 +127,7 @@
                         <p>Lorem ipsum dolor sit amet consectet adipiscing elit eget quamumto.</p>
                     </div>
                 </div>
-                <NuxtLink to="/portfolio"
+                <NuxtLink to="/areas"
                     class="py-3 px-5 flex space-x-2 items-center mx-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-white rounded-full transition ease-in-out duration-200">
                     <span>See all areas</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -164,7 +140,24 @@
     </main>
 </template>
 
-<style>
+<script setup>
+const config = useRuntimeConfig();
+const { data: projects } = await useFetch('/api/portfolio');
+const { data: people } = await useFetch('/api/team');
+
+
+function scroll(refName) {
+    console.log(refName)
+    //document.getElementById(link).scrollIntoView({ behavior: 'smooth' });
+    var element = document.getElementById(refName)
+    const y = element.getBoundingClientRect().top + window.pageYOffset - 90;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    //element.scrollIntoView({ top: -100, behavior: "smooth" })
+}
+
+</script>
+
+<!--style>
 #main-img {
     width: 80%;
     max-width: 1000px;
@@ -177,4 +170,4 @@ main {
     flex-direction: column;
     align-items: center;
 }
-</style>
+</style-->
