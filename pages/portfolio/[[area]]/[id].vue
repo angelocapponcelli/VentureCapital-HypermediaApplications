@@ -54,8 +54,8 @@
 
       <div class="flex lg:flex-row lg:space-x-4 lg:space-y-0 flex-col space-y-4">
         <ProjectTab class="basis-2/5" :tabType="0" :title="project.startup.name" :titleLabel="'Company'"
-          :subtitle="project.startup.headquarter" :subtitleLabel="'Headquarter'" :image="'/startups/' + project.startup.id"
-          :links="{ url: project.startup.website, label: 'Visit website' }" />
+          :subtitle="project.startup.headquarter" :subtitleLabel="'Headquarter'"
+          :image="'/startups/' + project.startup.id" :links="{ url: project.startup.website, label: 'Visit website' }" />
 
         <ProjectTab class="basis-2/5" :tabType="0" :title="project.supervisor.full_name" :titleLabel="'Supervisor'"
           :subtitle="project.supervisor.position" :subtitleLabel="'Role'" :image="'/people/' + project.supervisor.image"
@@ -156,7 +156,7 @@
         <div class="basis-4/5 flex flex-col space-y-8">
 
           <NuxtLink :to="'#'"
-            class="max-h-14 py-2 px-4 w-fit self-end items-center flex space-x-2 bg-white text-primary-color hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+            class="max-h-14 py-2 px-4 w-fit md:self-end self-center items-center flex space-x-2 bg-white text-primary-color hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
             <span>Read more about <b>{{ areaLabel.toLowerCase() }}</b></span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
               stroke="currentColor" class="w-4 h-4">
