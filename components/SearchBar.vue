@@ -1,7 +1,7 @@
 <template>
   <div class="flex bg-color-400 rounded-full">
-    <input id="searchBar"
-      class="w-80 h-12 pl-6 flex-initial bg-transparent rounded-full text-base text-color-1000 focus:outline-none"
+    <input :id="id"
+      class="w-80 h-12 pl-6 flex-initial grow bg-transparent rounded-full text-base text-color-1000 focus:outline-none"
       type="search" placeholder="Search for projects..." @click="search" @keyup="search">
     <button type="submit" class="flex-none pl-2 pr-6" @click="search">
       <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -16,11 +16,11 @@
 
 <script>
 export default {
+  props: ['id'],
   methods: {
     search() {
-      this.$emit('search-filter', document.getElementById("searchBar").value.toUpperCase());
+      this.$emit('search-filter', document.getElementById(this.id).value.toUpperCase());
     }
   }
 };
-
 </script>

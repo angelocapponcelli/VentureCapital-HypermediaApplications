@@ -106,7 +106,7 @@
                 </NuxtLink>
             </div>
             <div class="md:hidden flex items-center">
-                <div @click="myFunction">
+                <div @click="toggleMobileMenu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -118,22 +118,22 @@
                         class="w-full overflow-hidden bg-white rounded-b-lg shadow absolute top-16 left-0 z-20">
                         <ul>
                             <li>
-                                <NuxtLink to="/portfolio"
+                                <NuxtLink to="/portfolio" @click="toggleMobileMenu"
                                     class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                     Portfolio</NuxtLink>
                             </li>
                             <li>
-                                <NuxtLink to="/areas"
+                                <NuxtLink to="/areas" @click="toggleMobileMenu"
                                     class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                     Areas</NuxtLink>
                             </li>
                             <li>
-                                <NuxtLink to="/team"
+                                <NuxtLink to="/team" @click="toggleMobileMenu"
                                     class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                     Our team</NuxtLink>
                             </li>
                             <li>
-                                <NuxtLink to="/about"
+                                <NuxtLink to="/about" @click="toggleMobileMenu"
                                     class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                     About us</NuxtLink>
                             </li>
@@ -168,10 +168,9 @@ export default {
         setAreasDropdownHidden() {
             this.isAreasDropdownVisible = false;
         },
-        myFunction() {
+        toggleMobileMenu() {
             this.isMobileVisible = !this.isMobileVisible;
         }
     },
 };
-
 </script>
