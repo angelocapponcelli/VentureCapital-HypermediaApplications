@@ -34,6 +34,10 @@ export default {
       } else {
         this.isFixed = false;
       }
+      console.log(this.isFixed)
+      console.log(this.scrollPosition)
+      console.log(this.height)
+      console.log(this.componentTop)
       
     }
   },
@@ -41,7 +45,8 @@ export default {
     this.componentTop = document.getElementById("fixed").offsetTop;
     window.addEventListener('scroll', this.handleScroll);
     //this.height=document.getElementById("fixed").getBoundingClientRect().height;
-    this.height = document.getElementById("fixed").offsetHeight+"px"; 
+    this.height = document.getElementById("fixed").offsetHeight + document.getElementsByTagName("nav")[0].offsetHeight;
+    this.height = this.height+"px"; 
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -63,7 +68,6 @@ export default {
 
 .fixed {
   position: fixed;
-  top: 0;
 }
 
 .link {
