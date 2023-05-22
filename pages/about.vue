@@ -31,12 +31,12 @@
 Each founder brought a unique set of skills and experiences to the table. Alex was a seasoned entrepreneur who had successfully launched and scaled multiple businesses. Emma had a strong background in finance and had worked with renowned investment firms. Michael was a technology enthusiast with a knack for identifying disruptive innovations, and Sarah possessed expertise in marketing and business development.</p>
         </div>
         <div class="image-section">
-            <img src="_nuxt/assets/img/aboutus/group.jpg" alt="Immagine" />
+            <img src="@/assets/img/aboutus/group.jpg" alt="Immagine" />
         </div>
   </div>
   <div class="card" id="companymission">
     <div class="image-section">
-            <img src="_nuxt/assets/img/aboutus/other2.jpg" alt="Immagine" />
+            <img src="@/assets/img/aboutus/other2.jpg" alt="Immagine" />
         </div>
         <div class="content-section">
             <h2>Company mission</h2>
@@ -52,18 +52,18 @@ Each founder brought a unique set of skills and experiences to the table. Alex w
             <table>
                 <tr>
                     <td>
-                        <img src="_nuxt/assets/img/aboutus/hp.png" alt="Immagine" />
+                        <img src="@/assets/img/aboutus/hp.png" alt="Immagine" />
                     </td>
                     <td>
-                        <img src="_nuxt/assets/img/aboutus/nike.png" alt="Immagine" />
+                        <img src="@/assets/img/aboutus/nike.png" alt="Immagine" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="_nuxt/assets/img/aboutus/shell.png" alt="Immagine" />
+                        <img src="@/assets/img/aboutus/shell.png" alt="Immagine" />
                     </td>
                     <td>
-                        <img src="_nuxt/assets/img/aboutus/pepsi.png" alt="Immagine" />
+                        <img src="@/assets/img/aboutus/pepsi.png" alt="Immagine" />
                     </td>
                 </tr>
             </table>
