@@ -4,7 +4,7 @@
         <a class="link" @click="scroll(link.link)">{{ link.title }}</a>
       </div>
     </div>
-    <div :style="{ height: height }"></div>
+    <div v-if="isFixed===true"  :style="{ height: height }"></div>
     
   </template>
   
@@ -34,7 +34,6 @@
         } else {
           this.isFixed = false;
         }
-        console.log(this.height)
       }
     },
     mounted() {
