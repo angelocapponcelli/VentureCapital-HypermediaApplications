@@ -31,12 +31,12 @@
 Each founder brought a unique set of skills and experiences to the table. Alex was a seasoned entrepreneur who had successfully launched and scaled multiple businesses. Emma had a strong background in finance and had worked with renowned investment firms. Michael was a technology enthusiast with a knack for identifying disruptive innovations, and Sarah possessed expertise in marketing and business development.</p>
         </div>
         <div class="image-section">
-            <img src="_nuxt/assets/img/startup/1.png" alt="Immagine" />
+            <img src="_nuxt/assets/img/aboutus/group.jpg" alt="Immagine" />
         </div>
   </div>
   <div class="card" id="companymission">
     <div class="image-section">
-            <img src="_nuxt/assets/img/startup/1.png" alt="Immagine" />
+            <img src="_nuxt/assets/img/aboutus/other2.jpg" alt="Immagine" />
         </div>
         <div class="content-section">
             <h2>Company mission</h2>
@@ -52,18 +52,18 @@ Each founder brought a unique set of skills and experiences to the table. Alex w
             <table>
                 <tr>
                     <td>
-                        <img src="_nuxt/assets/img/startup/1.png" alt="Immagine" />
+                        <img src="_nuxt/assets/img/aboutus/hp.png" alt="Immagine" />
                     </td>
                     <td>
-                        <img src="_nuxt/assets/img/startup/1.png" alt="Immagine" />
+                        <img src="_nuxt/assets/img/aboutus/nike.png" alt="Immagine" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="_nuxt/assets/img/startup/1.png" alt="Immagine" />
+                        <img src="_nuxt/assets/img/aboutus/shell.png" alt="Immagine" />
                     </td>
                     <td>
-                        <img src="_nuxt/assets/img/startup/1.png" alt="Immagine" />
+                        <img src="_nuxt/assets/img/aboutus/pepsi.png" alt="Immagine" />
                     </td>
                 </tr>
             </table>
@@ -94,6 +94,10 @@ Each founder brought a unique set of skills and experiences to the table. Alex w
     
     .image-section {
         flex: 1;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .image-section img{
@@ -104,6 +108,14 @@ Each founder brought a unique set of skills and experiences to the table. Alex w
         padding-bottom: 2vh;
         padding-left: 2vh;
         padding-right: 2vh;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-section table img{
+        max-width: 500px;
     }
     
     .content-section {
@@ -114,7 +126,6 @@ Each founder brought a unique set of skills and experiences to the table. Alex w
         padding-right: 2vh;
         color: #494850;
         font-size:1.2em;
-      
     }
     
     .content-section h2 {
@@ -133,5 +144,6 @@ Each founder brought a unique set of skills and experiences to the table. Alex w
       .image-section {
         order: 2;
       }
+
     }
 </style>
