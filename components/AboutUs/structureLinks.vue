@@ -34,13 +34,17 @@
         } else {
           this.isFixed = false;
         }
+        console.log(this.height)
+        console.log(this.isFixed)
       }
     },
     mounted() {
-      this.componentTop = this.$el.offsetTop;
+      this.componentTop = document.getElementById("fixed").offsetTop;
       window.addEventListener('scroll', this.handleScroll);
       //this.height=document.getElementById("fixed").getBoundingClientRect().height;
-      this.height = `${this.$el.offsetHeight}px`
+      this.height = document.getElementById("fixed").offsetHeight+"px"; 
+      console.log(this.height)
+      console.log(this.componentTop)
     },
     beforeDestroy() {
       window.removeEventListener('scroll', this.handleScroll);
