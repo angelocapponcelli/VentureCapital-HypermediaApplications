@@ -27,7 +27,7 @@
         async asyncData() {
             // Despite using the options API, this.$route is not available in asyncData.
             const route = useRoute()
-            const location = await $fetch('/api/locations/' + route.params.id)
+            const location = await $fetch('/api/areas/' + route.params.id)
 
             return {
                 location

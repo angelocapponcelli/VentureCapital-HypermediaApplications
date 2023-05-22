@@ -2,60 +2,50 @@
     Header of the page
 -->
 <template>
-    <nav class="sticky top-0">
+    <nav class="sticky top-0 z-50">
         <!-- desktop Menu -->
-        <div class="bg-white drop-shadow-md px-36 flex justify-between">
+        <div class="w-full bg-white drop-shadow-md md:px-x_padding_page px-x_padding_page_mobile flex justify-between">
             <!-- logo -->
-            <NuxtLink to="/" class="flex items-center space-x-3 my-7">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-8 h-8">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
-                </svg>
-                <span class="text-4xl font-extrabold">venture</span>
-                <span class="text-4xl font-extrabold text-primary-color">capital</span>
-            </NuxtLink>
+            <Logo />
             <!-- menu -->
-            <div class="flex items-center space-x-1">
+            <div class="hidden md:flex items-center space-x-1">
                 <div class="mr-8 h-full flex items-center relative">
                     <!-- Portfolio -->
                     <div @mouseover="setPortfolioDropdownVisible" @mouseleave="setPortfolioDropdownHidden" class="h-full">
-                        <NuxtLink to="/portfolio">
-                            <div
-                                class="h-full px-2 flex items-center hover:text-color-900 border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                <span>Portfolio</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="w-4 h-4 ml-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </div>
+                        <NuxtLink to="/portfolio"
+                            class="h-full px-2 flex items-center hover:text-color-900 border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
+                            <span>Portfolio</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4 ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
                         </NuxtLink>
                         <!-- Portfolio dropdown -->
                         <div v-if="isPortfolioDropdownVisible"
                             class="w-64 overflow-hidden bg-white rounded-b-lg shadow absolute top-24 z-20">
                             <ul>
                                 <li>
-                                    <NuxtLink to="/portfolio/mostRelevantProjects"
+                                    <NuxtLink to="/portfolio/most-relevant-projects"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Most relevant projects</NuxtLink>
                                 </li>
                                 <li>
-                                    <NuxtLink to="/dogs"
+                                    <NuxtLink to="/portfolio/most-relevant-projects"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Machine learning projects</NuxtLink>
                                 </li>
                                 <li>
-                                    <NuxtLink to="/dogs"
+                                    <NuxtLink to="/portfolio/most-relevant-projects"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Artificial intelligence projects</NuxtLink>
                                 </li>
                                 <li>
-                                    <NuxtLink to="/dogs"
+                                    <NuxtLink to="/portfolio/most-relevant-projects"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Neural Network projects</NuxtLink>
                                 </li>
                                 <li>
-                                    <NuxtLink to="/dogs"
+                                    <NuxtLink to="/portfolio/most-relevant-projects"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                         Blockchains projects</NuxtLink>
                                 </li>
@@ -64,15 +54,13 @@
                     </div>
                     <!-- Areas -->
                     <div @mouseover="setAreasDropdownVisible" @mouseleave="setAreasDropdownHidden" class="h-full">
-                        <NuxtLink to="/locations">
-                            <div
-                                class="h-full px-2 flex items-center hover:text-color-900 border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                <span>Areas</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="w-4 h-4 ml-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </div>
+                        <NuxtLink to="/areas"
+                            class="h-full px-2 flex items-center hover:text-color-900 border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
+                            <span>Areas</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4 ml-1">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
                         </NuxtLink>
                         <!-- Areas dropdown -->
                         <div v-if="isAreasDropdownVisible"
@@ -102,21 +90,58 @@
                         </div>
                     </div>
                     <!-- Our team -->
-                    <NuxtLink to="/about"
-                        class="h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                        <div class="h-full flex items-center">Our team</div>
+                    <NuxtLink to="/team"
+                        class="flex items-center h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                        Our team
                     </NuxtLink>
                     <!-- About us -->
                     <NuxtLink to="/about"
-                        class="h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                        <div class="h-full flex items-center">About us</div>
+                        class="flex items-center h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                        About us
                     </NuxtLink>
                 </div>
                 <NuxtLink to="/contact"
-                    class="py-3 px-10 bg-primary-color text-white hover:text-headings-black hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+                    class="py-3 px-10 bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
                     Contacts
                 </NuxtLink>
             </div>
+            <div class="md:hidden flex items-center">
+                <div @click="myFunction">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </div>
+                <div>
+                    <div v-if="isMobileVisible"
+                        class="w-full overflow-hidden bg-white rounded-b-lg shadow absolute top-16 left-0 z-20">
+                        <ul>
+                            <li>
+                                <NuxtLink to="/portfolio"
+                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                    Portfolio</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/areas"
+                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                    Areas</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/team"
+                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                    Our team</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/about"
+                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                    About us</NuxtLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </nav>
 </template>
@@ -127,6 +152,7 @@ export default {
         return {
             isPortfolioDropdownVisible: false,
             isAreasDropdownVisible: false,
+            isMobileVisible: false,
         };
     },
     methods: {
@@ -142,29 +168,10 @@ export default {
         setAreasDropdownHidden() {
             this.isAreasDropdownVisible = false;
         },
+        myFunction() {
+            this.isMobileVisible = !this.isMobileVisible;
+        }
     },
 };
+
 </script>
-
-<!--style>
-header {
-    background-color: rgb(254, 206, 117);
-}
-
-header {
-    padding: 0px 20px 0px 20px;
-    margin-bottom: 5px;
-    border-bottom: 5px solid brown;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-    font-size: 17pt;
-    font-weight: bold;
-}
-</style-->

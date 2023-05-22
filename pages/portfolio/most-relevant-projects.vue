@@ -1,7 +1,10 @@
 <template>
   <main>
+    <!-- breadcrumb-->
     <Breadcrumb :crumbs="[
-      { label: 'Portfolio', link: '/portfolio' }]" />
+      { label: 'Portfolio', link: '/portfolio' },
+      { label: 'Most relevant projects', link: '/most-relevant-projects' }]" />
+
     <!-- content -->
     <div
       class="flex flex-col space-y-2 md:space-y-16 md:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile  w-full">
@@ -17,18 +20,19 @@
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
         <!-- side drawer section -->
-        <SideDrawer class="basis-1/5" :pageIndex=0 />
+        <SideDrawer class="basis-1/5" :pageIndex=1 />
 
         <!-- cards projects section -->
-        <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="flex flex-col space-y-5 basis-4/5">
+
           <!-- single card project -->
-          <SmallProjectCard v-for="project of projects" :title="project.title" :overview="project.overview"
-            :startupId="project.startup.id" :link="'/portfolio/' + project.id" />
+          <BigProjectCard v-for="project of projects" :title="project.title" :overview="project.overview"
+            :startupId="project.startup.id" :link="'/portfolio/most-relevant-projects/' + project.id" />
+
         </div>
 
       </div>
     </div>
-
   </main>
 </template>
 
@@ -41,7 +45,7 @@
 export default defineNuxtComponent({
   async asyncData() {
     // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
-    const projects = await $fetch('/api/portfolio')
+    const projects = await $fetch('/api/portfolio/most-relevant-projects')
 
     return {
       projects
