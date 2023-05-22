@@ -14,8 +14,6 @@ export default{
     //paragraphLinks has to be an object like {link: xxx, title: xxx }
     methods:{
         scroll(refName){
-            console.log(refName)
-            //document.getElementById(link).scrollIntoView({ behavior: 'smooth' });
             var element = document.getElementById(refName)
             element.scrollIntoView({block: "start", inline: "start", behavior:"smooth"})
             
