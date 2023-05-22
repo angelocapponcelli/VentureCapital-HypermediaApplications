@@ -1,7 +1,7 @@
 <template>
     <div :class="{'structbar': true, 'fixed': isFixed}" id="fixed">
-      <div v-for="link in links" :key="link.title">
-        <a class="link" @click="scroll(link.link)">{{ link.title }}</a>
+      <div class="link"  v-for="link in links" :key="link.title">
+        <a class ="innerlink" @click="scroll(link.link)">{{ link.title }}</a>
       </div>
     </div>
     <div v-if="isFixed===true"  :style="{ height: height }"></div>
@@ -34,8 +34,7 @@
         } else {
           this.isFixed = false;
         }
-        console.log(this.height)
-        console.log(this.isFixed)
+        
       }
     },
     mounted() {
@@ -43,8 +42,6 @@
       window.addEventListener('scroll', this.handleScroll);
       //this.height=document.getElementById("fixed").getBoundingClientRect().height;
       this.height = document.getElementById("fixed").offsetHeight+"px"; 
-      console.log(this.height)
-      console.log(this.componentTop)
     },
     beforeDestroy() {
       window.removeEventListener('scroll', this.handleScroll);
@@ -67,9 +64,6 @@
   .fixed {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
   }
   
   .link {
@@ -80,13 +74,18 @@
     font-size: 1.2em;
   }
   
-  .link:hover {
+  .innerlink:hover {
     border-bottom: solid 3px #a9a4cd;
-  }
-  
-  a:hover {
     color: #a9a4cd;
   }
+  
+
+  @media (max-width: 767px) {
+      .innerlink:hover{
+        color: #a9a4cd;
+      }
+
+    }
   </style>
   
   
