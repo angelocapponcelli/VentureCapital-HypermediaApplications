@@ -1,8 +1,8 @@
 <template>
     <div class="structbar" >
         
-        <div class="link" v-for="link in links" >
-            <a @click="scroll(link.link)">{{ link.title }}</a>
+        <div v-for="link in links" >
+            <a class="link" @click="scroll(link.link)">{{ link.title }}</a>
         </div>
         
     </div>
