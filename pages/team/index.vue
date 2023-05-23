@@ -70,14 +70,14 @@ export default defineNuxtComponent({
                         img.setAttribute('src', src);
 
                         // uncomment this line if you want the images to be loaded only once and not unloaded when they are not visible
-                        /* imgObserver.disconnect(); */
-                    }
+                        imgObserver.disconnect();
+                    }/* 
                     else {
                         // we get the image element and set the src attribute to an empty string
                         const img = entry.target;
                         const src = "";
                         img.setAttribute('src', src);
-                    }    
+                    } */    
                 });
             });
 
