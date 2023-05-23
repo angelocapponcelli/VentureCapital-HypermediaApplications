@@ -15,21 +15,21 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar class="invisible md:visible" :id="'searchBar'" @search-filter="receiveEmit" />
+        <ProjectSearchBar class="invisible md:visible" :id="'searchBar'" @search-filter="receiveEmit" />
       </div>
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
         <!-- side drawer section -->
-        <SideDrawer class="basis-1/5" :pageIndex=1 />
+        <ProjectSideDrawer class="basis-1/5" :pageIndex=1 />
 
         <!-- searchBar for mobile -->
-        <SearchBar class="md:hidden" :id="'mobileSearchBar'" @search-filter="receiveEmit" />
+        <ProjectSearchBar class="md:hidden" :id="'mobileSearchBar'" @search-filter="receiveEmit" />
 
         <!-- cards projects section -->
         <div class="flex flex-col space-y-5 basis-4/5">
 
           <!-- single card project -->
-          <BigProjectCard v-if="filteredProjects.length > 0" v-for="project of filteredProjects" :title="project.title"
+          <ProjectBigCard v-if="filteredProjects.length > 0" v-for="project of filteredProjects" :title="project.title"
             :overview="project.overview" :startupId="project.startup.id"
             :link="'/portfolio/most-relevant-projects/' + project.id" :id="project.id" />
 
@@ -90,4 +90,6 @@ export default defineNuxtComponent({
     }
   }
 })
+
+
 </script>

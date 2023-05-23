@@ -4,7 +4,7 @@
 
     <!-- cover image TODO: :src="pathImage" -->
     <img class="object-center object-cover  md:w-40 w-full aspect-square rounded-xl"
-      :src="config.SUPABASE_ASSETS_URL + image + '.png'" alt="Image">
+      :data-lazy="config.SUPABASE_ASSETS_URL + image + '.png'" alt="Image">
 
     <!-- startup overview -->
     <div class="flex-auto content-center flex-col space-y-3 align-middle m-auto md:pt-0 pt-4">
@@ -46,7 +46,7 @@
         {{ titleLabel }}
       </p>
     </div>
-    <NuxtLink v-for="item of links" :to="'areas/' + item.name"
+    <NuxtLink v-for="item of links" :to="'#'"
       class="text-primary-color text-lg font-bold hover:text-color-700 transition duration-200">
       {{ item.name }}
     </NuxtLink>
