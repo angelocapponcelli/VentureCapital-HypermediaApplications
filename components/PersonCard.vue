@@ -1,7 +1,8 @@
 <template>
     <NuxtLink :to ="'/team/' + id"
     class="p-6 space-y-2 flex flex-col rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
-        <img class="object-center object-cover h-80 w-full rounded-2xl" :src="imageUrl" alt="person image"/>
+        <!-- <img class="object-center object-cover h-80 w-full rounded-2xl" :src="imageUrl" alt="person image"/> -->
+        <img class="object-center object-cover h-80 w-full rounded-2xl" :data-lazy="image" alt="person image"/>
         <!-- person name and position -->
         <div class="name">{{ name }}</div>
         <div class="position">{{ position }}</div>
@@ -12,12 +13,12 @@
 export default {
     props: ['name', 'position', 'id', 'image'],
     
-    computed: {
+    /* computed: {
         imageUrl() {
             const config = useRuntimeConfig();
             return config.SUPABASE_ASSETS_URL + "/people/" + this.image + ".png"
         }
-    }
+    } */
 }
 </script>
 

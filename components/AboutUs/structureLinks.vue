@@ -34,10 +34,10 @@ export default {
       } else {
         this.isFixed = false;
       }
-      console.log(this.isFixed)
+      /* console.log(this.isFixed)
       console.log(this.scrollPosition)
       console.log(this.height)
-      console.log(this.componentTop)
+      console.log(this.componentTop) */
       
     }
   },
