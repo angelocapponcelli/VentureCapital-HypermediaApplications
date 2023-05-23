@@ -224,7 +224,7 @@ const config = useRuntimeConfig();
 
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
 if (pageTypeProject && !area) { //project from 'All projects' page
-  const { data: dataProject } = await useFetch('/api/portfolio/all/' + id, { initialCache: false })
+  const { data: dataProject } = await useFetch('/api/portfolio/all/' + id)
 
   project = dataProject.value.project
   //return id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name), gallery
