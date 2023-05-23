@@ -91,6 +91,7 @@ export default defineEventHandler(async (event) => {
       });
     }
   } else if (area == "person"){
+    // get the related projects to the specific person
     try {
       var { data: projects, error } = await client
         .from("project")
