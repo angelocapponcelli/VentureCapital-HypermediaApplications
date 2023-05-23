@@ -5,9 +5,9 @@
         <div class="w-full" >
             <TitleWithImage title="Meet our team" subtitle="A collective of passionate and experienced professionals driving 
             visionary investments and empowering startups to thrive in the world of venture capital."/>
-            
-            <div class="flex flex-col space-y-16 px-36 py-20 w-full">
-                <div class="basis-4/5 grid grid-cols-3 gap-4">
+            <!-- md:px-36 md:py-10 -->
+            <div class="flex flex-col space-y-16 lg:px-16 xl:px-36 lg:py-10 px-x_padding_page_mobile py-y_padding_page_mobile w-full">
+                <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <!-- single person card -->
                     <PersonCard class="hiddenCard" v-for="person of people" :name="person.full_name" :position="person.position" 
                         :id="person.id" :image="person.image" />
@@ -94,13 +94,13 @@ export default defineNuxtComponent({
 <style>
     .hiddenCard {
         opacity: 0;
-        transition: all 1s;
+        transition: 0;
         filter: blur(5px);
     }
 
-    @media (prefers-reduced-motion) {
+    @media (prefers-reduced-motion: no-preference) {
         .hiddenCard {
-            transition: none;
+            transition: all 1s;
         }
     }
     
