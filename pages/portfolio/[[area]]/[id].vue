@@ -146,7 +146,7 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <ProjectSearchBar v-if="projectExist" class="invisible md:visible" :id="'searchBar'"
+        <SearchBar v-if="projectExist" class="invisible md:visible" :id="'searchBar'"
           @search-filter="receiveEmit" />
       </div>
 
@@ -166,7 +166,7 @@
           </NuxtLink>
 
           <!-- searchBar for mobile -->
-          <ProjectSearchBar v-if="projectExist" class="md:hidden" :id="'mobileSearchBar'" @search-filter="receiveEmit" />
+          <SearchBar v-if="projectExist" class="md:hidden" :id="'mobileSearchBar'" @search-filter="receiveEmit" />
 
           <!-- cards projects section -->
           <div v-if="projectExist" class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto">

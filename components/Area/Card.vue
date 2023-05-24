@@ -1,5 +1,6 @@
 <template>
-    <div class="flex flex-row py-y_padding_page px-x_padding_page" :style="{ backgroundColor: getBackgroundColor(index) }">
+    <div class="flex flex-row py-y_padding_page px-x_padding_page"
+        :style="{ backgroundColor: getBackgroundColor(index, areOdd) }">
 
         <div class="flex flex-col pr-y_padding_title_text justify-between">
             <div>
@@ -14,17 +15,22 @@
                 <span class="pt-y_padding_title_text">Learn More</span>
             </NuxtLink>
         </div>
-        <img class="object-center object-cover h-52 w-full max-w-xs rounded-xl pl-70" :src="config.SUPABASE_ASSETS_URL + '/areas/' + areaId + '.png'" :alt="name + ' image'" />
-        </div>
+        <img class="object-center object-cover h-52 w-full max-w-xs rounded-xl pl-70"
+            :src="config.SUPABASE_ASSETS_URL + '/areas/' + areaId + '.png'" :alt="name + ' image'" />
+    </div>
 </template>
 
 <script>
 
 export default {
-    props: ["areaId", "name", "description", "index"],
+    props: ["areaId", "name", "description", "index", "areOdd",],
     methods: {
-        getBackgroundColor(index) {
-            return index % 2 === 0 ? '#F9F9FF' : 'white';
+        getBackgroundColor(index, areOdd) {
+            if (areOdd) {
+                return index % 2 === 0 ? 'white' : '#F9F9FF';
+            } else {
+                return index % 2 === 0 ? '#F9F9FF' : 'white';
+            }
         },
         truncate(input) {
             if (input.length > 200) {

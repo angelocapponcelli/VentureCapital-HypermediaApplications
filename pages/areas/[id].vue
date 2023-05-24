@@ -48,7 +48,7 @@
 
                         <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-6">
                             <!-- single card project -->
-                            <SmallProjectCard v-for="(project, index) of projects" :key="index" :title="project.title"
+                            <ProjectSmallCard v-for="(project, index) of projects" :key="index" :title="project.title"
                                 :overview="project.overview" :startupId="project.startup" :index="index"
                                 :link="'/portfolio/' + project.id" :id="project.id" />
                         </div>

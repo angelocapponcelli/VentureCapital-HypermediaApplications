@@ -15,7 +15,7 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <ProjectSearchBar class="invisible md:visible" :id="'searchBar'" @search-filter="receiveEmit" />
+        <SearchBar class="invisible md:visible" :id="'searchBar'" @search-filter="receiveEmit" />
       </div>
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
@@ -23,7 +23,7 @@
         <ProjectSideDrawer class="basis-1/5" :pageIndex=1 />
 
         <!-- searchBar for mobile -->
-        <ProjectSearchBar class="md:hidden" :id="'mobileSearchBar'" @search-filter="receiveEmit" />
+        <SearchBar class="md:hidden" :id="'mobileSearchBar'" @search-filter="receiveEmit" />
 
         <!-- cards projects section -->
         <div class="flex flex-col space-y-5 basis-4/5">
