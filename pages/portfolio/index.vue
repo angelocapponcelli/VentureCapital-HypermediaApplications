@@ -17,7 +17,7 @@
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
         <!-- side drawer section -->
-        <SideDrawer class="basis-1/5" :pageIndex=0 />
+        <ProjectSideDrawer class="basis-1/5" :pageIndex=0 />
 
         <!-- searchBar for mobile -->
         <SearchBar class="md:hidden" :id="'mobileSearchBar'" @search-filter="receiveEmit" />
@@ -26,7 +26,7 @@
         <!-- cards projects section -->
         <div v-if="projects" class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
           <!-- single card project -->
-          <SmallProjectCard v-if="filteredProjects.length > 0" v-for="project of filteredProjects" :title="project.title"
+          <ProjectSmallCard v-if="filteredProjects.length > 0" v-for="project of filteredProjects" :title="project.title"
             :overview="project.overview" :startupId="project.startup.id" :link="'/portfolio/' + project.id"
             :id="project.id" />
           <div v-else
@@ -51,8 +51,7 @@
                 d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>
-              Sorry, but there are <b>no {{ areaLabel.toLowerCase() }} projects</b>.<br>
-              Please try looking in another section.
+              Sorry, but there are <b>no projects</b>.
             </span>
           </div>
         </div>
@@ -99,6 +98,5 @@ export default defineNuxtComponent({
     }
   }
 })
-
-
 </script>
+

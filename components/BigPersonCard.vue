@@ -1,16 +1,18 @@
 <template>
-    <div class="big-person-card">
-        <img class="img-container" :src="imageUrl">
-        <div class="person-info-container">
-            <div class="flex flex-col space-y-3">
-                <span class="person-name">
+    <div class="flex flex-col md:flex-row items-center w-auto h-auto md:h-[540px] bg-white 
+    border border-solid border-[D4D2E3] rounded-[20px]">
+        <img class="md:max-w-[50%] h-full bg-[F9F9FF] object-cover rounded-[20px]" :src="imageUrl">
+        <!-- <div class="person-info-container"> -->
+        <div class="flex flex-col justify-between space-y-5 w-auto h-full p-5 md:pt-[130px] md:pr-[40px] md:pb-[50px] md:pl-[50px]">
+            <div class="flex flex-col">
+                <span class="font-['DM Sans'] not-italic font-bold text-[40px] lg:text-[44px] leading-[50px] text-[494850]">
                     {{ name }}
                 </span>
                 <span class="person-position">
                     {{ position }}
                 </span>
             </div>
-            <div class="flex flex-col space-y-3">
+            <div class="flex flex-col">
                 <span class="person-description">
                     {{ description }}
                 </span>
@@ -18,7 +20,7 @@
                     Personal CV
                 </NuxtLink>
             </div>
-            <span class="previous-next-links-container">
+            <span class="flex flex-row justify-between w-auto h-[30px]">
                 <NuxtLink v-if="id > 1" :to = "'/team/' + (id-1)" class="flex flex-row justify-start items-center" >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-color-1000">
                         <path fill-rule="evenodd" 
@@ -56,53 +58,6 @@ export default {
 </script>
 
 <style>
-    .big-person-card {
-        /* Card */
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-        width: auto;
-        height: 540px;
-        left: 110px;
-        top: 210px;
-        /* Neutral Colors/White */
-        background: #FFFFFF;
-        /* Neutral Colors/Color 600 */
-        border: 1px solid #D4D2E3;
-        border-radius: 20px;
-        margin: 25px;
-    }
-
-    .img-container {
-        /* Container */
-        width: 550px;
-        height: 540px;
-        left: 110px;
-        top: 210px;
-        /* Neutral Colors/Color 300 */
-        background: #F9F9FF;
-        border-radius: 20px 0px 0px 20px;
-        object-fit: cover;
-    }
-
-    .person-info-container {
-        display: flex;
-        flex-flow: column;
-        justify-content: space-between;
-        width: 550px;
-        height: 100%;
-        left: 730px;
-        top: 360px;
-        padding-top: 130px;
-        padding-bottom: 50px;
-        padding-left: 50px;
-        padding-right: 40px;
-        /* padding-left: 70px;
-        padding-right: 70px;
-        padding-bottom: 70px;
-        padding-top: 130px; */
-    }
-
     .person-name {
         /* Special headings/Display 3 */
         font-family: 'DM Sans';
@@ -147,14 +102,6 @@ export default {
         line-height: 30px;
         /* Neutral Colors/Text Gray */
         color: #9795B5;
-    }
-
-    .previous-next-links-container{
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        width: auto;
-        height: 30px;
     }
 
     #previous {

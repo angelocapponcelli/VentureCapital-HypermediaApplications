@@ -146,12 +146,13 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar v-if="projectExist" class="invisible md:visible" :id="'searchBar'" @search-filter="receiveEmit" />
+        <SearchBar v-if="projectExist" class="invisible md:visible" :id="'searchBar'"
+          @search-filter="receiveEmit" />
       </div>
 
       <div class="flex space-y-8 md:space-y-0 md:space-x-5 space-x-0 flex-col md:flex-row">
         <!-- side drawer section -->
-        <SideDrawer class="basis-1/5" :pageIndex="indexDrawer" />
+        <ProjectSideDrawer class="basis-1/5" :pageIndex="indexDrawer" />
 
         <div class="basis-4/5 flex flex-col space-y-8">
 
@@ -170,7 +171,7 @@
           <!-- cards projects section -->
           <div v-if="projectExist" class="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto">
             <!-- single card project -->
-            <SmallProjectCard v-for="project of projectList" :title="project.title" :overview="project.overview"
+            <ProjectSmallCard v-for="project of projectList" :title="project.title" :overview="project.overview"
               :startupId="project.startup.id" :link="'/portfolio/' + area + '/' + project.id" :id="project.id" />
             <div id="no-projects"
               class="lg:w-[40rem] md:w-[30rem] w-fit m-auto text-2xl flex md:flex-row flex-col md:space-x-5 space-x-0 text-color-1000 h-full"
@@ -228,7 +229,7 @@ if (pageTypeProject && !area) { //project from 'All projects' page
 
   project = dataProject.value.project
   //return id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position), area(id, name), gallery
-  console.log(project.gallery)
+
   previousProject = dataProject.value.previousProject
   //return id, title
   linkPrevious = (previousProject) ? previousProject.id : undefined

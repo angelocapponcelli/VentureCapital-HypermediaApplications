@@ -5,15 +5,16 @@
             { label: area.name }]" />
         <div class=bg-white>
 
-            <div class="flex flex-col py-y_padding_page px-x_padding_page text-center">
+            <div
+                class="flex flex-col lg:py-y_padding_page py-y_padding_page_mobile lg:px-x_padding_page px-x_padding_page_mobile">
 
-                <div class="flex items-center flex-row pt-8">
+                <div class="flex items-center lg:flex-row flex-col">
 
-                    <div class="flex flex-col pr-24">
-                        <h1 class="text-5xl text-left font-bold">
+                    <div class="flex flex-col lg:pr-24">
+                        <h1 class="lg:text-5xl text-4xl text-left font-bold lg:text-left text-center">
                             {{ area.name }}
                         </h1>
-                        <h2 class="text-left text-color-900 pt-8">
+                        <h2 class="text-left text-color-900 lg:pt-8 py-y_padding_title_text lg:text-left text-center">
                             {{ area.description }}
                         </h2>
                     </div>
@@ -24,19 +25,19 @@
             </div>
 
             <div class="box-border w-screen h-auto bg-color-300">
-                <div class="px-32 py-10">
-                    <div v-if="area.project.length == 0" class="m-auto text-xl text-color-1000">
+                <div class="lg:px-x_padding_page px-x_padding_page_mobile py-10">
+                    <div v-if="area.project.length == 0" class="m-auto text-xl text-color-1000 lg:text-left text-center">
                         <span>
                             There are <b>no related projects.</b>
                         </span>
                     </div>
                     <div v-else class="flex flex-col space-y-8">
                         <div class="flex flex-row justify-between">
-                            <h1 class="text-4xl font-bold">
+                            <h1 class="lg:text-4xl text-2xl font-bold">
                                 Related projects
                             </h1>
                             <div
-                                class="text-primary-color text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
+                                class="text-primary-color lg:text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
                                 <span>Learn more</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                                     stroke="currentColor" class="w-5 h-5">
@@ -48,7 +49,7 @@
 
                         <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-6">
                             <!-- single card project -->
-                            <SmallProjectCard v-for="(project, index) of projects" :key="index" :title="project.title"
+                            <ProjectSmallCard v-for="(project, index) of projects" :key="index" :title="project.title"
                                 :overview="project.overview" :startupId="project.startup" :index="index"
                                 :link="'/portfolio/' + project.id" :id="project.id" />
                         </div>
@@ -58,7 +59,7 @@
             </div>
         </div>
 
-        <div class="py-y_padding_page px-x_padding_page">
+        <div class="lg:py-y_padding_page py-y_padding_page_mobile lg:px-x_padding_page px-x_padding_page_mobile">
             <div class="flex md:flex-row flex-col md:space-x-4 md:space-y-0 space-y-4">
                 <NuxtLink v-if="previousArea" :to="'/areas/' + previousArea.id"
                     class="md:order-none order-1 py-4 md:py-0 flex-1 text-color-1000 text-lg font-bold flex md:space-x-2 items-center hover:text-color-700 transition duration-200">

@@ -5,11 +5,13 @@
     <main>
         <Breadcrumb :crumbs="[{ label: 'Our team', link: '/team' }, { label: person.full_name, link: '/team/' + id }]"/>
 
-        <BigPersonCard :name="person.full_name" :position="person.position" :description="person.description" :image="person.image" cvLink="#" :id="person.id" :next="nextPerson" />
-        
+        <div class="px-x_padding_page_mobile lg:px-x_padding_page py-5">
+            <BigPersonCard :name="person.full_name" :position="person.position" :description="person.description" :image="person.image" cvLink="#" :id="person.id" :next="nextPerson" />
+        </div>
+
         <div v-if="relatedProjects.length > 0" class="related-projects-container">
-            <div class="flex flex-col space-y-8 px-32 pt-10 pb-16 w-full">
-                <h1>
+            <div class="flex flex-col space-y-8 px-x_padding_page_mobile py-y_padding_page_mobile lg:px-x_padding_page lg:pt-10 lg:pb-16 w-full">
+                <h1 class="font-['DM Sans'] not-italic font-bold text-3xl md:text-[44px] leading-[50px] text-[494850]">
                     Related projects
                 </h1>
                 <div class="flex flex-row justify-center space-x-10">
@@ -45,17 +47,7 @@
         background: #E7E6F2;
         /* Neutral Colors/Color 300 */
         border: 1px solid #F9F9FF;
-        margin: 25px;
-        margin-bottom: 30px;
-    }
-
-    .related-projects-container h1 {
-        font-family: 'DM Sans';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 44px;
-        line-height: 50px;
-        /* Neutral Colors/Headings Black */
-        color: #494850;
+        /* margin: 25px;
+        margin-bottom: 30px; */
     }
 </style>

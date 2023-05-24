@@ -1,10 +1,10 @@
 <template>
-    <div class="relative text-center w-full h-[200px]">
+    <div class="relative text-center md:p-0 px-x_padding_page_mobile py-y_padding_page_mobile w-full h-auto">
         <!-- Uncomment this line to substitute the the background color with an image -->
         <!-- <img src='~/assets/img/home-image.jpg' /> -->
-        <div class="flex flex-col space-y-20">
+        <div class="grid grid-col-1 space-y-2 md:p-10">
             <span class="page-title">{{ title }}</span>
-            <span class="page-subtitle">{{ subtitle }}</span>
+            <span class="page-subtitle lg:px-40 xl:px-64">{{ subtitle }}</span>
         </div>
     </div>
 </template>
@@ -21,10 +21,10 @@
 <style>
     /* Heading */
     .page-title {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        /* position: absolute; */
+        /* top: 50%;
+        left: 50%; */
+        /* transform: translate(-50%, -50%); */
         /* Headings/H1 */
         font-family: 'DM Sans';
         font-style: normal;
@@ -39,10 +39,10 @@
 
     /* Paragraph */
     .page-subtitle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        /* position: absolute; */
+        /* top: 50%;
+        left: 50%; */
+        /* transform: translate(-50%, -50%); */
         /* Body/Default */
         font-family: 'DM Sans';
         font-style: normal;
