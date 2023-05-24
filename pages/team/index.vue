@@ -5,8 +5,8 @@
         <div class="w-full" >
             <TitleWithImage title="Meet our team" subtitle="A collective of passionate and experienced professionals driving 
             visionary investments and empowering startups to thrive in the world of venture capital."/>
-            <!-- md:px-36 md:py-10 xl:px-36 -->
-            <div class="flex flex-col space-y-16 lg:px-16 xl:mx-auto lg:py-10 px-x_padding_page_mobile py-y_padding_page_mobile 
+            <!-- md:px-36 md:py-10  -->
+            <div class="flex flex-col space-y-16 lg:px-16 xl:px-32 xl:mx-auto lg:py-10 px-x_padding_page_mobile py-y_padding_page_mobile 
             w-full h-auto 2xl:max-w-[2160px]">
                 <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-4">
                     <!-- single person card -->
