@@ -5,11 +5,12 @@
         <div class="w-full" >
             <TitleWithImage title="Meet our team" subtitle="A collective of passionate and experienced professionals driving 
             visionary investments and empowering startups to thrive in the world of venture capital."/>
-            <!-- md:px-36 md:py-10 -->
-            <div class="flex flex-col space-y-16 lg:px-16 xl:px-36 lg:py-10 px-x_padding_page_mobile py-y_padding_page_mobile w-full">
-                <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- md:px-36 md:py-10  -->
+            <div class="flex flex-col space-y-16 lg:px-16 xl:px-32 xl:mx-auto lg:py-10 px-x_padding_page_mobile py-y_padding_page_mobile 
+            w-full h-auto 2xl:max-w-[2160px]">
+                <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-4">
                     <!-- single person card -->
-                    <PersonCard class="hiddenCard" v-for="person of people" :name="person.full_name" :position="person.position" 
+                    <TeamCard class="hiddenCard" v-for="person of people" :name="person.full_name" :position="person.position" 
                         :id="person.id" :image="person.image" />
                 </div>
             </div>
@@ -39,14 +40,14 @@ export default defineNuxtComponent({
                     // if the element is visible, we add the show class to it and remove the hiddenCard class
                     entry.target.classList.add('show');
                     entry.target.classList.remove('hiddenCard');
-                } else {
+                } /* else {
                     // if the element is not visible, we add the hiddenCard class to it and remove the show class
                     entry.target.classList.add('hiddenCard');
                     entry.target.classList.remove('show');
-                }
+                } */
             });
         }, {
-            rootMargin: '-20% 0px -20% 0px' // defines the area in which the observer will trigger
+            rootMargin: '-10% 0px -10% 0px' // defines the area in which the observer will trigger
         });
         
         // we select all the elements with the hiddenCard class and add them to the observer
@@ -56,7 +57,6 @@ export default defineNuxtComponent({
         });
 
         const targets = document.querySelectorAll('img');
-        const config = useRuntimeConfig();
 
         // we use the lazyLoad function to load the images only when they are visible in the viewport and unload them when they are not
         const lazyLoad = target => {
@@ -66,7 +66,7 @@ export default defineNuxtComponent({
                     if (entry.isIntersecting) {
                         // we get the image element and set the src attribute to the image url
                         const img = entry.target;
-                        const src = config.SUPABASE_ASSETS_URL + "/people/" + img.getAttribute('data-lazy') + ".png";
+                        const src = img.getAttribute('data-lazy');
                         img.setAttribute('src', src);
 
                         // uncomment this line if you want the images to be loaded only once and not unloaded when they are not visible
@@ -100,7 +100,7 @@ export default defineNuxtComponent({
 
     @media (prefers-reduced-motion: no-preference) {
         .hiddenCard {
-            transition: all 1s;
+            transition: all 1s ease-in-out;
         }
     }
     

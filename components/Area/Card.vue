@@ -11,10 +11,18 @@
                     {{ truncate(description) }}
                 </h2>
             </div>
-            <NuxtLink :to="'/areas/' + areaId"
-                class="lg:pt-y_padding_title_text py-y_padding_title_text flex lg:justify-start justify-center">
-                <span>Learn More</span>
-            </NuxtLink>
+            <div class="flex flex-row justify-center lg:justify-start w-full">
+                <NuxtLink :to="'/areas/' + areaId"
+                    class="w-fit text-primary-color text-lg font-bold flex space-x-2 items-center 
+                    hover:transform hover:scale-105 hover:text-color-700 transition duration-200 lg:pt-y_padding_title_text py-y_padding_title_text">
+                    <span>Learn More</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+                    class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                </NuxtLink>
+            </div>
         </div>
         <div class="grow"></div>
         <div class="flex justify-center w-full lg:max-w-xs">

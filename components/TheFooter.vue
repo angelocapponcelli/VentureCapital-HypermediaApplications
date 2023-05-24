@@ -10,7 +10,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:space-y-0 space-y-6">
                     <div>
                         <Logo />
-                        <p class="xl:w-[32rem] w-full">
+                        <p class="mr-3.5 px-3.5">
                             We understand the significance of emerging technologies
                             in shaping the future. Our investments encompass startups
                             that are at the forefront of disruptive technologies

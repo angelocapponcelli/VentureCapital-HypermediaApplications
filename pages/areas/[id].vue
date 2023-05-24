@@ -60,31 +60,49 @@
         </div>
 
         <div class="lg:py-y_padding_page py-y_padding_page_mobile lg:px-x_padding_page px-x_padding_page_mobile">
-            <div class="flex md:flex-row flex-col md:space-x-4 md:space-y-0 space-y-4">
-                <NuxtLink v-if="previousArea" :to="'/areas/' + previousArea.id"
-                    class="md:order-none order-1 py-4 md:py-0 flex-1 text-color-1000 text-lg font-bold flex md:space-x-2 items-center hover:text-color-700 transition duration-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
-                        stroke="currentColor" class="w-8 h-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            <div class="flex md:flex-row flex-col justify-between md:space-y-0 space-y-4">
+                <div v-if="previousArea" class="flex flex-row justify-start md:w-1/3">
+                    <NuxtLink :to="'/areas/' + previousArea.id"
+                        class="w-fit md:order-none order-1 flex justify-start text-color-1000 text-lg font-bold space-x-2 items-center 
+                            hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
+                            stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                        <div class="text-left">
+                            <p class="text-color-700">Previous area</p>
+                            <h3 class="font-extrabold text-xl">{{ previousArea.name }}</h3>
+                        </div>
+                    </NuxtLink>
+                </div>
+                <div v-else class="md:w-1/3" />
+
+                <NuxtLink to="/areas"
+                class="max-h-14 md:order-none order-last flex-none py-2 px-4 mx-auto justify-center items-center flex space-x-2 bg-white text-primary-color 
+                    hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+                    <span>Return to Areas</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                     </svg>
-                    <div class="text-left">
-                        <p class="text-color-700">Previous area</p>
-                        <h3 class="font-extrabold text-xl">{{ previousArea.name }}</h3>
-                    </div>
                 </NuxtLink>
 
-                <NuxtLink v-if="nextArea" :to="'/areas/' + nextArea.id"
-                    class="md:order-none order-0 flex-1 justify-end text-primary-color text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
-                    <div class="text-right">
-                        <p class="text-color-700">Next area</p>
-                        <h3 class="font-extrabold text-xl">{{ nextArea.name }}</h3>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
-                        stroke="currentColor" class="w-8 h-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                    </svg>
-                </NuxtLink>
-                <div v-else class="flex-1" />
+                <div v-if="nextArea" class="flex flex-row justify-end md:w-1/3">
+                    <NuxtLink :to="'/areas/' + nextArea.id"
+                        class="w-fit md:order-none order-0 flex justify-end text-primary-color text-lg font-bold space-x-2 items-center 
+                            hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
+                        <div class="text-right">
+                            <p class="text-color-700">Next area</p>
+                            <h3 class="font-extrabold text-xl">{{ nextArea.name }}</h3>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
+                            stroke="currentColor" class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </NuxtLink>
+                </div>
+                <div v-else class="md:w-1/3" />
             </div>
         </div>
     </div>
