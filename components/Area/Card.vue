@@ -16,6 +16,7 @@
                 <span>Learn More</span>
             </NuxtLink>
         </div>
+        <div class="grow"></div>
         <div class="flex justify-center w-full lg:max-w-xs">
             <img class="rounded-xl object-center object-cover h-52 pl-70 w-full max-w-xs"
                 :src="config.SUPABASE_ASSETS_URL + '/areas/' + areaId + '.png'" :alt="name + ' image'" />

@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="flex flex-col">
+        <div class="flex flex-col w-full">
             <Breadcrumb :crumbs="[
                 { label: 'Areas', link: '/areas' }]" />
             
