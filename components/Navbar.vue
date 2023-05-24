@@ -92,12 +92,12 @@
                     <!-- Our team -->
                     <NuxtLink to="/team"
                         class="flex items-center h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                        Our team
+                        Our Team
                     </NuxtLink>
                     <!-- About us -->
                     <NuxtLink to="/about"
                         class="flex items-center h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                        About us
+                        About Us
                     </NuxtLink>
                 </div>
                 <NuxtLink to="/contact"

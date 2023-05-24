@@ -111,7 +111,7 @@
 
         <NuxtLink :to="linkBack"
           class="max-h-14 md:order-none order-last flex-none py-2 px-4 mx-auto items-center justify-center flex space-x-2 bg-white text-primary-color hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
-          <span>Return to portfolio</span>
+          <span>Return to Portfolio</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round"
