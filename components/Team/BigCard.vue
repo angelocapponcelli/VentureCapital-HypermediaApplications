@@ -22,14 +22,14 @@
             </div>
             <span class="flex flex-row justify-between w-auto h-[30px]">
                 <div v-if="id > 1" class="flex flex-row justify-start w-1/3">
-                    <NuxtLink  :to = "'/team/' + (id-1)" class="flex flex-row items-center w-min
-                        hover:transform hover:scale-105 transition duration-200" >
+                    <NuxtLink  :to = "'/team/' + (id-1)" class="flex flex-row items-center w-min font-bold text-color-1000
+                        hover:transform hover:scale-105 hover:text-color-700 transition duration-200" >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-color-1000">
                             <path fill-rule="evenodd" 
                             d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" 
                             clip-rule="evenodd" />
                         </svg>
-                        <button id="previous">Previous</button>
+                        <button>Previous</button>
                     </NuxtLink>
                 </div>
                 <div v-else class="w-1/3"></div>
@@ -46,9 +46,9 @@
                 </NuxtLink>
                 
                 <div v-if="next" class="flex flex-row justify-end w-1/3">
-                    <NuxtLink  :to = "'/team/' + (id+1)" class="flex flex-row items-center w-min
-                        hover:transform hover:scale-105 transition duration-200" >
-                        <button id="next">Next</button>
+                    <NuxtLink  :to = "'/team/' + (id+1)" class="flex flex-row items-center w-min font-bold text-primary-color
+                        hover:transform hover:scale-105 hover:text-color-700 transition duration-200" >
+                        <button>Next</button>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-color-1000">
                             <path fill-rule="evenodd" 
                             d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" 
