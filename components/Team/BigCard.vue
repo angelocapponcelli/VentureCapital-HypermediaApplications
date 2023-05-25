@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col md:flex-row items-center w-auto h-auto md:h-[540px] 2xl:max-w-screen-xl bg-white 
     border border-solid border-[D4D2E3] rounded-[20px]">
-        <img class="md:max-w-[50%] h-full bg-[F9F9FF] object-cover rounded-[20px]" :src="imageUrl">
+        <img class="md:max-w-[50%] h-full bg-[F9F9FF] object-cover rounded-[20px]" :src="imageUrl" format="webp" alt="person image">
         <!-- <div class="person-info-container"> -->
         <div class="flex flex-col justify-between space-y-5 w-auto h-full p-5 md:pt-[130px] md:pr-[40px] md:pb-[50px] md:pl-[40px]">
             <div class="flex flex-col space-y-3">
@@ -80,7 +80,7 @@ export default {
     mounted() {
         window.addEventListener('resize', this.handleResize)
     },
-    beforeDestroy() {
+    beforeUnmount() {
         window.removeEventListener('resize', this.handleResize)
     },
     methods: {

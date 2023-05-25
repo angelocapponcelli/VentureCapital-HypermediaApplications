@@ -8,7 +8,7 @@
             <!-- md:px-36 md:py-10  -->
             <div class="flex flex-col space-y-16 lg:px-16 xl:px-32 xl:mx-auto lg:py-10 px-x_padding_page_mobile py-y_padding_page_mobile 
             w-full h-auto 2xl:max-w-[2160px]">
-                <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-4">
+                <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <!-- single person card -->
                     <TeamCard class="hiddenCard" v-for="person of people" :name="person.full_name" :position="person.position" 
                         :id="person.id" :image="person.image" />
@@ -47,7 +47,7 @@ export default defineNuxtComponent({
                 } */
             });
         }, {
-            rootMargin: '-10% 0px -10% 0px' // defines the area in which the observer will trigger
+            rootMargin: '-20% 0px -20% 0px' // defines the area in which the observer will trigger
         });
         
         // we select all the elements with the hiddenCard class and add them to the observer
@@ -87,7 +87,7 @@ export default defineNuxtComponent({
 
         // we loop through all the images and add them to the lazyLoad function
         targets.forEach(lazyLoad);
-    }
+    },
 })
 </script>
 

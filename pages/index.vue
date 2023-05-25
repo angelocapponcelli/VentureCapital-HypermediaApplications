@@ -180,14 +180,14 @@ export default defineNuxtComponent({
                     // if the element is visible, we add the show class to it and remove the hiddenItem class
                     entry.target.classList.add('show');
                     entry.target.classList.remove('hiddenItem');
-                } else {
+                } /* else {
                     // if the element is not visible, we add the hiddenItem class to it and remove the show class
                     entry.target.classList.add('hiddenItem');
                     entry.target.classList.remove('show');
-                }
+                } */
             });
         }, {
-            rootMargin: '-10% 0px -10% 0px' // defines the area in which the observer will trigger
+            rootMargin: '-20% 0px -10% 0px' // defines the area in which the observer will trigger
         });
 
         // we select all the elements with the hiddenItem class and add them to the observer
