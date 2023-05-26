@@ -16,9 +16,12 @@
                 <span class="person-description">
                     {{ description }}
                 </span>
-                <NuxtLink :to="cvLink" class="person-cv-link">
-                    Personal CV
-                </NuxtLink>
+                <div class="flex flex-row justify-start">
+                    <NuxtLink :to="cvLink" class="font-sans font-bold leading-[30px] text-[15px] underline text-primary-color
+                    hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
+                        Personal CV
+                    </NuxtLink>
+                </div>
             </div>
             <span class="flex flex-row justify-between w-auto h-[30px]">
                 <div v-if="id > 1" class="flex flex-row justify-start w-1/3">

@@ -17,34 +17,46 @@
                         </p>
                     </div>
                     <div class="flex justify-between md:flex-row flex-col md:space-y-0 space-y-6">
-                        <div class="flex md:flex-col flex-row md:space-x-0 space-x-6 space-y-0 md:space-y-10">
+                        <div class="flex md:flex-col flex-row md:space-x-0 space-x-6 space-y-0 md:space-y-10 md:w-1/3">
                             <h1 class="text-headings-black font-bold md:basis-0 basis-1/4">Pages</h1>
 
                             <ul class="space-y-2">
-                                <li class="text-color-900 hover:text-color-700 active:font-bold">
-                                    <NuxtLink to="/portfolio">
-                                        Portfolio
-                                    </NuxtLink>
+                                <li>
+                                    <div class="flex flex-row justify-start">
+                                        <NuxtLink to="/portfolio" class="text-color-900 hover:text-color-700 active:font-bold
+                                            hover:transform hover:scale-105 hover:font-bold transition duration-200">
+                                            Portfolio
+                                        </NuxtLink>
+                                    </div>
                                 </li>
-                                <li class="text-color-900 hover:text-color-700 active:font-bold">
-                                    <NuxtLink to="/areas">
-                                        Areas
-                                    </NuxtLink>
+                                <li>
+                                    <div class="flex flex-row justify-start">
+                                        <NuxtLink to="/areas" class="text-color-900 hover:text-color-700 active:font-bold
+                                            hover:transform hover:scale-105 hover:font-bold transition duration-200">
+                                            Areas
+                                        </NuxtLink>
+                                    </div>
                                 </li>
-                                <li class="text-color-900 hover:text-color-700 active:font-bold">
-                                    <NuxtLink to="/team">
-                                        Our team
-                                    </NuxtLink>
+                                <li>
+                                    <div class="flex flex-row justify-start">
+                                        <NuxtLink to="/team" class="text-color-900 hover:text-color-700 active:font-bold
+                                            hover:transform hover:scale-105 hover:font-bold transition duration-200">
+                                            Our team
+                                        </NuxtLink>
+                                    </div>
                                 </li>
-                                <li class="text-color-900 hover:text-color-700 active:font-bold">
-                                    <NuxtLink to="/about">
-                                        About us
-                                    </NuxtLink>
+                                <li>
+                                    <div class="flex flex-row justify-start">
+                                        <NuxtLink to="/about" class="text-color-900 hover:text-color-700 active:font-bold
+                                            hover:transform hover:scale-105 hover:font-bold transition duration-200">
+                                            About us
+                                        </NuxtLink>
+                                    </div>
                                 </li>
                             </ul>
 
                         </div>
-                        <div class="flex md:flex-col flex-row md:space-x-0 space-x-6 space-y-0 md:space-y-10">
+                        <div class="flex md:flex-col flex-row md:space-x-0 space-x-6 space-y-0 md:space-y-10 md:w-1/3">
                             <h1 class="text-headings-black font-bold md:basis-0 basis-1/4">Contacts</h1>
 
                             <ul class="space-y-2">
@@ -53,13 +65,14 @@
                                 <li class="text-color-900">Via Larga 12, Milan Italy</li>
                                 <li class="py-2">
                                     <NuxtLink to="/contact"
-                                        class="py-2 px-4 my-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
-                                        Stay on touch
+                                        class="py-2 px-4 my-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 
+                                        border-primary-color rounded-full transition ease-in-out duration-200">
+                                        Stay in touch
                                     </NuxtLink>
                                 </li>
                             </ul>
                         </div>
-                        <div class="flex md:flex-col flex-row md:space-x-0 space-x-6 space-y-0 md:space-y-10">
+                        <div class="flex md:flex-col flex-row md:items-end md:space-x-0 space-x-6 space-y-0 md:space-y-10 md:w-1/3">
                             <h1 class="text-headings-black font-bold md:basis-0 basis-1/4">Follow us</h1>
 
                             <ul class="space-y-2">

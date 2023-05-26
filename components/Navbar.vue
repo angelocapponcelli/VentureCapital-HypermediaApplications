@@ -12,16 +12,9 @@
                 <div class="mr-8 h-full flex items-center relative">
                     <!-- Portfolio -->
                     <div @mouseover="setPortfolioDropdownVisible" @mouseleave="setPortfolioDropdownHidden" class="h-full ">
-                        <!-- <RouterLink to="/portfolio"
-                            class="h-full px-2 flex items-center hover:text-color-900 border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
-                            <span>Portfolio</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-4 h-4 ml-1">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </RouterLink> -->
-                        <NuxtLink to="/portfolio"
-                            class="h-full px-2 flex items-center hover:text-color-900 border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
+                        <!-- border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200 -->
+                        <NuxtLink to="/portfolio" id="btn"
+                            class="relative h-full px-2 flex items-center hover:text-color-900">
                             <span>Portfolio</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-4 h-4 ml-1">
@@ -62,8 +55,9 @@
                     </div>
                     <!-- Areas -->
                     <div @mouseover="setAreasDropdownVisible" @mouseleave="setAreasDropdownHidden" class="h-full">
-                        <NuxtLink to="/areas"
-                            class="h-full px-2 flex items-center hover:text-color-900 border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200">
+                        <!-- border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200 -->
+                        <NuxtLink to="/areas" id="btn"
+                            class="relative h-full px-2 flex items-center hover:text-color-900">
                             <span>Areas</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-4 h-4 ml-1">
@@ -98,19 +92,20 @@
                         </div>
                     </div>
                     <!-- Our team -->
-                    <NuxtLink to="/team"
-                        class="flex items-center h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                    <!-- border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200 -->
+                    <NuxtLink to="/team" id="btn"
+                        class="relative flex items-center h-full px-2 hover:text-color-900">
                         Our Team
                     </NuxtLink>
                     <!-- About us -->
-                    <NuxtLink to="/about"
-                        class="flex items-center h-full px-2 hover:text-color-900 border-b-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                    <NuxtLink to="/about" id="btn"
+                        class="relative flex items-center h-full px-2 hover:text-color-900">
                         About Us
                     </NuxtLink>
                 </div>
                 <NuxtLink to="/contact"
                     class="py-3 px-10 bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
-                    Contacts
+                    Contact Us
                 </NuxtLink>
             </div>
             <div class="md:hidden flex items-center">
@@ -182,3 +177,25 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+    #btn::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 0.2rem;
+        left: 0;
+        bottom: 0;
+        background-color: #5B45F8;
+    }
+
+    #btn::after {
+        transform: scale(0, 1);
+        transition: transform 0.3s ease;
+    }
+
+    #btn:hover::after {
+        transform: scale(1, 1);
+    }
+
+</style>
