@@ -11,3 +11,8 @@ html {
     width: 100%;
     overflow-x: hidden; //breaks sticky element
 }*/
+
+/* html.is-leaving, .transition-fade {
+    @apply transition-opacity duration-300 ease-in-out;
+}
+ */

@@ -1,6 +1,8 @@
 <template>
-  <div :class="{'structbar': true, 'fixed': isFixed}" id="fixed">
+  <!-- <div :class="{'structbar': true, 'fixed': isFixed}" id="fixed"> -->
+  <div class="flex flex-row flex-nowrap justify-center py-2 w-full sticky top-24 z-40 bg-white" id="fixed">
     <div class="link"  v-for="link in links" :key="link.title">
+      <!-- <NuxtLink :to="link.link" class="innerlink">{{ link.title }}</NuxtLink> -->
       <a class ="innerlink" @click="scroll(link.link)">{{ link.title }}</a>
     </div>
   </div>
@@ -42,13 +44,13 @@ export default {
     }
   },
   mounted() {
-    this.componentTop = document.getElementById("fixed").offsetTop;
+    /* this.componentTop = document.getElementById("fixed").offsetTop; */
     window.addEventListener('scroll', this.handleScroll);
     //this.height=document.getElementById("fixed").getBoundingClientRect().height;
-    this.height = document.getElementById("fixed").offsetHeight + document.getElementsByTagName("nav")[0].offsetHeight;
-    this.height = this.height+"px"; 
+    /* this.height = document.getElementById("fixed").offsetHeight + document.getElementsByTagName("nav")[0].offsetHeight;
+    this.height = this.height+"px";  */
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
 };
