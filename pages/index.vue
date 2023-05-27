@@ -180,55 +180,55 @@ export default defineNuxtComponent({
                     // if the element is visible, we add the show class to it and remove the hiddenItem class
                     entry.target.classList.add('show');
                     entry.target.classList.remove('hiddenItem');
-                } else {
+                } /* else {
                     // if the element is not visible, we add the hiddenItem class to it and remove the show class
                     entry.target.classList.add('hiddenItem');
                     entry.target.classList.remove('show');
-                }
+                } */
             });
         }, {
-            rootMargin: '-10% 0px -10% 0px' // defines the area in which the observer will trigger
+            rootMargin: '-20% 0px -10% 0px' // defines the area in which the observer will trigger
         });
 
-        // we select all the elements with the hiddenItem class and add them to the observer
-        const hiddenElements = document.querySelectorAll('.hiddenItem');
-        hiddenElements.forEach(element => {
-            observer.observe(element);
-        });
-
-        const targets = document.querySelectorAll('img');
-        //const config = useRuntimeConfig();
-
-        // we use the lazyLoad function to load the images only when they are visible in the viewport and unload them when they are not
-        const lazyLoad = target => {
-            const io = new IntersectionObserver((entries, imgObserver) => {
-                /* console.log(entries) */
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // we get the image element and set the src attribute to the image url
-                        const img = entry.target;
-                        const src = img.getAttribute('data-lazy');
-                        img.setAttribute('src', src);
-
-                        // uncomment this line if you want the images to be loaded only once and not unloaded when they are not visible
-                        imgObserver.disconnect();
-                    }/* 
-                    else {
-                        // we get the image element and set the src attribute to an empty string
-                        const img = entry.target;
-                        const src = "";
-                        img.setAttribute('src', src);
-                    } */
-                });
+        setTimeout(() => {
+            // we select all the elements with the hiddenItem class and add them to the observer
+            const hiddenElements = document.querySelectorAll('.hiddenItem');
+            hiddenElements.forEach(element => {
+                observer.observe(element);
             });
 
-            // we add the image element to the observer
-            io.observe(target)
-        };
+            const targets = document.querySelectorAll('img');
 
-        // we loop through all the images and add them to the lazyLoad function
-        targets.forEach(lazyLoad);
+            // we use the lazyLoad function to load the images only when they are visible in the viewport and unload them when they are not
+            const lazyLoad = target => {
+                const io = new IntersectionObserver((entries, imgObserver) => {
+                    /* console.log(entries) */
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // we get the image element and set the src attribute to the image url
+                            const img = entry.target;
+                            const src = img.getAttribute('data-lazy');
+                            img.setAttribute('src', src);
 
+                            // uncomment this line if you want the images to be loaded only once and not unloaded when they are not visible
+                            imgObserver.disconnect();
+                        }/* 
+                        else {
+                            // we get the image element and set the src attribute to an empty string
+                            const img = entry.target;
+                            const src = "";
+                            img.setAttribute('src', src);
+                        } */
+                    });
+                });
+
+                // we add the image element to the observer
+                io.observe(target)
+            };
+
+            // we loop through all the images and add them to the lazyLoad function
+            targets.forEach(lazyLoad);
+        }, 500);
     }
 })
 </script>

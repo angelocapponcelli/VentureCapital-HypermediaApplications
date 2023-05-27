@@ -15,7 +15,7 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar class="invisible md:visible" :id="'searchBar'" @search-filter="receiveEmit" />
+        <SearchBar class="hidden md:flex" :id="'searchBar'" @search-filter="receiveEmit" />
       </div>
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">
@@ -88,8 +88,16 @@ export default defineNuxtComponent({
     receiveEmit(value) {
       this.search = value
     }
+  },
+  head(nuxtApp) {
+    return {
+      title: 'Venture Capital - Most relevant projects',
+      meta: [{
+        name: 'description',
+        content: 'Discover our diverse venture capital portfolio featuring innovative startups from various industries. Explore our successful investments, disruptive technologies, and transformative solutions. Join us on the journey of supporting and nurturing exceptional entrepreneurs as they redefine the future of business.'
+      }]
+    }
   }
 })
-
-
 </script>
+

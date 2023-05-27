@@ -5,7 +5,7 @@
     <main>
         <Breadcrumb :crumbs="[{ label: 'Our team', link: '/team' }, { label: person.full_name, link: '/team/' + id }]"/>
 
-        <div class="px-x_padding_page_mobile lg:px-x_padding_page py-5">
+        <div class="flex flex-row justify-center px-x_padding_page_mobile lg:px-x_padding_page py-5">
             <TeamBigCard :name="person.full_name" :position="person.position" :description="person.description" 
             :image="person.image" cvLink="#" :id="person.id" :next="nextPerson" />
         </div>
