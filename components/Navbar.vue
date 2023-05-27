@@ -112,21 +112,21 @@
                             <NuxtLink to="/team"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">O</span>ur <span class="text-primary-color">T</span>eam
+                                    <span class="text-primary-color">O</span>ur&NonBreakingSpace;<span class="text-primary-color">T</span>eam
                             </NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/about"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">A</span>bout <span class="text-primary-color">U</span>s
+                                    <span class="text-primary-color">A</span>bout&NonBreakingSpace;<span class="text-primary-color">U</span>s
                             </NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/contact"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">C</span>ontact <span class="text-primary-color">U</span>s
+                                    <span class="text-primary-color">C</span>ontact&NonBreakingSpace;<span class="text-primary-color">U</span>s
                             </NuxtLink>
                         </li>
                     </ul>
@@ -151,21 +151,21 @@
                             <NuxtLink to="/team"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">O</span>ur <span class="text-primary-color">T</span>eam
+                                    <span class="text-primary-color">O</span>ur&NonBreakingSpace;<span class="text-primary-color">T</span>eam
                             </NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/about"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">A</span>bout <span class="text-primary-color">U</span>s
+                                    <span class="text-primary-color">A</span>bout&NonBreakingSpace;<span class="text-primary-color">U</span>s
                             </NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/contact"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">C</span>ontact <span class="text-primary-color">U</span>s
+                                    <span class="text-primary-color">C</span>ontact&NonBreakingSpace;<span class="text-primary-color">U</span>s
                             </NuxtLink>
                         </li>
                     </ul>

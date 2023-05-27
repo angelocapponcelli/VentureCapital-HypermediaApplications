@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex bg-color-400 text-color-900 py-1 lg:px-x_padding_page px-x_padding_page_mobile w-full">
+  <nav class="hidden md:flex bg-color-400 text-color-900 py-1 lg:px-x_padding_page px-x_padding_page_mobile w-full">
     <ol class="inline-flex items-center space-x-1 md:space-x-3">
       <!--li class="inline-flex items-center">                            // home redudant
         <NuxtLink to="/" class="text-sm text-color-1000 hover:text-color-700 inline-flex items-center">
