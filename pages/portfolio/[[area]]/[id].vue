@@ -26,9 +26,8 @@
             </p>
           </div>
           <div class="flex justify-between">
-            <NuxtLink v-if="previousProject" :to="'/portfolio/' + linkPrevious"
-              class="text-color-1000 md:text-lg text-sm font-bold flex md:space-x-2 items-center 
-              hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
+            <NuxtLink v-if="previousProject" :to="'/portfolio/' + linkPrevious" class="text-color-1000 md:text-lg text-sm font-bold flex md:space-x-2 items-center 
+                                  hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -36,9 +35,8 @@
               <span>Previous project</span>
             </NuxtLink>
             <div v-else />
-            <NuxtLink v-if="nextProject" :to="'/portfolio/' + linkNext"
-              class="justify-end text-primary-color md:text-lg text-sm font-bold flex space-x-2 items-center 
-              hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
+            <NuxtLink v-if="nextProject" :to="'/portfolio/' + linkNext" class="justify-end text-primary-color md:text-lg text-sm font-bold flex space-x-2 items-center 
+                                  hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
               <span>Next project</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
@@ -49,7 +47,7 @@
           </div>
         </div>
         <!-- cover image -->
-        <img class="h-64 max-w-min rounded-xl object-cover aspect-video m-auto"
+        <img class="max-h-64 rounded-xl object-cover aspect-video m-auto"
           :src="config.SUPABASE_ASSETS_URL + '/projects/' + project.id + '.png'"
           :alt="'Cover image project ' + project.id" />
       </div>
@@ -99,11 +97,10 @@
 
       <div class="flex md:flex-row flex-col md:justify-between space-y-4 md:space-y-0">
         <div v-if="previousProject" class="flex flex-row justify-start md:w-1/3">
-          <NuxtLink :to="'/portfolio/' + previousProject.id"
-            class="w-fit md:order-none order-1 flex justify-start text-color-1000 text-lg font-bold space-x-2 items-center 
-            hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor"
-              class="w-8 h-8">
+          <NuxtLink :to="'/portfolio/' + previousProject.id" class="w-fit md:order-none order-1 flex justify-start text-color-1000 text-lg font-bold space-x-2 items-center 
+                                hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
+              stroke="currentColor" class="w-8 h-8">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
             <div class="text-left">
@@ -116,7 +113,7 @@
 
         <NuxtLink :to="linkBack"
           class="max-h-14 md:order-none order-last flex-none py-2 px-4 mx-auto justify-center items-center flex space-x-2 bg-white text-primary-color 
-          hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+                              hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
           <span>Return to Portfolio</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="w-6 h-6">
@@ -126,15 +123,14 @@
         </NuxtLink>
 
         <div v-if="nextProject" class="flex flex-row justify-end md:w-1/3">
-          <NuxtLink :to="'/portfolio/' + nextProject.id"
-            class="w-fit md:order-none order-0 flex justify-end text-primary-color text-lg font-bold space-x-2 items-center 
-            hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
+          <NuxtLink :to="'/portfolio/' + nextProject.id" class="w-fit md:order-none order-0 flex justify-end text-primary-color text-lg font-bold space-x-2 items-center 
+                                hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
             <div class="text-right">
               <p class="text-color-700">Next project</p>
               <h3 class="font-extrabold text-xl">{{ nextProject.title }}</h3>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor"
-              class="w-8 h-8">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
+              stroke="currentColor" class="w-8 h-8">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
           </NuxtLink>
@@ -155,8 +151,7 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar v-if="projectExist" class="invisible md:visible" :id="'searchBar'"
-          @search-filter="receiveEmit" />
+        <SearchBar v-if="projectExist" class="hidden md:flex" :id="'searchBar'" @search-filter="receiveEmit" />
       </div>
 
       <div class="flex space-y-8 md:space-y-0 md:space-x-5 space-x-0 flex-col md:flex-row">
@@ -165,7 +160,7 @@
 
         <div class="basis-4/5 flex flex-col space-y-8">
 
-          <NuxtLink :to="'#'"
+          <NuxtLink :to="areaLink"
             class="max-h-14 py-2 px-4 w-fit md:self-end self-center items-center flex space-x-2 bg-white text-primary-color hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
             <span>Read more about <b>{{ areaLabel.toLowerCase() }}</b></span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
@@ -229,7 +224,7 @@ const area = ((parseFloat(id) === id >>> 0) ? route.params.area : route.params.i
 const areaLabel = area.charAt(0).toUpperCase() + area.slice(1).replaceAll("-", " ")
 const pageTypeProject = ((parseFloat(id) === id >>> 0) ? true : false)
 let project, previousProject, nextProject, linkPrevious, linkNext, linkBack
-let projectList, indexDrawer = 0, projectExist = false;
+let projectList, indexDrawer = 0, projectExist = false, areaLink;
 const config = useRuntimeConfig();
 
 // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
@@ -267,17 +262,19 @@ if (pageTypeProject && !area) { //project from 'All projects' page
   const { data } = await useFetch('/api/portfolio/' + areaLabel + '/undefined')
 
   projectList = data.value
-  if (projectList[0]) { //todo verifica che ci siano progetti
+  if (projectList[0]) {
     projectExist = true
   } else {
     projectExist = false
   }
 
+  let index
   indexDrawer = 2
   const areas = await $fetch('/api/areas')
-  for (let index = 0; areas[index].name != areaLabel; index++) {
+  for (index = 0; areas[index].name != areaLabel; index++) {
     indexDrawer++
   }
+  areaLink = '/areas/' + index
 }
 
 /*function imageUrl(id_image) {

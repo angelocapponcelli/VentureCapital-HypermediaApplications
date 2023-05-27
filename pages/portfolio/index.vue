@@ -12,7 +12,7 @@
           Portfolio
         </h1>
         <!-- searchBar -->
-        <SearchBar class="invisible md:visible" :id="'searchBar'" @search-filter="receiveEmit" />
+        <SearchBar class="hidden md:flex" :id="'searchBar'" @search-filter="receiveEmit" />
       </div>
 
       <div class="flex space-y-4 md:space-x-5 flex-col md:flex-row">

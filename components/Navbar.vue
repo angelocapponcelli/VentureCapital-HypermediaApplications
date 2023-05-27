@@ -30,24 +30,10 @@
                                         Most relevant projects</NuxtLink>
                                 </li>
                                 <li>
-                                    <NuxtLink to="/portfolio/most-relevant-projects"
+                                    <NuxtLink v-for="area in areas"
+                                        :to="'/portfolio/' + area.name.toLowerCase().replaceAll(' ', '-')"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                        Machine learning projects</NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/portfolio/most-relevant-projects"
-                                        class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                        Artificial intelligence projects</NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/portfolio/most-relevant-projects"
-                                        class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                        Neural Network projects</NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/portfolio/most-relevant-projects"
-                                        class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                        Blockchains projects</NuxtLink>
+                                        {{ area.name }} projects</NuxtLink>
                                 </li>
                             </ul>
                         </div>
@@ -67,24 +53,9 @@
                             class="w-52 overflow-hidden bg-white rounded-b-lg shadow absolute top-24 z-20">
                             <ul>
                                 <li>
-                                    <NuxtLink to="/dogs"
+                                    <NuxtLink v-for="area in areas" :to="'/areas/' + area.id"
                                         class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                        Machine learning</NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/dogs"
-                                        class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                        Artificial intelligence</NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/dogs"
-                                        class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                        Neural Network</NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/dogs"
-                                        class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                        Blockchains</NuxtLink>
+                                        {{ area.name }}</NuxtLink>
                                 </li>
                             </ul>
                         </div>
@@ -118,24 +89,29 @@
                         class="w-full overflow-hidden bg-white rounded-b-lg shadow absolute top-16 left-0 z-20">
                         <ul>
                             <li>
-                                <NuxtLink to="/portfolio" @click="toggleMobileMenu"
+                                <NuxtLink to="/portfolio"
                                     class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                     Portfolio</NuxtLink>
                             </li>
                             <li>
-                                <NuxtLink to="/areas" @click="toggleMobileMenu"
+                                <NuxtLink to="/areas"
                                     class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                     Areas</NuxtLink>
                             </li>
                             <li>
-                                <NuxtLink to="/team" @click="toggleMobileMenu"
+                                <NuxtLink to="/team"
                                     class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                     Our team</NuxtLink>
                             </li>
                             <li>
-                                <NuxtLink to="/about" @click="toggleMobileMenu"
+                                <NuxtLink to="/about"
                                     class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
                                     About us</NuxtLink>
+                            </li>
+                            <li>
+                                <NuxtLink to="/contact"
+                                    class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 border-transparent hover:border-primary-color transition ease-in-out duration-200">
+                                    Contacts</NuxtLink>
                             </li>
                         </ul>
                     </div>
@@ -148,6 +124,11 @@
 
 <script>
 export default {
+    watch: {
+        $route() {
+            this.isMobileVisible = false;
+        },
+    },
     data() {
         return {
             isPortfolioDropdownVisible: false,
@@ -170,7 +151,11 @@ export default {
         },
         toggleMobileMenu() {
             this.isMobileVisible = !this.isMobileVisible;
-        }
+        },
     },
 };
+</script>
+
+<script setup>
+const { data: areas } = await useFetch('/api/areas');
 </script>
