@@ -18,7 +18,7 @@
                 <div class="flex flex-row justify-center space-x-10">
                     <!-- related projects cards -->
                     <ProjectSmallCard class="w-96 h-[500px]" v-for="project of relatedProjects" :title="project.title"
-            :overview="project.overview" :startupId="project.startup.id" :link="'/portfolio/' + project.id" :id="project.id" />
+                        :overview="project.overview" :startupId="project.startup.id" :link="'/portfolio/' + project.id" :id="project.id" />
                 </div>
             </div>
             <div v-else class="text-xl text-color-1000 lg:text-left text-center">
@@ -42,18 +42,13 @@
 
     const { data: dataProjects } = await useFetch('/api/portfolio/person/' + id)
     const relatedProjects = dataProjects.value.projects
-</script>
 
-<style>
-    .related-projects-container {
-        /* box-sizing: border-box; */
-        width: 100%;
-        height: auto;
-        /* Neutral Colors/Color 500 */
-        background: #E7E6F2;
-        /* Neutral Colors/Color 300 */
-        border: 1px solid #F9F9FF;
-        /* margin: 25px;
-        margin-bottom: 30px; */
-    }
-</style>
+    const title = ref('Venture Capital - ' + person.full_name)
+    useHead({
+        title,
+        meta: [{
+            name: 'description',
+            content: 'A collective of passionate and experienced professionals driving visionary investments and empowering startups to thrive in the world of venture capital.'
+        }]
+    })
+</script>

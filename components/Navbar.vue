@@ -114,27 +114,28 @@
                             <NuxtLink to="/team"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">O</span>ur <span class="text-primary-color">T</span>eam
+                                    <span class="text-primary-color">O</span>ur&NonBreakingSpace;<span class="text-primary-color">T</span>eam
                             </NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/about"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">A</span>bout <span class="text-primary-color">U</span>s
+                                    <span class="text-primary-color">A</span>bout&NonBreakingSpace;<span class="text-primary-color">U</span>s
                             </NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/contact"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">C</span>ontact <span class="text-primary-color">U</span>s
+                                    <span class="text-primary-color">C</span>ontact&NonBreakingSpace;<span class="text-primary-color">U</span>s
                             </NuxtLink>
                         </li>
                     </ul>
                 </transition> -->
                 <transition name="mobile-nav">
-                    <ul v-show="isMobileVisible" class="dropdown-nav">
+                    <ul v-show="isMobileVisible" :class="platform === 'iPhone' ?
+                            'dropdown-nav-iPhone' : 'dropdown-nav'">
                         <li>
                             <NuxtLink to="/portfolio"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
@@ -153,21 +154,21 @@
                             <NuxtLink to="/team"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">O</span>ur <span class="text-primary-color">T</span>eam
+                                    <span class="text-primary-color">O</span>ur&NonBreakingSpace;<span class="text-primary-color">T</span>eam
                             </NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/about"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">A</span>bout <span class="text-primary-color">U</span>s
+                                    <span class="text-primary-color">A</span>bout&NonBreakingSpace;<span class="text-primary-color">U</span>s
                             </NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/contact"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
                                     border-transparent hover:border-primary-color transition ease-in-out duration-200">
-                                    <span class="text-primary-color">C</span>ontact <span class="text-primary-color">U</span>s
+                                    <span class="text-primary-color">C</span>ontact&NonBreakingSpace;<span class="text-primary-color">U</span>s
                             </NuxtLink>
                         </li>
                     </ul>
@@ -214,6 +215,7 @@ export default {
 
 <script setup>
 const { data: areas } = await useFetch('/api/areas');
+const platform = navigator.platform;
 </script>
 
 <style scoped>
@@ -236,6 +238,21 @@ const { data: areas } = await useFetch('/api/areas');
         max-width: 200px;
         background-color: white;
         top: 100%;
+        right: 0;
+        border-radius: 0% 0% 0% 5%;
+        box-shadow: 5px;
+    }
+
+    .dropdown-nav-iPhone {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        /* uncomment this line to make the dropdown mobile menu fit the entire screen */
+        /* height: 100svh; */
+        max-width: 200px;
+        background-color: white;
+        top: 60px;
         right: 0;
         border-radius: 0% 0% 0% 5%;
         box-shadow: 5px;
