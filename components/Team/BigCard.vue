@@ -16,9 +16,12 @@
                 <span class="person-description">
                     {{ description }}
                 </span>
-                <NuxtLink :to="cvLink" class="person-cv-link">
-                    Personal CV
-                </NuxtLink>
+                <div class="flex flex-row justify-start">
+                    <NuxtLink :to="cvLink" class="font-sans font-bold leading-[30px] text-[15px] underline text-primary-color
+                    hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
+                        Personal CV
+                    </NuxtLink>
+                </div>
             </div>
             <span class="flex flex-row justify-between w-auto h-[30px]">
                 <div v-if="id > 1" class="flex flex-row justify-start w-1/3">
@@ -34,10 +37,10 @@
                 </div>
                 <div v-else class="w-1/3"></div>
 
-                <NuxtLink to="/team"
-                class="max-h-14 flex-none py-2 px-1 mx-auto items-center justify-center flex space-x-2 bg-white text-primary-color 
+                <NuxtLink to="/team" 
+                class="max-h-14 flex-none py-2 px-1 mx-auto items-center justify-center flex bg-white text-primary-color 
                 hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
-                    <span v-if="screenWidth > 1024">Our Team</span>
+                    <span class="hidden lg:contents">Our Team</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                         class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -46,7 +49,7 @@
                 </NuxtLink>
                 
                 <div v-if="next" class="flex flex-row justify-end w-1/3">
-                    <NuxtLink  :to = "'/team/' + (id+1)" class="flex flex-row items-center w-min font-bold text-primary-color
+                    <NuxtLink  :to = "'/team/' + (id+1)"  class="flex flex-row items-center w-min font-bold text-primary-color
                         hover:transform hover:scale-105 hover:text-color-700 transition duration-200" >
                         <button>Next</button>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-6 h-6 text-color-1000">
@@ -70,22 +73,6 @@ export default {
         imageUrl() {
             const config = useRuntimeConfig();
             return config.SUPABASE_ASSETS_URL + "/people/" + this.image + '.png'
-        }
-    },
-    data() {
-        return {
-            screenWidth: window.innerWidth,
-        }
-    },
-    mounted() {
-        window.addEventListener('resize', this.handleResize)
-    },
-    beforeUnmount() {
-        window.removeEventListener('resize', this.handleResize)
-    },
-    methods: {
-        handleResize() {
-            this.screenWidth = window.innerWidth
         }
     }
 }
