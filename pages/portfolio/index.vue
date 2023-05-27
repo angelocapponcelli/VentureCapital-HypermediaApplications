@@ -96,7 +96,15 @@ export default defineNuxtComponent({
     receiveEmit(value) {
       this.search = value
     }
+  },
+  head(nuxtApp) {
+    return {
+      title: 'Venture Capital - Portfolio',
+      meta: [{
+        name: 'description',
+        content: 'Discover our diverse venture capital portfolio featuring innovative startups from various industries. Explore our successful investments, disruptive technologies, and transformative solutions. Join us on the journey of supporting and nurturing exceptional entrepreneurs as they redefine the future of business.'
+      }]
+    }
   }
 })
 </script>
-
