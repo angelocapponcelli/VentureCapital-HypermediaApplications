@@ -134,8 +134,7 @@
                     </ul>
                 </transition> -->
                 <transition name="mobile-nav">
-                    <ul v-show="isMobileVisible" :class="platform === 'iPhone' ?
-                            'dropdown-nav-iPhone' : 'dropdown-nav'">
+                    <ul v-show="isMobileVisible" class="dropdown-nav">
                         <li>
                             <NuxtLink to="/portfolio"
                                 class="px-3 py-3 flex items-center hover:text-color-900 border-l-4 text-2xl
@@ -215,7 +214,6 @@ export default {
 
 <script setup>
 const { data: areas } = await useFetch('/api/areas');
-const platform = navigator.platform;
 </script>
 
 <style scoped>
@@ -238,21 +236,6 @@ const platform = navigator.platform;
         max-width: 200px;
         background-color: white;
         top: 100%;
-        right: 0;
-        border-radius: 0% 0% 0% 5%;
-        box-shadow: 5px;
-    }
-
-    .dropdown-nav-iPhone {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        width: 100%;
-        /* uncomment this line to make the dropdown mobile menu fit the entire screen */
-        /* height: 100svh; */
-        max-width: 200px;
-        background-color: white;
-        top: 60px;
         right: 0;
         border-radius: 0% 0% 0% 5%;
         box-shadow: 5px;
