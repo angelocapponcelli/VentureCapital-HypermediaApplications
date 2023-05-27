@@ -1,31 +1,29 @@
 <template>
-  <!-- <div :class="{'structbar': true, 'fixed': isFixed}" id="fixed"> -->
   <div class="flex flex-row flex-nowrap justify-center gap-x-5 md:gap-x-40 py-2 w-full sticky drop-shadow-md top-16 md:top-24 z-40 bg-white" id="fixed">
-    <div class="relative text-color-1000 font-bold text-base md:text-xl cursor-pointer hover:text-color-700 transition duration-200" id="btn" v-for="link in links" :key="link.title">
-      <!-- <NuxtLink :to="link.link" class="innerlink">{{ link.title }}</NuxtLink> -->
+    <div class="relative text-color-1000 font-bold text-base md:text-xl cursor-pointer 
+      hover:text-color-700 transition duration-200" id="btn" v-for="link in links" :key="link.title">
       <a @click="scroll(link.link)">{{ link.title }}</a>
     </div>
   </div>
-  <!-- <div v-if="isFixed===true"  :style="{ height: height }"></div> -->
-  
 </template>
 
 <script>
 export default {
   props: ['links'],
-  data() {
+  methods: {
+    scroll(refName) {
+      const element = document.getElementById(refName);
+      element.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
+    },
+  },
+  /* data() {
     return {
       isFixed: false,
       componentTop: 0,
       scrollPosition: 0, 
       height: '0'
     };
-  },
-  methods: {
-    scroll(refName) {
-      const element = document.getElementById(refName);
-      element.scrollIntoView({ block: 'start', inline: 'start', behavior: 'smooth' });
-    },
+  }, */
 /*     handleScroll() {
       this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -37,7 +35,6 @@ export default {
         this.isFixed = false;
       }
     }*/
-  },
   /* mounted() {
     //this.componentTop = document.getElementById("fixed").offsetTop;
     window.addEventListener('scroll', this.handleScroll);
