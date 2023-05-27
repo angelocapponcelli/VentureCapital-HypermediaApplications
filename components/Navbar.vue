@@ -197,5 +197,4 @@ export default {
     #btn:hover::after {
         transform: scale(1, 1);
     }
-
 </style>

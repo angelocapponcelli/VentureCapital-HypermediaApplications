@@ -1,6 +1,6 @@
 <template>
     <NuxtLink :to ="'/team/' + id"
-    class="p-6 space-y-2 rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
+    class="p-6 space-y-2 rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-[103%] transition duration-200">
         <div class="flex flex-col justify-between h-full">
             <img class="2xl:h-[85%] object-top object-cover 2xl:object-top h-80 w-full mb-2 rounded-2xl" :data-lazy="imageUrl" alt="person image"
             format="webp"/>
@@ -40,37 +40,3 @@ function isTooLong(text) {
     return false;
 }
 </script>
-
-<style>
-    .person-image-container
-    {
-        display: flex;
-        justify-content: center;
-    }
-
-    .person-img
-    {
-        vertical-align: middle;
-        border-radius: 20px;
-    }
-
-    .person-card
-    {
-        display: flex;
-        flex-flow: column;
-        text-align: center;
-        padding: 20px;
-        border-radius: 20px;
-
-        /* Container */
-
-        /* position: absolute; */
-        width: 380px;
-        height: 500px;
-        left: 110px;
-        top: 558px;
-
-        /* Neutral Colors/Color 400 */
-        background: #F2F1FA;
-    }
-</style>
