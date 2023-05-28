@@ -52,7 +52,7 @@
 
                 <div class="basis-1/2 grid grid-cols-3 lg:gap-4 gap-2 w-full">
                     <img v-for="i in Math.min(6, projects.length)"
-                        :data-lazy="config.SUPABASE_ASSETS_URL + '/startups/' + projects[i - 1].startup.id + '.png'"
+                        :data-lazy="config.SUPABASE_ASSETS_URL + '/startups/' + projects[i - 1].startup.id + '.webp'"
                         class="hiddenItem hiddenItemChild rounded-xl aspect-square object-cover" />
                 </div>
                 <NuxtLink to="/portfolio"
@@ -82,11 +82,11 @@
                 <div
                     class="grid md:grid-cols-4 grid-cols-2 lg:gap-4 gap-2 w-auto md:mx-x_padding_page mx-x_padding_page_mobile bg-white lg:p-10 p-2 rounded-xl">
                     <img v-for="i in Math.min(8, people.length)"
-                        :data-lazy="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.png'"
+                        :data-lazy="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.webp'"
                         class="hiddenItem hiddenItemChild rounded-xl aspect-square object-cover md:flex hidden" />
                     <!-- for mobile reduce card number-->
                     <img v-for="i in Math.min(4, people.length)"
-                        :data-lazy="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.png'"
+                        :data-lazy="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.webp'"
                         class="rounded-xl aspect-square object-cover md:hidden" />
 
                 </div>
@@ -145,7 +145,7 @@
                     <NuxtLink v-for="j in Math.min(3, areas.length)" :to="'/areas/' + areas[j - 1].id"
                         class="hiddenItem hiddenItemChild bg-white lg:p-6 p-2 rounded-xl text-center hover:shadow-md hover:transform hover:scale-101 transition duration-500">
                         <img class="rounded-xl aspect-video object-cover"
-                            :data-lazy="config.SUPABASE_ASSETS_URL + '/areas/' + areas[j - 1].id + '.png'" />
+                            :data-lazy="config.SUPABASE_ASSETS_URL + '/areas/' + areas[j - 1].id + '.webp'" />
                         <h3 class="text-2xl font-semibold pt-4">{{ areas[j - 1].name }}</h3>
                         <p>{{ truncate(areas[j - 1].description) }}</p>
                     </NuxtLink>
