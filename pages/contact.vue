@@ -6,12 +6,13 @@
         <Breadcrumb :crumbs="[
                     { label: 'Contact Us', link: '/contact' }]" />
         <div class="flex flex-col justify-center lg:px-x_padding_page px-x_padding_page_mobile">
-           
             <TitleWithImage title="Get in touch" subtitle="We appreciate your interest in reaching out to us. To ensure a smooth and efficient communication process, we kindly request you to fill out the form below with your relevant information. This will help us better understand your needs and provide you with the most appropriate assistance."></TitleWithImage>
+            <!--form + image -->
             <div class="md:flex">
                 <div class="md:w-full p-7">
-                    <img class="rounded-3xl" src="@/assets/img/aboutus/group.jpg" alt="Immagine" />
+                    <img class="rounded-3xl" src="@/assets/img/contacts/group.webp" alt="Immagine" />
                 </div>
+                <!--form-->
                 <div class="md:w-full p-7">
                     <Transition name="hidden-form" @after-leave="toggleAnimation">
                     <form v-show="!isClosed">
@@ -55,7 +56,36 @@
                         </div>
                     </Transition>
                 </div>
-            </div>     
+            </div>
+            <!--contacts cards-->
+            <div class="md:flex md:justify-center">
+                <ContactsCard title="Email us" content="vc@email.org"></ContactsCard>
+                <ContactsCard title="Call us" content="+12 123 456 789"></ContactsCard>
+            </div>
+            <div class="md:flex justify-center">
+                <div class="p-3 m-5 justify-center text-center border-2 border-color-400 rounded-3xl">
+                    <h3 class="font-bold text-xl text-primary-color p-2">Follow us</h3>
+                    <table class="flex justify-center">
+                        <tr class="flex justify-center">
+                            <td>
+                                <img class="p-3 w-full" src="@/assets/img/facebook.png" alt="Immagine" />
+                            </td>
+                            <td>
+                                <img class="p-3 w-full " src="@/assets/img/instagram.png" alt="Immagine" />
+                            </td>
+                        </tr>
+                        <tr class="flex justify-center">
+                            <td>
+                                <img class="p-3 w-full" src="@/assets/img/twitter.png" alt="Immagine" />
+                            </td>
+                            <td>
+                                <img class="p-3 w-full " src="@/assets/img/linkedin.png" alt="Immagine" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <ContactsCard title="Our location" content="Via Larga 12, Milan Italy" :maps="maps"></ContactsCard> 
+            </div>
         </div>
     </main>
 </template>
@@ -70,7 +100,14 @@ export default{
             surnameError: false, 
             emailError: false,
             companyError: false, 
-            textError: false
+            textError: false, 
+            maps:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.3835724117585!2d9.191949900000001!3d45.462076599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6a8d6c8a797%3A0x853071d1537e8bc0!2sVia%20Larga%2C%2012%2C%2020122%20Milano%20MI!5e0!3m2!1sit!2sit!4v1685293835994!5m2!1sit!2sit",
+            socials: {
+                facebook:"@/assets/img/facebook.png",
+                instagram: "@/assets/img/instagram.png",
+                twitter: "@/assets/img/twitter.png",
+                linkedin: "@/assets/img/linkedin.png"
+            }
         }
     }, 
     methods: {
@@ -163,6 +200,7 @@ export default{
     .error{
         background-color: #ff000074;
     }
+
     
 
     
