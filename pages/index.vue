@@ -4,7 +4,7 @@
 <template>
     <main>
         <div class="bg-no-repeat bg-top bg-cover w-full h-[40rem]"
-            style="background-image: url('https://images.unsplash.com/photo-1639174326326-6e2ef8d8ae39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80')">
+            :style="'background-image: url(' + config.SUPABASE_ASSETS_URL + '/heroHomepage.webp)'">
             <div
                 class="justify-end py-16 bg-gradient-to-r from-black from-40% h-full flex flex-col space-y-10 px-x_padding_page_mobile lg:px-x_padding_page w-11/12 md:w-7/12">
                 <h1 class="hiddenItem text-5xl md:text-7xl text-white">
@@ -19,9 +19,9 @@
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                         stroke="currentColor" class="w-5 h-5">
-                                                                                                                                                                                                                                                                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                                                                                                                                                                                                                                                                                    </svg>
-                                                                                                                                                                                                                                                                                                </a-->
+                                                                                                                                                                                                                                                                                                                                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                                                                                                                                                                                                                                                                                                                                                        </svg>
+                                                                                                                                                                                                                                                                                                                                                                    </a-->
             </div>
         </div>
 
@@ -52,8 +52,8 @@
 
                 <div class="basis-1/2 grid grid-cols-3 lg:gap-4 gap-2 w-full">
                     <img v-for="i in Math.min(6, projects.length)"
-                        :data-lazy="config.SUPABASE_ASSETS_URL + '/startups/' + projects[i - 1].startup.id + '.png'"
-                        class="hiddenItem hiddenItemChild rounded-xl aspect-square object-cover" />
+                        :data-lazy="config.SUPABASE_ASSETS_URL + '/startups/' + projects[i - 1].startup.id + '.webp'"
+                        class="hiddenItem hiddenItemChild rounded-xl aspect-square object-cover" alt='thumbnail project' />
                 </div>
                 <NuxtLink to="/portfolio"
                     class="md:hidden py-3 px-5 flex space-x-2 items-center mx-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
@@ -82,17 +82,18 @@
                 <div
                     class="grid md:grid-cols-4 grid-cols-2 lg:gap-4 gap-2 w-auto md:mx-x_padding_page mx-x_padding_page_mobile bg-white lg:p-10 p-2 rounded-xl">
                     <img v-for="i in Math.min(8, people.length)"
-                        :data-lazy="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.png'"
-                        class="hiddenItem hiddenItemChild rounded-xl aspect-square object-cover md:flex hidden" />
+                        :data-lazy="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.webp'"
+                        class="hiddenItem hiddenItemChild rounded-xl aspect-square object-cover md:flex hidden"
+                        alt="thumbnail team" />
                     <!-- for mobile reduce card number-->
                     <img v-for="i in Math.min(4, people.length)"
-                        :data-lazy="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.png'"
-                        class="rounded-xl aspect-square object-cover md:hidden" />
+                        :data-lazy="config.SUPABASE_ASSETS_URL + '/people/' + people[i - 1].image + '.webp'"
+                        alt="thumbnail team" class="rounded-xl aspect-square object-cover md:hidden" />
 
                 </div>
                 <NuxtLink to="/team"
                     class="py-3 px-5 flex space-x-2 items-center mx-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-white rounded-full transition ease-in-out duration-200">
-                    <span>Discover our team</span>
+                    <span>See our team</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -123,7 +124,7 @@
                 </div>
                 <NuxtLink to="/about"
                     class="py-3 px-5 flex space-x-2 items-center mx-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
-                    <span>See more</span>
+                    <span>See more about us</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -144,10 +145,10 @@
 
                     <NuxtLink v-for="j in Math.min(3, areas.length)" :to="'/areas/' + areas[j - 1].id"
                         class="hiddenItem hiddenItemChild bg-white lg:p-6 p-2 rounded-xl text-center hover:shadow-md hover:transform hover:scale-101 transition duration-500">
-                        <img class="rounded-xl aspect-video object-cover"
+                        <img class="rounded-xl aspect-video object-cover" alt="thumbnail area"
                             :data-lazy="config.SUPABASE_ASSETS_URL + '/areas/' + areas[j - 1].id + '.png'" />
                         <h3 class="text-2xl font-semibold pt-4">{{ areas[j - 1].name }}</h3>
-                        <p>{{ truncate(areas[j - 1].description) }}</p>
+                        <p>{{ truncate(areas[j - 1].description, 120) }}</p>
                     </NuxtLink>
 
                 </div>
@@ -236,9 +237,12 @@ export default defineNuxtComponent({
 
 <script setup>
 const config = useRuntimeConfig();
-const { data: projects } = await useFetch('/api/portfolio');
-const { data: people } = await useFetch('/api/team');
-const { data: areas } = await useFetch('/api/areas');
+
+const { data } = await useFetch('/api/');
+
+const projects = data.value.projects;
+const people = data.value.people;
+const areas = data.value.areas;
 
 /* not used
 function scroll(refName) {
@@ -247,12 +251,16 @@ function scroll(refName) {
     window.scrollTo({ top: y, behavior: 'smooth' });
 }*/
 
-function truncate(input) {
-    if (input.length > 120) {
-        return input.substring(0, 120) + '...';
-    }
-    return input;
-}
+const title = ref('Ventue Capital - Home')
+const description = ref('Welcome to Venture Capital Ventures - Your Gateway to Innovation and Growth. We are a leading venture capital firm investing in groundbreaking projects and empowering visionary entrepreneurs. Discover our diverse portfolio and explore investment opportunities in sectors such as health, sustainability, future technologies, and education. Join us in shaping the future of innovation and driving transformative change. Invest in the next generation of disruptors with Venture Capital Ventures.')
+
+useHead({
+    title,
+    meta: [{
+        name: 'description',
+        content: description
+    }]
+})
 </script>
 
 <style>

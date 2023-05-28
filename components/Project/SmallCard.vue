@@ -4,14 +4,14 @@
 
     <!-- cover image -->
     <img class="object-center object-cover aspect-square w-full rounded-xl"
-      :src="config.SUPABASE_ASSETS_URL + '/startups/' + startupId + '.png'" :alt="'Thumbnail ' + title + ' project'" />
+      :src="config.SUPABASE_ASSETS_URL + '/startups/' + startupId + '.webp'" :alt="'Thumbnail ' + title + ' project'" />
 
     <!-- project overview -->
     <h2 class="text-2xl font-extrabold">
       {{ title }}
     </h2>
     <p class="text-sm text-color-900 text-ellipsis">
-      {{ overview }}
+      {{ truncate(overview, 125) }}
     </p>
     <div class="flex flex-row justify-start w-full">
       <div
@@ -33,6 +33,7 @@ const supabaseUrl = import.meta.env.SUPABASE_URL
 export default {
   props: ['title', 'overview', 'startupId', 'link', 'id']
 };
+
 </script>
 
 <script setup>
