@@ -2,10 +2,11 @@
     Contact Page
 -->
 <template>
-    <Breadcrumb :crumbs="[
-                { label: 'Contact Us', link: '/contact' }]" />
-    <main class="flex justify-center lg:px-x_padding_page px-x_padding_page_mobile">
-        <main>
+    <main>
+        <Breadcrumb :crumbs="[
+                    { label: 'Contact Us', link: '/contact' }]" />
+        <div class="flex flex-col justify-center lg:px-x_padding_page px-x_padding_page_mobile">
+           
             <TitleWithImage title="Get in touch" subtitle="We appreciate your interest in reaching out to us. To ensure a smooth and efficient communication process, we kindly request you to fill out the form below with your relevant information. This will help us better understand your needs and provide you with the most appropriate assistance."></TitleWithImage>
             <div class="md:flex">
                 <div class="md:w-full p-7">
@@ -47,6 +48,7 @@
                     </form>
                 </div>
             </div>
-        </main>
+        
+        </div>
     </main>
 </template>
