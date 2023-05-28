@@ -13,7 +13,7 @@
         {{ title }}
       </h2>
       <p class="grow md:text-lg text-sm text-color-900">
-        {{ overview }}
+        {{ truncate(overview, 330) }}
       </p>
       <div
         class="flex-none text-primary-color text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
