@@ -4,7 +4,7 @@
 
     <!-- cover image -->
     <img class="object-center object-cover aspect-square w-full rounded-xl"
-      :src="config.SUPABASE_ASSETS_URL + '/startups/' + startupId + '.png'" :alt="'Thumbnail ' + title + ' project'" />
+      :src="config.SUPABASE_ASSETS_URL + '/startups/' + startupId + '.wepb'" :alt="'Thumbnail ' + title + ' project'" />
 
     <!-- project overview -->
     <h2 class="text-2xl font-extrabold">

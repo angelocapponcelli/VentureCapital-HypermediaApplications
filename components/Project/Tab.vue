@@ -4,7 +4,7 @@
 
     <!-- cover image TODO: :src="pathImage" -->
     <img class="object-center object-cover  md:w-40 w-full aspect-square rounded-xl"
-      :src="config.SUPABASE_ASSETS_URL + image + '.png'" alt="Image">
+      :src="config.SUPABASE_ASSETS_URL + image + '.webp'" alt="Image">
 
     <!-- startup overview -->
     <div class="flex-auto content-center flex-col space-y-3 align-middle m-auto md:pt-0 pt-4">
