@@ -19,9 +19,9 @@
 
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                         stroke="currentColor" class="w-5 h-5">
-                                                                                                                                                                                                                                                                                                                                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                                                                                                                                                                                                                                                                                                                                                        </svg>
-                                                                                                                                                                                                                                                                                                                                                                    </a-->
+                                                                                                                                                                                                                                                                                                                                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                                                                                                                                                                                                                                                                                                                                                            </svg>
+                                                                                                                                                                                                                                                                                                                                                                        </a-->
             </div>
         </div>
 
@@ -146,7 +146,7 @@
                     <NuxtLink v-for="j in Math.min(3, areas.length)" :to="'/areas/' + areas[j - 1].id"
                         class="hiddenItem hiddenItemChild bg-white lg:p-6 p-2 rounded-xl text-center hover:shadow-md hover:transform hover:scale-101 transition duration-500">
                         <img class="rounded-xl aspect-video object-cover" alt="thumbnail area"
-                            :data-lazy="config.SUPABASE_ASSETS_URL + '/areas/' + areas[j - 1].id + '.png'" />
+                            :data-lazy="config.SUPABASE_ASSETS_URL + '/areas/' + areas[j - 1].id + '.webp'" />
                         <h3 class="text-2xl font-semibold pt-4">{{ areas[j - 1].name }}</h3>
                         <p>{{ truncate(areas[j - 1].description, 120) }}</p>
                     </NuxtLink>

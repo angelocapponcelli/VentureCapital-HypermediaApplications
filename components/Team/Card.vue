@@ -26,7 +26,7 @@ export default {
     computed: {
         imageUrl() {
             const config = useRuntimeConfig();
-            return config.SUPABASE_ASSETS_URL + "/people/" + this.image + ".png"
+            return config.SUPABASE_ASSETS_URL + "/people/" + this.image + ".webp"
         }
     }
 }
