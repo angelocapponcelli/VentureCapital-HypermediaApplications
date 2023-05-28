@@ -93,7 +93,7 @@
                             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </div>
-                <!-- <transition name="mobile" mode="out-in">
+                <transition name="mobile" mode="out-in">
                     <ul v-show="isMobileVisible"
                     class="w-full overflow-hidden bg-white rounded-b-lg shadow absolute top-16 left-0 z-20">
                         <li>
@@ -132,8 +132,8 @@
                             </NuxtLink>
                         </li>
                     </ul>
-                </transition> -->
-                <transition name="mobile-nav">
+                </transition> 
+                <!--<transition name="mobile-nav">
                     <ul v-show="isMobileVisible" class="dropdown-nav">
                         <li>
                             <NuxtLink to="/portfolio"
@@ -171,7 +171,7 @@
                             </NuxtLink>
                         </li>
                     </ul>
-                </transition>
+                </transition>-->
             </div>
 
         </div>
