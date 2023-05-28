@@ -11,10 +11,9 @@
             <div class="hidden md:flex items-center space-x-1">
                 <div class="mr-8 h-full flex items-center relative">
                     <!-- Portfolio -->
-                    <div @mouseover="setPortfolioDropdownVisible" @mouseleave="setPortfolioDropdownHidden" class="h-full ">
-                        <!-- border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200 -->
-                        <NuxtLink to="/portfolio" id="btn"
-                            class="relative h-full px-2 flex items-center hover:text-color-900">
+                    <div @mouseover="setPortfolioDropdownVisible" @mouseleave="setPortfolioDropdownHidden" class="h-full">
+                        <!-- relative h-full px-2 flex items-center hover:text-color-900 -->
+                        <NuxtLink to="/portfolio" class="btn">
                             <span>Portfolio</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-4 h-4 ml-1">
@@ -46,8 +45,7 @@
                     <!-- Areas -->
                     <div @mouseover="setAreasDropdownVisible" @mouseleave="setAreasDropdownHidden" class="h-full">
                         <!-- border-b-4 border-b-transparent hover:border-primary-color transition ease-in-out duration-200 -->
-                        <NuxtLink to="/areas" id="btn"
-                            class="relative h-full px-2 flex items-center hover:text-color-900">
+                        <NuxtLink to="/areas" class="btn">
                             <span>Areas</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-4 h-4 ml-1">
@@ -69,13 +67,11 @@
                         </div>
                     </div>
                     <!-- Our team -->
-                    <NuxtLink to="/team" id="btn"
-                        class="relative flex items-center h-full px-2 hover:text-color-900">
+                    <NuxtLink to="/team" class="btn">
                         Our Team
                     </NuxtLink>
                     <!-- About us -->
-                    <NuxtLink to="/about" id="btn"
-                        class="relative flex items-center h-full px-2 hover:text-color-900">
+                    <NuxtLink to="/about" class="btn">
                         About Us
                     </NuxtLink>
                 </div>
@@ -255,7 +251,19 @@ const { data: areas } = await useFetch('/api/areas');
         transform: translateX(0);
     }
 
-    #btn::after {
+    .btn {
+        position: relative;
+        height: 100%;
+        padding: 0 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .btn:hover {
+        color: #8D8BA7;
+    }
+
+    .btn::after {
         content: "";
         position: absolute;
         width: 100%;
@@ -265,12 +273,12 @@ const { data: areas } = await useFetch('/api/areas');
         background-color: #5B45F8;
     }
 
-    #btn::after {
+    .btn::after {
         transform: scale(0, 1);
         transition: transform 0.3s ease;
     }
 
-    #btn:hover::after {
+    .btn:hover::after {
         transform: scale(1, 1);
     }
 
