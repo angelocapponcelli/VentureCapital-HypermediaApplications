@@ -41,12 +41,12 @@
                 Each founder brought a unique set of skills and experiences to the table. Alex was a seasoned entrepreneur who had successfully launched and scaled multiple businesses. Emma had a strong background in finance and had worked with renowned investment firms. Michael was a technology enthusiast with a knack for identifying disruptive innovations, and Sarah possessed expertise in marketing and business development.</p>
             </div>
             <div class="image-section">
-                <img src="@/assets/img/aboutus/group.jpg" alt="Immagine" />
+                <!-- <img src="@/assets/img/aboutus/group.jpg" alt="Immagine" /> -->
             </div>
         </div>
         <div class="card" id="companymission">
             <div class="image-section">
-                    <img src="@/assets/img/aboutus/other2.jpg" alt="Immagine" />
+                    <!-- <img src="@/assets/img/aboutus/other2.jpg" alt="Immagine" /> -->
                 </div>
                 <div class="content-section">
                     <h2>Company mission</h2>
@@ -58,7 +58,7 @@
                     <h2>Partners</h2>
                     <p>Venture Capital has established a vast network of strategic partners, forging relationships with various organizations across industries. These partnerships are essential for enhancing the firm's investment capabilities and providing comprehensive support to its portfolio companies. One vital aspect of Venture Capital's partnership ecosystem lies in its collaboration with industry experts and thought leaders. By engaging with these experts, Venture Capital gains access to deep domain knowledge, market insights, and valuable expertise in specific sectors. This enables the firm to make well-informed investment decisions and provide strategic guidance to its portfolio companies based on the latest trends and emerging opportunities in each industry. Another significant facet of Venture Capital's partnerships is its engagement with startup incubators and accelerators. These collaborative relationships allow Venture Capital to tap into a pool of innovative ideas and entrepreneurial talent. By connecting with these incubators and accelerators, Venture Capital can identify promising early-stage startups and provide them with the necessary funding, mentorship, and resources to fuel their growth and success. Furthermore, Venture Capital partners with academic institutions, research organizations, and innovation hubs to stay at the forefront of technological advancements and emerging trends. These partnerships enable the firm to gain access to groundbreaking research, cutting-edge technologies, and early-stage inventions that have the potential to disrupt industries. Venture Capital also forms alliances with other investment firms and financial institutions, both domestically and internationally. These partnerships expand the firm's reach and deal flow, enabling it to identify investment opportunities on a global scale and leverage the combined expertise and networks of multiple entities. In summary, Venture Capital's extensive network of partners spans industry experts, startup incubators, academic institutions, research organizations, and other investment firms. These partnerships contribute to the firm's ability to identify promising investment opportunities, offer strategic guidance, and provide comprehensive support to its portfolio companies. By leveraging the collective knowledge, resources, and networks of its partners, Venture Capital strives to maximize returns on investments and drive the success of the companies it supports.</p>
                 </div>
-                <div class="image-section">
+                <!-- <div class="image-section">
                     <table>
                         <tr>
                             <td>
@@ -78,7 +78,7 @@
                         </tr>
                     </table>
 
-                </div>
+                </div> -->
         </div>
     </main>
 </template>
