@@ -3,8 +3,8 @@
         <!-- Uncomment this line to substitute the the background color with an image -->
         <!-- <img src='~/assets/img/home-image.jpg' /> -->
         <div class="grid grid-col-1 space-y-2 md:p-10">
-            <span class="page-title">{{ title }}</span>
-            <span class="page-subtitle lg:px-40 xl:px-64">{{ subtitle }}</span>
+            <span class="font-sans font-extrabold no-italic text-[40px] md:text-[56px] md:leading-[66px] text-center">{{ title }}</span>
+            <span class="font-sans text-lg leading-[30px] text-center text-color-1000 lg:px-40 xl:px-64">{{ subtitle }}</span>
         </div>
     </div>
 </template>
@@ -14,41 +14,3 @@
         props: [ 'title', 'subtitle' ],
     }
 </script>
-
-<style>
-    /* Heading */
-    .page-title {
-        /* position: absolute; */
-        /* top: 50%;
-        left: 50%; */
-        /* transform: translate(-50%, -50%); */
-        /* Headings/H1 */
-        font-family: 'DM Sans';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 56px;
-        line-height: 66px;
-        /* identical to box height, or 118% */
-        text-align: center;
-        /* Neutral Colors/Headings Black */
-        color: #494850;
-    }
-
-    /* Paragraph */
-    .page-subtitle {
-        /* position: absolute; */
-        /* top: 50%;
-        left: 50%; */
-        /* transform: translate(-50%, -50%); */
-        /* Body/Default */
-        font-family: 'DM Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 30px;
-        /* or 167% */
-        text-align: center;
-        /* Neutral Colors/Text Gray */
-        color: #767494;
-    }
-</style>

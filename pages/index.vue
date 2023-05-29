@@ -30,15 +30,11 @@
             <div
                 class="flex md:flex-row flex-col lg:px-x_padding_page md:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile space-y-10 md:space-y-0">
                 <div class="basis-1/2 flex flex-col space-y-10 items-center my-auto">
-                    <div class="hiddenItem w-9/12 lg:text-left text-center">
+                    <div class="hiddenItem w-full md:w-9/12 lg:text-left text-center">
                         <h2 class="hiddenItemChild text-2xl lg:text-3xl font-semibold ">Discovering the Future: Introducing
-                            Our Latest
-                            Venture</h2>
+                            Our Latest Venture</h2>
                         <h3 class="hiddenItemChild text-lg lg:text-xl pt-4 ">We have found a remarkable company poised to
-                            reshape industries
-                            with
-                            disruptive
-                            innovation and unlimited potential.</h3>
+                            reshape industries with disruptive innovation and unlimited potential.</h3>
                     </div>
                     <NuxtLink to="/portfolio"
                         class="hidden py-3 px-5 md:flex space-x-2 items-center mx-auto bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
@@ -69,15 +65,12 @@
             <div
                 class="flex flex-col bg-primary-color lg:px-x_padding_page lg:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full space-y-10 ">
                 <div class="hiddenItem">
-                    <h2 class="hiddenItemChild text-2xl lg:text-3xl font-semibold text-white mx-auto text-center">Our
-                        dynamic
-                        team driving
-                        venture capital
-                        success</h2>
+                    <h2 class="hiddenItemChild text-2xl lg:text-[40px] font-semibold text-white mx-auto text-center">Our
+                        dynamic team driving Venture Capital's success.
+                    </h2>
                     <h3 class="hiddenItemChild text-lg lg:text-xl lg:w-3/5 text-white mx-auto text-center pt-4">Meet the
-                        passionate experts
-                        fueling
-                        innovation and making strategic investments for groundbreaking ventures.</h3>
+                        passionate experts fueling innovation and making strategic investments for groundbreaking ventures.
+                    </h3>
                 </div>
                 <div
                     class="grid md:grid-cols-4 grid-cols-2 lg:gap-4 gap-2 w-auto md:mx-x_padding_page mx-x_padding_page_mobile bg-white lg:p-10 p-2 rounded-xl">
@@ -103,9 +96,9 @@
 
             <!-- third section -->
             <div
-                class="flex flex-col lg:px-x_padding_page lg:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full space-y-10">
-                <h2 class="text-2xl lg:text-3xl font-semibold mx-auto text-center">Our results in numbers</h2>
-                <div class="hiddenItem flex lg:flex-row flex-col pt-8 lg:space-x-20 space-x-0 space-y-10 lg:space-y-0">
+                class="flex flex-col lg:px-x_padding_page lg:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full md:space-y-10">
+                <h2 class="text-2xl lg:text-[40px] font-semibold mx-auto text-center">Our results in numbers</h2>
+                <div class="hiddenItem flex lg:flex-row flex-col pt-8 lg:space-x-20 space-x-0 space-y-10 lg:space-y-0 mb-6">
                     <div class="hiddenItemChild basis-1/3 text-center space-y-2">
                         <h3 class="text-5xl font-bold">90<span class="text-color-700">%</span> </h3>
                         <h3 class="text-2xl font-semibold pt-4">Successful Investments</h3>
@@ -135,11 +128,10 @@
             <div
                 class="flex flex-col bg-primary-color lg:px-x_padding_page lg:py-y_padding_page px-x_padding_page_mobile py-y_padding_page_mobile w-full space-y-10 ">
                 <div class="hiddenItem">
-                    <h2 class="hiddenItemChild text-2xl lg:text-3xl font-semibold text-white mx-auto text-center">Areas</h2>
-                    <h3 class="hiddenItemChild text-lg lg:text-xl w-3/5 text-white mx-auto text-center pt-4">Harnessing
-                        transformative
-                        technologies
-                        and disruptive innovations to drive exponential growth and global impact.</h3>
+                    <h2 class="hiddenItemChild text-[40px] font-semibold text-white mx-auto text-center">Areas</h2>
+                    <h3 class="hiddenItemChild text-lg lg:text-xl lg:w-3/5 text-white mx-auto text-center pt-4">Harnessing
+                        transformative technologies and disruptive innovations to drive exponential growth and global impact.
+                    </h3>
                 </div>
                 <div class="grid md:grid-cols-3 md:gap-4 grid-cols-1 gap-4">
 

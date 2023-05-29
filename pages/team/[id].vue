@@ -15,9 +15,11 @@
                 <h1 class="font-['DM Sans'] not-italic font-bold text-3xl md:text-[44px] leading-[50px] text-[494850]">
                     Related projects
                 </h1>
-                <div class="flex flex-row justify-center space-x-10">
-                    <!-- related projects cards -->
-                    <ProjectSmallCard class="w-96 h-[500px]" v-for="project of relatedProjects" :title="project.title"
+                <!-- <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-10"> -->
+                <div class="basis-4/5 grid gap-4 justify-center m-auto" :class="{ 'grid-cols-1 md:w-[350px]': small, 
+                    'md:grid-cols-2 md:w-[700px]': medium, 'md:grid-cols-3 w-full': large }">
+                    <!-- related projects cards class="md:w-96 md:h-[500px]" -->
+                    <ProjectSmallCard v-for="project of relatedProjects" :title="project.title"
                         :overview="project.overview" :startupId="project.startup.id" :link="'/portfolio/' + project.id" :id="project.id" />
                 </div>
             </div>
@@ -42,6 +44,15 @@
 
     const { data: dataProjects } = await useFetch('/api/portfolio/person/' + id)
     const relatedProjects = dataProjects.value.projects
+
+    let small=false,medium=false, large=false;
+    if (relatedProjects.length == 1) {
+        small = true;
+    } else if (relatedProjects.length == 2) {
+        medium = true;
+    } else if (relatedProjects.length >= 3) {
+        large = true;
+    }
 
     const title = ref('Venture Capital - ' + person.full_name)
     useHead({
