@@ -4,7 +4,8 @@
         <!-- <img src='~/assets/img/home-image.jpg' /> -->
         <div class="grid grid-col-1 space-y-2 md:p-10">
             <span class="font-sans font-extrabold no-italic text-[40px] md:text-[56px] md:leading-[66px] text-center">{{ title }}</span>
-            <span class="font-sans text-lg leading-[30px] text-center text-color-1000 lg:px-40 xl:px-64">{{ subtitle }}</span>
+            <!-- lg:px-40 xl:px-64 -->
+            <span class="font-sans text-lg leading-[30px] text-center text-color-1000 w-11/12 lg:w-4/6 mx-auto">{{ subtitle }}</span>
         </div>
     </div>
 </template>

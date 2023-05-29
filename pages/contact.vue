@@ -5,10 +5,13 @@
     <main>
         <Breadcrumb :crumbs="[
                     { label: 'Contact Us', link: '/contact' }]" />
-        <div class="flex flex-col justify-center px-x_padding_page_mobile">
-            <TitleWithImage title="Get in touch" subtitle="We appreciate your interest in reaching out to us. To ensure a smooth and efficient communication process, we kindly request you to fill out the form below with your relevant information. This will help us better understand your needs and provide you with the most appropriate assistance."></TitleWithImage>
+        <div class="flex flex-col justify-center">
+            <TitleWithImage title="Get in touch" subtitle="We appreciate your interest in reaching out to us. 
+                To ensure a smooth and efficient communication process, we kindly request you to fill out the form below with your relevant information. 
+                This will help us better understand your needs and provide you with the most appropriate assistance.">
+            </TitleWithImage>
             <!--form + image -->
-            <div class="md:flex lg:px-x_padding_page">
+            <div class="md:flex px-x_padding_page_mobile lg:px-x_padding_page">
                 <div class="md:w-full p-7">
                     <img class="rounded-3xl" src="@/assets/img/contacts/group.webp" alt="Immagine" />
                 </div>
