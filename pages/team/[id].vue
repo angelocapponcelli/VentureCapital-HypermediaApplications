@@ -16,8 +16,8 @@
                     Related projects
                 </h1>
                 <!-- <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-10"> -->
-                <div class="basis-4/5 grid gap-4 justify-center m-auto" :class="{ 'grid-cols-1 md:w-[350px]': small, 
-                    'md:grid-cols-2 md:w-[700px]': medium, 'md:grid-cols-3 w-full': large }">
+                <div class="basis-4/5 grid gap-4 justify-center m-auto" 
+                :class="{ 'grid-cols-1 md:w-[350px]': small, 'md:grid-cols-2 md:w-[700px]': medium, 'md:grid-cols-3 w-full': large }">
                     <!-- related projects cards class="md:w-96 md:h-[500px]" -->
                     <ProjectSmallCard v-for="project of relatedProjects" :title="project.title"
                         :overview="project.overview" :startupId="project.startup.id" :link="'/portfolio/' + project.id" :id="project.id" />

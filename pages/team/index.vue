@@ -91,14 +91,14 @@ export default defineNuxtComponent({
 
     },
     head(nuxtApp) {
-    return {
-      title: 'Venture Capital - Our Team',
-      meta: [{
-        name: 'description',
-        content: 'A collective of passionate and experienced professionals driving visionary investments and empowering startups to thrive in the world of venture capital.'
-      }]
+        return {
+            title: 'Venture Capital - Our Team',
+            meta: [{
+                name: 'description',
+                content: 'A collective of passionate and experienced professionals driving visionary investments and empowering startups to thrive in the world of venture capital.'
+            }]
+        }
     }
-  }
     /* beforeUnmount() {
         observer.disconnect();
     } */
