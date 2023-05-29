@@ -3,7 +3,7 @@
         <div class="flex flex-col w-full">
             <Breadcrumb :crumbs="[
                 { label: 'Areas', link: '/areas' }]" />
-            
+
             <!-- <div class="flex flex-col bg-color-1000 py-y_padding_page"> -->
             <div class="flex flex-col bg-primary-color lg:py-y_padding_page py-y_padding_page_mobile">
                 <!-- Title -->
@@ -29,7 +29,8 @@
                 </div>
             </div>
             <AreaCard v-if="searchedAreas.length > 0" v-for="(area, index) of searchedAreas" :key="index" :name="area.name"
-                :description="area.description" :areaId="area.id" :index="index" :areOdd="!(searchedAreas.length % 2 === 0)"/>
+                :description="area.description" :areaId="area.id" :index="index"
+                :areOdd="!(searchedAreas.length % 2 === 0)" />
             <div v-else
                 class="py-y_padding_page_mobile lg:py-y_padding_page lg:w-[40rem] md:w-[30rem] w-fit m-auto text-2xl flex md:flex-row flex-col md:space-x-5 space-x-0 text-color-1000 h-full">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -50,6 +51,15 @@
 <script>
 
 export default defineNuxtComponent({
+    head(nuxtApp) {
+        return {
+            title: 'Venture Capital - Areas',
+            meta: [{
+                name: 'description',
+                content: 'We discover and invest in game-changing startups, we fuel innovation and empower visionary entrepreneurs, unleashing potential across industries. Explore our diverse investment interests.'
+            }]
+        }
+    },
     async asyncData() {
         const areas = await $fetch('/api/areas')
         return {
