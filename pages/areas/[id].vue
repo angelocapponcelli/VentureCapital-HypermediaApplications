@@ -20,7 +20,7 @@
                     </div>
 
                     <img class="w-96 h-auto rounded-xl mx-auto pl-70"
-                        :src="config.SUPABASE_ASSETS_URL + '/areas/' + area.id + '.png'" :alt="area.name + ' image'" />
+                        :src="config.SUPABASE_ASSETS_URL + '/areas/' + area.id + '.webp'" :alt="area.name + ' image'" />
                 </div>
             </div>
 
