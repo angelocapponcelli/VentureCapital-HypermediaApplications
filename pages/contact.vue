@@ -5,10 +5,10 @@
     <main>
         <Breadcrumb :crumbs="[
                     { label: 'Contact Us', link: '/contact' }]" />
-        <div class="flex flex-col justify-center lg:px-x_padding_page px-x_padding_page_mobile">
+        <div class="flex flex-col justify-center px-x_padding_page_mobile">
             <TitleWithImage title="Get in touch" subtitle="We appreciate your interest in reaching out to us. To ensure a smooth and efficient communication process, we kindly request you to fill out the form below with your relevant information. This will help us better understand your needs and provide you with the most appropriate assistance."></TitleWithImage>
             <!--form + image -->
-            <div class="md:flex">
+            <div class="md:flex lg:px-x_padding_page">
                 <div class="md:w-full p-7">
                     <img class="rounded-3xl" src="@/assets/img/contacts/group.webp" alt="Immagine" />
                 </div>
@@ -20,21 +20,21 @@
                             <div class="md:w-full">
                                 <div class="text-left">
                                     <label class="p-3 font-bold text-lg">Name</label><br>
-                                    <input id="form_name" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':nameError}" type="text" value="Nicolas">
+                                    <input id="form_name" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':nameError}" type="text" placeholder="Nicolas">
                                 </div>
                                 <div class="text-left">
                                     <label class="p-3 font-bold text-lg">Email</label><br>
-                                    <input id="form_email" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':emailError}" type="email" value="prova@email.com">
+                                    <input id="form_email" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':emailError}" type="email" placeholder="prova@email.com">
                                 </div>
                             </div>
                             <div class="md:w-full">
                                 <div class="text-left">
                                     <label class="p-3 font-bold text-lg">Surname</label><br>
-                                    <input id="form_surname" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':surnameError}" type="text" value="Cage">
+                                    <input id="form_surname" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':surnameError}" type="text" placeholder="Cage">
                                 </div>
                                 <div class="text-left">
                                     <label class="p-3 font-bold text-lg">Company</label><br>
-                                    <input id="form_company" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':companyError}" type="text" value="My company">
+                                    <input id="form_company" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':companyError}" type="text" placeholder="My company">
                                 </div>
                             </div>
                         </div>

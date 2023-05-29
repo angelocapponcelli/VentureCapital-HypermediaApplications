@@ -37,15 +37,15 @@
                             <h1 class="lg:text-4xl text-2xl font-bold">
                                 Related projects
                             </h1>
-                            <div
-                                class="text-primary-color lg:text-lg font-bold flex space-x-2 items-center hover:text-color-700 transition duration-200">
+                            <NuxtLink :to="'/portfolio/' + area.name" class="flex flex-row items-center w-fit gap-2 font-bold text-primary-color
+                                hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
                                 <span>Learn more</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                                     stroke="currentColor" class="w-5 h-5">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                 </svg>
-                            </div>
+                            </NuxtLink>
                         </div>
 
                         <div class="basis-4/5 grid grid-cols-1 md:grid-cols-3 gap-6">
