@@ -3,7 +3,7 @@
         <h3 class="font-bold text-xl text-primary-color p-2">{{title}}</h3>
         <div class="">{{ content }}</div>
         <div v-show="mapsPresent" class="justify-center p-3">
-            <iframe :src="maps"  width="400" height="300" class="w-full border-2 border-color-300 rounded-3xl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe :src="maps"  width="800" height="600" class="w-full border-2 border-color-300 rounded-3xl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div> 
     </div>
 </template>

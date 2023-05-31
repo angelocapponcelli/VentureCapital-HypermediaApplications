@@ -5,13 +5,13 @@
     <main>
         <Breadcrumb :crumbs="[
                     { label: 'Contact Us', link: '/contact' }]" />
-        <div class="flex flex-col justify-center">
+        <div class="flex flex-col justify-center px-x_padding_page_mobile lg:px-x_padding_page">
             <TitleWithImage title="Get in touch" subtitle="We appreciate your interest in reaching out to us. 
                 To ensure a smooth and efficient communication process, we kindly request you to fill out the form below with your relevant information. 
                 This will help us better understand your needs and provide you with the most appropriate assistance.">
             </TitleWithImage>
             <!--form + image -->
-            <div class="md:flex px-x_padding_page_mobile lg:px-x_padding_page">
+            <div class="md:flex">
                 <div class="md:w-full p-7">
                     <img class="rounded-3xl" src="@/assets/img/contacts/group.webp" alt="Immagine" />
                 </div>
@@ -26,14 +26,14 @@
                                     <input id="form_name" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':nameError}" type="text" placeholder="Nicolas">
                                 </div>
                                 <div class="text-left">
-                                    <label class="p-3 font-bold text-lg">Email</label><br>
-                                    <input id="form_email" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':emailError}" type="email" placeholder="prova@email.com">
+                                    <label class="p-3 font-bold text-lg">Surname</label><br>
+                                    <input id="form_surname" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':surnameError}" type="text" placeholder="Cage">
                                 </div>
                             </div>
                             <div class="md:w-full">
                                 <div class="text-left">
-                                    <label class="p-3 font-bold text-lg">Surname</label><br>
-                                    <input id="form_surname" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':surnameError}" type="text" placeholder="Cage">
+                                    <label class="p-3 font-bold text-lg">Email</label><br>
+                                    <input id="form_email" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':emailError}" type="email" placeholder="prova@email.com">
                                 </div>
                                 <div class="text-left">
                                     <label class="p-3 font-bold text-lg">Company</label><br>
@@ -61,33 +61,33 @@
                 </div>
             </div>
             <!--contacts cards-->
-            <div class="md:flex md:justify-center">
-                <ContactsCard title="Email us" content="vc@email.org"></ContactsCard>
-                <ContactsCard title="Call us" content="+12 123 456 789"></ContactsCard>
-            </div>
-            <div class="md:flex justify-center">
-                <div class="p-3 m-5 justify-center text-center border-2 border-color-400 rounded-3xl">
-                    <h3 class="font-bold text-xl text-primary-color p-2">Follow us</h3>
-                    <table class="flex justify-center">
-                        <tr class="flex justify-center">
-                            <td>
-                                <img class="p-3 w-full" src="@/assets/img/facebook.png" alt="Immagine" />
-                            </td>
-                            <td>
-                                <img class="p-3 w-full " src="@/assets/img/instagram.png" alt="Immagine" />
-                            </td>
-                        </tr>
-                        <tr class="flex justify-center">
-                            <td>
-                                <img class="p-3 w-full" src="@/assets/img/twitter.png" alt="Immagine" />
-                            </td>
-                            <td>
-                                <img class="p-3 w-full " src="@/assets/img/linkedin.png" alt="Immagine" />
-                            </td>
-                        </tr>
-                    </table>
+            <div class="">
+                <div class="md:flex md:justify-center">
+                    <ContactsCard title="Email us" content="vc@email.org"></ContactsCard>
+                    <ContactsCard title="Call us" content="+12 123 456 789"></ContactsCard>
+                    <div class="p-3 m-5 md:w-full justify-center text-center border-2 border-color-400 rounded-3xl">
+                        <h3 class="font-bold text-xl text-primary-color p-2">Follow us</h3>
+                        <table class="flex justify-center">
+                            <tr class="flex justify-center">
+                                <td>
+                                    <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/facebook.png" alt="Immagine" />
+                                </td>
+                                <td>
+                                    <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/instagram.png" alt="Immagine" />
+                                </td>
+                            </tr>
+                            <tr class="flex justify-center">
+                                <td>
+                                    <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/twitter.png" alt="Immagine" />
+                                </td>
+                                <td>
+                                    <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/linkedin.png" alt="Immagine" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div> 
                 </div>
-                <ContactsCard title="Our location" content="Via Larga 12, Milan Italy" :maps="maps"></ContactsCard> 
+                <ContactsCard title="Our location" content="Via Larga 12, Milan Italy" :maps="maps"></ContactsCard>
             </div>
         </div>
     </main>
@@ -201,7 +201,7 @@ export default{
     }
 
     .error{
-        background-color: #ff000074;
+        border: 5px solid #ff000074;
     }
 
     
