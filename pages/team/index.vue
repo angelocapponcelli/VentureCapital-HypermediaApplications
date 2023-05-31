@@ -12,6 +12,11 @@
                     <!-- single person card -->
                     <TeamCard class="hiddenCard" v-for="person of people" :name="person.full_name" :position="person.position" 
                         :id="person.id" :image="person.image" />
+                    <!-- <Suspense>
+                        <template #fallback>
+                            <TeamCardSkeleton v-for="n in 3" :key="n" />
+                        </template>
+                    </Suspense> -->
                 </div>
             </div>
         </div>
@@ -49,7 +54,7 @@ export default defineNuxtComponent({
         }, {
             rootMargin: '-20% 0px -20% 0px' // defines the area in which the observer will trigger
         });
-        
+
         // we select all the elements with the hiddenCard class and add them to the observer
         setTimeout(() => {
             const hiddenElements = document.querySelectorAll('.hiddenCard')
@@ -91,14 +96,14 @@ export default defineNuxtComponent({
 
     },
     head(nuxtApp) {
-    return {
-      title: 'Venture Capital - Our Team',
-      meta: [{
-        name: 'description',
-        content: 'A collective of passionate and experienced professionals driving visionary investments and empowering startups to thrive in the world of venture capital.'
-      }]
+        return {
+            title: 'Venture Capital - Our Team',
+            meta: [{
+                name: 'description',
+                content: 'A collective of passionate and experienced professionals driving visionary investments and empowering startups to thrive in the world of venture capital.'
+            }]
+        }
     }
-  }
     /* beforeUnmount() {
         observer.disconnect();
     } */

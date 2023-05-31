@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
         .from("project")
         .select("id, title, overview, startup (id), area (id, name)")
         .eq("area.name", area)
-        .order("id", { ascending: false });
+        .order("title", { ascending: true });
 
       if (error) {
         throw createError({ statusCode: 400, statusMessage: error.message });
@@ -62,8 +62,8 @@ export default defineEventHandler(async (event) => {
       var { data: previousProject, error } = await client
         .from("project")
         .select("id, title")
-        .gt("id", id)
-        .order("id", { ascending: true })
+        .lt("title", project.title)
+        .order("title", { ascending: false })
         .limit(1)
         .single();
 
@@ -74,8 +74,8 @@ export default defineEventHandler(async (event) => {
       var { data: nextProject, error } = await client
         .from("project")
         .select("id, title")
-        .lt("id", id)
-        .order("id", { ascending: false })
+        .gt("title", project.title)
+        .order("title", { ascending: true })
         .limit(1)
         .single();
 
@@ -90,12 +90,12 @@ export default defineEventHandler(async (event) => {
         statusMessage: "Internal Server Error",
       });
     }
-  } else if (area == "person"){
+  } else if (area == "person") {
     // get the related projects to the specific person
     try {
       var { data: projects, error } = await client
         .from("project")
-        .select( "id, title, overview, startup (id)")
+        .select("id, title, overview, startup (id)")
         .eq("supervisor", id)
         .limit(3);
 
@@ -106,8 +106,6 @@ export default defineEventHandler(async (event) => {
         });
       }
 
-      console.log(projects)
-      
       return { projects };
     } catch (error) {
       throw createError({
@@ -115,7 +113,6 @@ export default defineEventHandler(async (event) => {
         statusMessage: "Internal Server Error",
       });
     }
-
   } else if (area == "Most relevant projects") {
     // get the data for the project page coming from the page of most relevant projects
     var { data: project, error } = await client
@@ -125,6 +122,7 @@ export default defineEventHandler(async (event) => {
       )
       .eq("id", id)
       .eq("isRelevant", true)
+      .order("title", { ascending: true })
       .limit(1)
       .single();
 
@@ -134,23 +132,17 @@ export default defineEventHandler(async (event) => {
         statusMessage: error.message,
       });
     }
-    if (project.area.length == 0) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: "Project does not exist",
-      });
-    }
 
     var { data: previousProject, error } = await client
       .from("project")
       .select("id, title, area (id, name), isRelevant")
       .eq("isRelevant", true)
-      .gt("id", id)
-      .order("id", { ascending: true })
+      .lt("title", project.title)
+      .order("title", { ascending: false })
       .limit(1)
       .single();
 
-    if (error || !previousProject.area[0]) {
+    if (error) {
       previousProject = undefined;
     }
 
@@ -158,12 +150,12 @@ export default defineEventHandler(async (event) => {
       .from("project")
       .select("id, title, area (id, name), isRelevant")
       .eq("isRelevant", true)
-      .lt("id", id)
-      .order("id", { ascending: false })
+      .gt("title", project.title)
+      .order("title", { ascending: true })
       .limit(1)
       .single();
 
-    if (error || !nextProject.area[0]) {
+    if (error) {
       nextProject = undefined;
     }
 
@@ -195,10 +187,10 @@ export default defineEventHandler(async (event) => {
 
     var { data: previousProject, error } = await client
       .from("project")
-      .select("id, title, area (id, name)")
+      .select("id, title, area!inner (id, name)")
       .eq("area.name", area)
-      .gt("id", id)
-      .order("id", { ascending: true })
+      .order("title", { ascending: false })
+      .lt("title", project.title)
       .limit(1)
       .single();
 
@@ -208,10 +200,10 @@ export default defineEventHandler(async (event) => {
 
     var { data: nextProject, error } = await client
       .from("project")
-      .select("id, title, area (id, name)")
+      .select("id, title, area!inner (id, name)")
       .eq("area.name", area)
-      .lt("id", id)
-      .order("id", { ascending: false })
+      .order("title", { ascending: true })
+      .gt("title", project.title)
       .limit(1)
       .single();
 

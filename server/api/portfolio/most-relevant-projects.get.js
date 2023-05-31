@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
     .from("project")
     .select("id, title, overview, isRelevant, startup (id)")
     .eq("isRelevant", true)
-    .order("id", { ascending: false });
+    .order("title", { ascending: true });
 
   if (error) {
     throw createError({ statusCode: 400, statusMessage: error.message });

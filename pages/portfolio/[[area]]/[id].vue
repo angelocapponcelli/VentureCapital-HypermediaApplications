@@ -27,25 +27,37 @@
           </div>
           <div class="flex justify-between">
             <NuxtLink v-if="previousProject" :to="'/portfolio/' + linkPrevious"
-              class="text-color-1000 md:text-lg text-sm font-bold flex md:space-x-2 items-center 
-                                                hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
+              class="flex-1 text-color-1000 md:text-lg text-sm font-bold flex md:space-x-2 items-center 
+                                                                          hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
               </svg>
               <span>Previous project</span>
             </NuxtLink>
-            <div v-else />
+            <div v-else class="flex-1" />
+
+            <NuxtLink :to="(area) ? ('/portfolio/' + area) : '/portfolio'"
+              class="md:hidden flex-1 py-2 px-2 max-w-fit items-center justify-center flex bg-white text-primary-color 
+                                                hover:text-white hover:bg-primary-color border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+              </svg>
+            </NuxtLink>
+
+
             <NuxtLink v-if="nextProject" :to="'/portfolio/' + linkNext"
-              class="justify-end text-primary-color md:text-lg text-sm font-bold flex space-x-2 items-center 
-                                                hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
+              class="flex-1 justify-end text-primary-color md:text-lg text-sm font-bold flex space-x-2 items-center 
+                                                                          hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
               <span>Next project</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
             </NuxtLink>
-            <div v-else />
+            <div v-else class="flex-1" />
           </div>
         </div>
         <!-- cover image -->
@@ -99,7 +111,7 @@
         <div v-if="previousProject" class="flex flex-row justify-start md:w-1/3">
           <NuxtLink :to="'/portfolio/' + previousProject.id"
             class="w-fit md:order-none order-1 flex justify-start text-color-1000 text-lg font-bold space-x-2 items-center 
-                                              hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
+                                                                        hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
               stroke="currentColor" class="w-8 h-8">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -114,7 +126,7 @@
 
         <NuxtLink :to="linkBack"
           class="max-h-14 md:order-none order-last flex-none py-2 px-4 mx-auto justify-center items-center flex space-x-2 bg-white text-primary-color 
-                                            hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+                                                                      hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
           <span>Return to Portfolio</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="w-6 h-6">
@@ -126,7 +138,7 @@
         <div v-if="nextProject" class="flex flex-row justify-end md:w-1/3">
           <NuxtLink :to="'/portfolio/' + nextProject.id"
             class="w-fit md:order-none order-0 flex justify-end text-primary-color text-lg font-bold space-x-2 items-center 
-                                              hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
+                                                                        hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
             <div class="text-right">
               <p class="text-color-700">Next project</p>
               <h3 class="font-extrabold text-xl">{{ nextProject.title }}</h3>
