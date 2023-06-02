@@ -66,7 +66,7 @@
                     <ContactsCard title="Email us" content="vc@email.org"></ContactsCard>
                     <ContactsCard title="Call us" content="+12 123 456 789"></ContactsCard>
                     <div class="p-3 m-5 md:w-full justify-center text-center border-2 border-color-400 rounded-3xl">
-                        <h3 class="font-bold text-xl text-primary-color p-2">Follow us</h3>
+                        <h3 class="font-bold text-3xl text-primary-color p-2">Follow us</h3>
                         <table class="flex justify-center">
                             <tr class="flex justify-center">
                                 <td>
