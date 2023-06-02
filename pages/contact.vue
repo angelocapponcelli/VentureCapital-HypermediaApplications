@@ -61,31 +61,33 @@
                 </div>
             </div>
             <!--contacts cards-->
-            <div class="">
-                <div class="md:flex md:justify-center">
-                    <ContactsCard title="Email us" content="vc@email.org"></ContactsCard>
-                    <ContactsCard title="Call us" content="+12 123 456 789"></ContactsCard>
-                    <div class="p-3 m-5 md:w-full justify-center text-center border-2 border-color-400 rounded-3xl">
-                        <h3 class="font-bold text-3xl text-primary-color p-2">Follow us</h3>
-                        <table class="flex justify-center">
-                            <tr class="flex justify-center">
-                                <td>
-                                    <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/facebook.png" alt="Immagine" />
-                                </td>
-                                <td>
-                                    <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/instagram.png" alt="Immagine" />
-                                </td>
-                            </tr>
-                            <tr class="flex justify-center">
-                                <td>
-                                    <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/twitter.png" alt="Immagine" />
-                                </td>
-                                <td>
-                                    <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/linkedin.png" alt="Immagine" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div> 
+            <div class="md:flex">
+                <div class="md:flex-row md:justify-center">
+                    <div class="md: px-20">
+                        <ContactsCard title="Email us" content="vc@email.org"></ContactsCard>
+                        <ContactsCard title="Call us" content="+12 123 456 789"></ContactsCard>
+                        <div class="p-3 m-5 md:w-full justify-center text-center border-2 border-color-400 rounded-3xl">
+                            <h3 class="font-bold text-3xl text-primary-color p-2">Follow us</h3>
+                            <table class="flex justify-center">
+                                <tr class="flex justify-center">
+                                    <td>
+                                        <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/facebook.png" alt="Immagine" />
+                                    </td>
+                                    <td>
+                                        <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/instagram.png" alt="Immagine" />
+                                    </td>
+                                </tr>
+                                <tr class="flex justify-center">
+                                    <td>
+                                        <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/twitter.png" alt="Immagine" />
+                                    </td>
+                                    <td>
+                                        <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/linkedin.png" alt="Immagine" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div> 
+                    </div>
                 </div>
                 <ContactsCard title="Our location" content="Via Larga 12, Milan Italy" :maps="maps"></ContactsCard>
             </div>
