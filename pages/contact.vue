@@ -165,6 +165,8 @@ export default{
                 this.textError=false; 
             }
 
+            //here makes the ajax call if the response is 200 ok set isClosed=true, 
+            //we also can vue-link the message text and if there is an error it pop-ups a personalized error msg
             if(errorcounter==0){
                 this.isClosed=true;
             } 
