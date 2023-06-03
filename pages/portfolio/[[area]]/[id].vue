@@ -26,17 +26,19 @@
             </p>
           </div>
           <div class="flex justify-between">
-            <NuxtLink v-if="previousProject" :to="'/portfolio/' + linkPrevious"
-              class="flex-1 text-color-1000 md:text-lg text-sm font-bold flex md:space-x-2 items-center 
-                                                                          hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-              <span>Previous project</span>
-            </NuxtLink>
+            <div v-if="previousProject" class="flex flex-row justify-start">
+              <NuxtLink :to="'/portfolio/' + linkPrevious"
+                class="flex-1 text-color-1000 md:text-lg text-sm font-bold flex md:space-x-2 items-center 
+                                                                            hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+                <span>Previous project</span>
+              </NuxtLink>
+            </div>
             <div v-else class="flex-1" />
-
+            
             <NuxtLink :to="(area) ? ('/portfolio/' + area) : '/portfolio'"
               class="md:hidden flex-1 py-2 px-2 max-w-fit items-center justify-center flex bg-white text-primary-color 
                                                 hover:text-white hover:bg-primary-color border-2 border-primary-color rounded-full transition ease-in-out duration-200">
@@ -47,16 +49,17 @@
               </svg>
             </NuxtLink>
 
-
-            <NuxtLink v-if="nextProject" :to="'/portfolio/' + linkNext"
-              class="flex-1 justify-end text-primary-color md:text-lg text-sm font-bold flex space-x-2 items-center 
-                                                                          hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
-              <span>Next project</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </NuxtLink>
+            <div v-if="nextProject" class="flex flex-row justify-end">
+              <NuxtLink :to="'/portfolio/' + linkNext"
+                class="flex-1 justify-end text-primary-color md:text-lg text-sm font-bold flex space-x-2 items-center 
+                                                                            hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
+                <span>Next project</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="md:w-6 md:h-6 w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </NuxtLink>
+            </div>
             <div v-else class="flex-1" />
           </div>
         </div>
