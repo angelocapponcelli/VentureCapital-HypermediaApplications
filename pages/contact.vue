@@ -54,8 +54,14 @@
                         </div>
                        
                         <div class="flex justify-end">
-                            <div @click="sendForm" class="py-3 px-10 bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200" >Send</div>
+                            <div v-if="!isWaiting" @click="sendForm" class="py-3 px-10 bg-primary-color text-white hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200" >Send</div>
+                            <div v-else class="flex justify-end">
+                                <div class="py-3 px-10 bg-white border-2 border-primary-color rounded-full">
+                                    <svg aria-hidden="true" class="w-5 h-5 mr-2 animate-spin fill-primary-color" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#D4D2E3"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
+                                </div>
+                            </div>
                         </div>
+                
                     </form>
                     </Transition>
                     <Transition name="hidden-msg">
@@ -136,6 +142,7 @@ export default{
             },
             isClosed:false, 
             isToggled: false,  
+            isWaiting:false, 
             maps:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.3835724117585!2d9.191949900000001!3d45.462076599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6a8d6c8a797%3A0x853071d1537e8bc0!2sVia%20Larga%2C%2012%2C%2020122%20Milano%20MI!5e0!3m2!1sit!2sit!4v1685293835994!5m2!1sit!2sit",
             socials: {
                 facebook:"@/assets/img/facebook.png",
@@ -146,7 +153,7 @@ export default{
         }
     }, 
     methods: {
-        sendForm(){
+        async sendForm(){
 
             function sendJsonObject(url, obj, cback){
                 var req = new XMLHttpRequest();   // new HttpRequest instance
@@ -177,6 +184,9 @@ export default{
                 this.isValid(this.form_text)){
                 //here makes the ajax call if the response is 200 ok set isClosed=true, 
                 //we also can vue-link the message text and if there is an error it pop-ups a personalized error msg
+
+                this.isWaiting=true;
+                await new Promise(r => setTimeout(r, 2000));//force animation for demo porpouse
                 
                 var jsonObj = {
                     name: this.form_name.value, 
