@@ -24,32 +24,32 @@
                                 <div class="text-left">
                                     <label class="p-3 font-bold text-lg">Name<span v-show="!isValid(form_name) && form_name.isModified" class="text-red">*</span></label><br>
                                     <input v-model="form_name.value" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_name) && form_name.isModified}" type="text" placeholder="Nicolas">
-                                    <span class="flex text-red justify-start"> {{ form_name.errormsg }}</span>
+                                    <span class="pl-4 pb-2 flex text-red justify-start"> {{ form_name.errormsg }}</span>
                                 </div>
                                 <div class="text-left">
                                     <label class="p-3 font-bold text-lg">Surname<span v-show="!isValid(form_surname) && form_surname.isModified" class="text-red">*</span></label><br>
                                     <input v-model="form_surname.value" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_surname) && form_surname.isModified}" type="text" placeholder="Cage">
-                                    <span class="flex text-red justify-start">{{ form_surname.errormsg }}</span>
+                                    <span class="pl-4 pb-2 flex text-red justify-start">{{ form_surname.errormsg }}</span>
                                 </div>
                             </div>
                             <div class="md:w-full">
                                 <div class="text-left">
                                     <label class="p-3 font-bold text-lg">Email<span v-show="!isValid(form_email) && form_email.isModified" class="text-red">*</span></label><br>
                                     <input v-model.trim="form_email.value" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_email) && form_email.isModified}" type="email" placeholder="prova@email.com">
-                                    <span class="flex text-red justify-start">{{ form_email.errormsg }}</span>
+                                    <span class="pl-4 pb-2 flex text-red justify-start">{{ form_email.errormsg }}</span>
                                 </div>
                                 <div class="text-left">
                                     <label class="p-3 font-bold text-lg">Company<span v-show="!isValid(form_company) && form_company.isModified" class="text-red">*</span></label><br>
                                     <input v-model="form_company.value" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_company) && form_company.isModified}" type="text" placeholder="My company">
-                                    <span class="flex text-red justify-start">{{ form_company.errormsg }}</span>
+                                    <span class="pl-4 pb-2 flex text-red justify-start">{{ form_company.errormsg }}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="md:flex">
                             <div class="md:w-full text-left">
                                 <label class="p-3 font-bold text-lg">Write your requests<span v-show="!isValid(form_text) && form_text.isModified" class="text-red">*</span></label><br>
-                                <textarea v-model="form_text.value" class="p-9 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_text) && form_text.isModified}" placeholder="Write here your question..."></textarea>
-                                <span class="flex text-red justify-start">{{ form_text.errormsg }}</span>
+                                <textarea v-model="form_text.value" class="p-9 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_text) && form_text.isModified}" placeholder="Write here your question .."></textarea>
+                                <span class="pl-4 pb-2 flex text-red justify-start">{{ form_text.errormsg }}</span>
                             </div>
                         </div>
                        
@@ -186,7 +186,7 @@ export default{
                 //we also can vue-link the message text and if there is an error it pop-ups a personalized error msg
 
                 this.isWaiting=true;
-                await new Promise(r => setTimeout(r, 2000));//force animation for demo porpouse
+                await new Promise(r => setTimeout(r, 1000));//force animation for demo porpouse
                 
                 var jsonObj = {
                     name: this.form_name.value, 
