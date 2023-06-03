@@ -48,7 +48,7 @@
                         <div class="md:flex">
                             <div class="md:w-full text-left">
                                 <label class="p-3 font-bold text-lg">Write your requests<span v-show="!isValid(form_text) && form_text.isModified" class="text-red">*</span></label><br>
-                                <textarea v-model="form_text.value" class="p-9 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_text) && form_text.isModified}" placeholder="Write here your question .."></textarea>
+                                <textarea v-model="form_text.value" class="p-9 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_text) && form_text.isModified}" placeholder="Write here your question..."></textarea>
                                 <span class="flex text-red justify-start">{{ form_text.errormsg }}</span>
                             </div>
                         </div>

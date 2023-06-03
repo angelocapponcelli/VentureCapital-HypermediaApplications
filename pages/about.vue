@@ -26,7 +26,7 @@
             <div class="hiddenItem p-6 md:pt-20 md:px-60">
                 <img class="rounded-3xl" :data-lazy="config.SUPABASE_ASSETS_URL + '/about/people.webp'" alt="Immagine" />
             </div>
-            <h1 class="hiddenItem text-3xl py-8 md:py-20 md:text-5xl md:px-60 font-bold text-center"> Our Expert Team: Guiding Investments with Unparalleled Expertise</h1>
+            <h1 class="hiddenItem text-3xl py-8 md:py-20 md:text-5xl font-bold text-center"> Our Expert Team: Guiding Investments with Unparalleled Expertise</h1>
             <div class="hiddenItem flex flex-col text-xl text-center pb-10 md:pb-20 md:flex-row">
                 Our team comprises industry experts with diverse backgrounds in finance, entrepreneurship, and strategic advisory. With their wealth of knowledge and experience, they provide invaluable insights, due diligence, and guidance to identify and support promising investment opportunities. Our team's expertise enables us to make informed decisions, maximize value for our portfolio companies, and drive sustainable growth in the dynamic landscape of venture capital.
             </div>      
