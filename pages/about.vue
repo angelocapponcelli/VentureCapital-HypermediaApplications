@@ -3,82 +3,131 @@
 -->
 <template>
     <main>
-        <Breadcrumb :crumbs="[{ label: 'About Us', link: '/abouts' }]" />
-
-        <AboutUsStructureLinks :links = "[
-            {
-                link:'whoweare', //should be the same of the id section
-                title: 'Who we are'
-            }, 
-            {
-                link: 'companymission',
-                title: 'Company mission'
-
-            }, 
-            {
-                link: 'partners',
-                title: 'Partners'
-
-            }
-        ]"></AboutUsStructureLinks>
-    
-
-        <div class="card" id="whoweare">
-            <div class="content-section">
-                <h2>Who we are</h2>
-                <p>Venture Capital is a fictional investment management company that specializes 
-                    in providing funding to early-stage and high-growth potential businesses. 
-                    As a venture capital firm, it seeks out innovative and promising startups and provides 
-                    them with financial backing in exchange for an equity stake in the company. 
-                    Venture Capital plays a vital role in the entrepreneurial ecosystem by supporting entrepreneurs 
-                    and helping them scale their businesses. Through careful due diligence and analysis, 
-                    Venture Capital aims to identify startups with significant market potential and help them 
-                    navigate the challenges of growth by offering not just capital but also strategic guidance 
-                    and industry connections. By leveraging its expertise and network, Venture Capital aims to maximize 
-                    returns on its investments and contribute to the success of the companies it supports.</p>
-                <p>Venture Capital was founded in 2017 by four brilliant and visionary individuals: Alex Thompson, Emma Johnson, Michael Ramirez, and Sarah Chen. These individuals shared a common passion for entrepreneurship and a deep understanding of the startup ecosystem. Having witnessed the challenges faced by early-stage companies in securing funding, they recognized the need for a specialized investment firm that could bridge the gap between promising startups and the capital they required to thrive.
-
-                Each founder brought a unique set of skills and experiences to the table. Alex was a seasoned entrepreneur who had successfully launched and scaled multiple businesses. Emma had a strong background in finance and had worked with renowned investment firms. Michael was a technology enthusiast with a knack for identifying disruptive innovations, and Sarah possessed expertise in marketing and business development.</p>
-            </div>
-            <div class="image-section">
-                <!-- <img src="@/assets/img/aboutus/group.jpg" alt="Immagine" /> -->
+        <Breadcrumb :crumbs="[{ label: 'About Us', link: '/about' }]" />
+        <div class="bg-no-repeat bg-top bg-cover w-full h-[45rem]" :style="'background-image: url(' + config.SUPABASE_ASSETS_URL + '/about/nasa.webp)'">
+            <div class="flex flex-col justify-center px-x_padding_page_mobile lg:px-x_padding_page">
+                <h1 class="text-4xl text-center text-white py-8 md:py-32 md:text-5xl">Connections that Drive Innovation:<br>Empowering Entrepreneurs and Investors</h1> 
+                <div class="p-3 md:p-5 m-5 md:m-7 justify-center text-lg md:text-xl text-center bg-color-200 md:max-w-xl rounded-3xl">
+                    <div class="">At Venture Capital, we are a leading Italian investment firm dedicated to empowering visionary entrepreneurs and driving innovation. With a strong track record of success since our establishment in 1990, we have built a reputation for identifying and supporting promising startups across various industries.
+    What sets us apart is our deep-rooted belief in the potential of Italian talent.</div>
+                </div>
             </div>
         </div>
-        <div class="card" id="companymission">
-            <div class="image-section">
-                    <!-- <img src="@/assets/img/aboutus/other2.jpg" alt="Immagine" /> -->
-                </div>
-                <div class="content-section">
-                    <h2>Company mission</h2>
-                    <p>Driven by their collective expertise and a shared belief in the power of innovation, the founders pooled their resources to establish Venture Capital. Their mission was clear: to provide financial support, strategic guidance, and industry connections to startups with transformative potential. By leveraging their own experiences and networks, they aimed to nurture these young companies, fuel their growth, and ultimately generate exceptional returns for their investors. Since its inception, Venture Capital has developed a reputation for its keen eye for promising opportunities and its ability to identify startups that have the potential to disrupt industries. The firm has cultivated a diverse portfolio of successful investments across various sectors, including technology, healthcare, renewable energy, and consumer products. Through its rigorous due diligence process and hands-on approach, Venture Capital has helped countless entrepreneurs turn their bold ideas into flourishing businesses. Today, Venture Capital stands as a trusted and influential player in the investment landscape, known for its unwavering commitment to supporting innovation and driving positive change. With a dedicated team of professionals and a track record of success, the firm continues to play a pivotal role in shaping the future of entrepreneurship and investment.</p>
-                </div>
+        <div class="bg-no-repeat bg-top bg-cover w-full bg-color-white px-x_padding_page_mobile lg:px-x_padding_page">
+            <h1 class="hiddenItem text-4xl py-8 md:py-20 md:text-5xl font-bold text-center"> Our values</h1>
+            <div class="hiddenItem flex flex-col pb-10 md:pb-20 md:flex-row">
+                <ContactsCard title="Innovation" content="Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm."></ContactsCard>
+                <ContactsCard title="Collaboration" content="Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm."></ContactsCard>
+                <ContactsCard title="Impact" content="Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm."></ContactsCard>
+            </div>      
         </div>
-        <div class="card" id="partners">
-                <div class="content-section">
-                    <h2>Partners</h2>
-                    <p>Venture Capital has established a vast network of strategic partners, forging relationships with various organizations across industries. These partnerships are essential for enhancing the firm's investment capabilities and providing comprehensive support to its portfolio companies. One vital aspect of Venture Capital's partnership ecosystem lies in its collaboration with industry experts and thought leaders. By engaging with these experts, Venture Capital gains access to deep domain knowledge, market insights, and valuable expertise in specific sectors. This enables the firm to make well-informed investment decisions and provide strategic guidance to its portfolio companies based on the latest trends and emerging opportunities in each industry. Another significant facet of Venture Capital's partnerships is its engagement with startup incubators and accelerators. These collaborative relationships allow Venture Capital to tap into a pool of innovative ideas and entrepreneurial talent. By connecting with these incubators and accelerators, Venture Capital can identify promising early-stage startups and provide them with the necessary funding, mentorship, and resources to fuel their growth and success. Furthermore, Venture Capital partners with academic institutions, research organizations, and innovation hubs to stay at the forefront of technological advancements and emerging trends. These partnerships enable the firm to gain access to groundbreaking research, cutting-edge technologies, and early-stage inventions that have the potential to disrupt industries. Venture Capital also forms alliances with other investment firms and financial institutions, both domestically and internationally. These partnerships expand the firm's reach and deal flow, enabling it to identify investment opportunities on a global scale and leverage the combined expertise and networks of multiple entities. In summary, Venture Capital's extensive network of partners spans industry experts, startup incubators, academic institutions, research organizations, and other investment firms. These partnerships contribute to the firm's ability to identify promising investment opportunities, offer strategic guidance, and provide comprehensive support to its portfolio companies. By leveraging the collective knowledge, resources, and networks of its partners, Venture Capital strives to maximize returns on investments and drive the success of the companies it supports.</p>
-                </div>
-                <!-- <div class="image-section">
-                    <table>
-                        <tr>
-                            <td>
-                                <img src="@/assets/img/aboutus/hp.png" alt="Immagine" />
-                            </td>
-                            <td>
-                                <img src="@/assets/img/aboutus/nike.png" alt="Immagine" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="@/assets/img/aboutus/shell.png" alt="Immagine" />
-                            </td>
-                            <td>
-                                <img src="@/assets/img/aboutus/pepsi.png" alt="Immagine" />
-                            </td>
-                        </tr>
-                    </table>
 
-                </div> -->
+        <div class="bg-no-repeat bg-top bg-cover w-full bg-color-500 px-x_padding_page_mobile lg:px-x_padding_page">
+            <div class="hiddenItem p-6 md:pt-20 md:px-60">
+                <img class="rounded-3xl" :data-lazy="config.SUPABASE_ASSETS_URL + '/about/people.webp'" alt="Immagine" />
+            </div>
+            <h1 class="hiddenItem text-3xl py-8 md:py-20 md:text-5xl font-bold text-center"> Our Expert Team: Guiding Investments with Unparalleled Expertise</h1>
+            <div class="hiddenItem flex flex-col text-xl text-center pb-10 md:pb-20 md:flex-row">
+                Our team comprises industry experts with diverse backgrounds in finance, entrepreneurship, and strategic advisory. With their wealth of knowledge and experience, they provide invaluable insights, due diligence, and guidance to identify and support promising investment opportunities. Our team's expertise enables us to make informed decisions, maximize value for our portfolio companies, and drive sustainable growth in the dynamic landscape of venture capital.
+            </div>      
         </div>
+
+        <div class="bg-no-repeat md:flex bg-top bg-cover w-full bg-color-white px-x_padding_page_mobile lg:px-x_padding_page">
+            <div>
+                <h1 class="hiddenItem text-3xl py-8 md:pt-20 md:text-5xl md:flex text-center font-bold "> Partners</h1>
+                <div class="hiddenItem flex text-xl text-center md:text-left md:pr-20 pb-10 md:pb-20 md:flex-row">
+                    At Venture Capital, we are a leading Italian investment firm dedicated to empowering visionary entrepreneurs and driving innovation. <br><br>With a strong track record of success since our establishment in 1990, we have built a reputation for identifying and supporting promising startups across various industries.
+                </div>
+            </div>
+            <div class="hiddenItem pt-4 pb-10 px-5 md:p-20">
+                <img class="rounded-3xl" :data-lazy="config.SUPABASE_ASSETS_URL + '/about/logos.webp'" alt="Immagine" />
+            </div>
+
+        </div>
+        
     </main>
 </template>
+
+<style>
+.hiddenItem {
+    opacity: 0;
+    @apply transition ease-in-out duration-500;
+    filter: blur(5px);
+}
+
+.show {
+    opacity: 1;
+    @apply transition ease-in-out duration-1000;
+    filter: blur(0px);
+}
+
+</style>
+
+
+<script>
+export default{
+    data(){
+        return{
+            config : useRuntimeConfig()
+        }
+    }, 
+    mounted() {
+        // IntersectionObserver is a browser API that allows us to detect when an element is visible in the viewport
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // if the element is visible, we add the show class to it and remove the hiddenItem class
+                    entry.target.classList.add('show');
+                    entry.target.classList.remove('hiddenItem');
+                } /* else {
+                    // if the element is not visible, we add the hiddenItem class to it and remove the show class
+                    entry.target.classList.add('hiddenItem');
+                    entry.target.classList.remove('show');
+                } */
+            });
+        }, {
+            rootMargin: '-20% 0px -10% 0px' // defines the area in which the observer will trigger
+        });
+
+        setTimeout(() => {
+            // we select all the elements with the hiddenItem class and add them to the observer
+            const hiddenElements = document.querySelectorAll('.hiddenItem');
+            hiddenElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            const targets = document.querySelectorAll('img');
+
+            // we use the lazyLoad function to load the images only when they are visible in the viewport and unload them when they are not
+            const lazyLoad = target => {
+                const io = new IntersectionObserver((entries, imgObserver) => {
+                    /* console.log(entries) */
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // we get the image element and set the src attribute to the image url
+                            const img = entry.target;
+                            const src = img.getAttribute('data-lazy');
+                            img.setAttribute('src', src);
+
+                            // uncomment this line if you want the images to be loaded only once and not unloaded when they are not visible
+                            imgObserver.disconnect();
+                        }/* 
+                        else {
+                            // we get the image element and set the src attribute to an empty string
+                            const img = entry.target;
+                            const src = "";
+                            img.setAttribute('src', src);
+                        } */
+                    });
+                });
+
+                // we add the image element to the observer
+                io.observe(target)
+            };
+
+            // we loop through all the images and add them to the lazyLoad function
+            targets.forEach(lazyLoad);
+        }, 500);
+    }
+}
+</script>
