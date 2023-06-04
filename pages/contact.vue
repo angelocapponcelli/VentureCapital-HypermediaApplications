@@ -21,26 +21,26 @@
                     <form v-show="!isClosed">
                         <div class="md:flex">
                             <div class="md:w-full">
-                                <div class="text-left">
+                                <div class="text-left md:mr-5">
                                     <label class="p-3 font-bold text-lg">Name<span v-show="!isValid(form_name) && form_name.isModified" class="text-red">*</span></label><br>
-                                    <input v-model="form_name.value" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_name) && form_name.isModified}" type="text" placeholder="Nicolas">
+                                    <input v-model="form_name.value" class="p-3 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-5" :class="{'error':!isValid(form_name) && form_name.isModified}" type="text" placeholder="Nicolas">
                                     <span class="pl-4 pb-2 flex text-red justify-start"> {{ form_name.errormsg }}</span>
                                 </div>
-                                <div class="text-left">
+                                <div class="text-left md:mr-5">
                                     <label class="p-3 font-bold text-lg">Surname<span v-show="!isValid(form_surname) && form_surname.isModified" class="text-red">*</span></label><br>
-                                    <input v-model="form_surname.value" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_surname) && form_surname.isModified}" type="text" placeholder="Cage">
+                                    <input v-model="form_surname.value" class="p-3 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-5" :class="{'error':!isValid(form_surname) && form_surname.isModified}" type="text" placeholder="Cage">
                                     <span class="pl-4 pb-2 flex text-red justify-start">{{ form_surname.errormsg }}</span>
                                 </div>
                             </div>
                             <div class="md:w-full">
-                                <div class="text-left">
+                                <div class="text-left md:mr-5">
                                     <label class="p-3 font-bold text-lg">Email<span v-show="!isValid(form_email) && form_email.isModified" class="text-red">*</span></label><br>
-                                    <input v-model.trim="form_email.value" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_email) && form_email.isModified}" type="email" placeholder="prova@email.com">
+                                    <input v-model.trim="form_email.value" class="p-3 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-5" :class="{'error':!isValid(form_email) && form_email.isModified}" type="email" placeholder="prova@email.com">
                                     <span class="pl-4 pb-2 flex text-red justify-start">{{ form_email.errormsg }}</span>
                                 </div>
-                                <div class="text-left">
+                                <div class="text-left md:mr-5">
                                     <label class="p-3 font-bold text-lg">Company<span v-show="!isValid(form_company) && form_company.isModified" class="text-red">*</span></label><br>
-                                    <input v-model="form_company.value" class="p-3 rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-10" :class="{'error':!isValid(form_company) && form_company.isModified}" type="text" placeholder="My company">
+                                    <input v-model="form_company.value" class="p-3 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-5" :class="{'error':!isValid(form_company) && form_company.isModified}" type="text" placeholder="My company">
                                     <span class="pl-4 pb-2 flex text-red justify-start">{{ form_company.errormsg }}</span>
                                 </div>
                             </div>
@@ -82,18 +82,18 @@
                             <table class="flex justify-center">
                                 <tr class="flex justify-center">
                                     <td>
-                                        <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/facebook.png" alt="Immagine" />
+                                       <a href="https://it-it.facebook.com/" target="_blank" ><img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/facebook.webp" alt="Immagine" /></a>
                                     </td>
                                     <td>
-                                        <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/instagram.png" alt="Immagine" />
+                                        <a href="https://www.instagram.com" target="_blank"><img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/instagram.webp" alt="Immagine" /></a>
                                     </td>
                                 </tr>
                                 <tr class="flex justify-center">
                                     <td>
-                                        <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/twitter.png" alt="Immagine" />
+                                        <a href="https://www.twitter.com" target="_blank"><img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/twitter.webp" alt="Immagine" /></a>
                                     </td>
                                     <td>
-                                        <img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/linkedin.png" alt="Immagine" />
+                                        <a href="https://www.linkedin.com" target="_blank"><img class="p-3 max-w-xs w-full rounded-3xl hover:shadow-2xl" src="@/assets/img/linkedin.webp" alt="Immagine" /></a>
                                     </td>
                                 </tr>
                             </table>
