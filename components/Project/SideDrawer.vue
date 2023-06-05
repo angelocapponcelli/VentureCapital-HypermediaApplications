@@ -37,6 +37,6 @@ const { data: areas } = await useFetch('/api/areas')
 
 let areaLinks = []
 for (let i = 0; i < areas.value.length; i++) {
-  areaLinks[i] = areas.value[i].name.toLowerCase().replaceAll(' ', '-')
+  areaLinks[i] = areas.value[i].name//.toLowerCase().replaceAll(' ', '-')
 }
 </script>

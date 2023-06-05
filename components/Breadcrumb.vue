@@ -21,7 +21,7 @@
               clip-rule="evenodd"></path>
           </svg>
           <NuxtLink v-if="index < crumbs.length - 1" v-bind:to=crumb.link
-            class="text-[10px] md:text-sm text-color-1000 hover:text-color-700 ml-1">{{ crumb.label }}
+            class="text-[10px] md:text-sm text-color-1000 hover:text-color-700 ml-1 underline">{{ crumb.label }}
           </NuxtLink>
           <span v-else class="text-[10px] md:text-sm text-color-1000 ml-1 font-medium">{{ crumb.label }}</span>
         </div>
