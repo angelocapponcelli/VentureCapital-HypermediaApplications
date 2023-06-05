@@ -118,7 +118,7 @@ export default defineEventHandler(async (event) => {
     var { data: project, error } = await client
       .from("project")
       .select(
-        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position, image), area(id, name), isRelevant"
+        "id, title, overview, product, team, gallery, startup (id, name, headquarter, website), supervisor (id, full_name, position, image), area(id, name), isRelevant"
       )
       .eq("id", id)
       .eq("isRelevant", true)
@@ -165,7 +165,7 @@ export default defineEventHandler(async (event) => {
     var { data: project, error } = await client
       .from("project")
       .select(
-        "id, title, overview, product, team, startup (id, name, headquarter, website), supervisor (id, full_name, position, image), area(id, name), gallery"
+        "id, title, overview, product, team, gallery, startup (id, name, headquarter, website), supervisor (id, full_name, position, image), area(id, name), gallery"
       )
       .eq("area.name", area)
       .eq("id", id)
