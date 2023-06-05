@@ -3,7 +3,7 @@
 -->
 <template>
     <main>
-        <Breadcrumb :crumbs="[{ label: 'About Us', link: '/about' }]" />
+        <Breadcrumb :crumbs="[{ label: 'About us', link: '/about' }]" />
         <div class="bg-no-repeat bg-top bg-cover w-full h-[45rem]" :style="'background-image: url(' + config.SUPABASE_ASSETS_URL + '/about/nasa.webp)'">
             <div class="flex flex-col justify-center px-x_padding_page_mobile lg:px-x_padding_page">
                 <h1 class="text-4xl text-center text-white py-8 md:py-32 md:text-5xl">Connections that Drive Innovation:<br>Empowering Entrepreneurs and Investors</h1> 

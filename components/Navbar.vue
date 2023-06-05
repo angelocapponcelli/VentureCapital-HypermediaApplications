@@ -68,17 +68,17 @@
                     </div>
                     <!-- Our team -->
                     <NuxtLink to="/team" class="btn">
-                        Our Team
+                        Our team
                     </NuxtLink>
                     <!-- About us -->
                     <NuxtLink to="/about" class="btn">
-                        About Us
+                        About us
                     </NuxtLink>
                 </div>
                 <NuxtLink to="/contact"
                     class="py-3 px-10 bg-primary-color text-white text-sm border-2 border-primary-color rounded-full 
                         hover:text-primary-color hover:bg-white transition ease-in-out duration-200">
-                    Contact Us
+                    Contact us
                 </NuxtLink>
             </div>
             <div class="md:hidden flex items-center">
