@@ -167,7 +167,7 @@ export default defineEventHandler(async (event) => {
       .select(
         "id, title, overview, product, team, gallery, startup (id, name, headquarter, website), supervisor (id, full_name, position, image), area(id, name), gallery"
       )
-      .eq("area.name", area)
+      //.eq("area.name", area)
       .eq("id", id)
       .limit(1)
       .single();
@@ -177,12 +177,19 @@ export default defineEventHandler(async (event) => {
         statusCode: 400,
         statusMessage: error.message,
       });
-    }
-    if (project.area.length == 0) {
+    } else if (project.area.length == 0) {
       throw createError({
         statusCode: 400,
         statusMessage: "Project does not exist",
       });
+    } else {
+      let areas = project.area.map((a) => a.name);
+      if (!areas.includes(area)) {
+        throw createError({
+          statusCode: 400,
+          statusMessage: "Project not related to the area",
+        });
+      }
     }
 
     var { data: previousProject, error } = await client
