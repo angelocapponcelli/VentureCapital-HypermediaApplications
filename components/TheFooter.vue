@@ -4,7 +4,7 @@
 
 <template>
     <footer>
-        <div class="bg-color-200 py-8"> <!-- h-height_footer -->
+        <div class="bg-color-400 py-8"> <!-- h-height_footer -->
             <div class="pb-8 lg:px-x_padding_page px-x_padding_page_mobile">
                 <!-- A grid with 4 columns with large displays -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:space-y-0 space-y-6">

@@ -22,7 +22,7 @@
             </div>      
         </div>
 
-        <div class="bg-no-repeat bg-top bg-cover w-full bg-color-500 px-x_padding_page_mobile lg:px-x_padding_page">
+        <div class="bg-no-repeat bg-top bg-cover w-full bg-color-400 px-x_padding_page_mobile lg:px-x_padding_page">
             <div class="hiddenItem p-6 md:pt-20 md:px-60">
                 <img class="rounded-3xl" :data-lazy="config.SUPABASE_ASSETS_URL + '/about/people.webp'" alt="Immagine" />
             </div>
@@ -130,4 +130,14 @@ export default{
         }, 500);
     }
 }
+</script>
+
+<script setup>
+useHead({
+    title:'About us',
+    meta: [{
+        name: 'description',
+        content: 'In this page we talk about company and our values'
+    }]
+})
 </script>

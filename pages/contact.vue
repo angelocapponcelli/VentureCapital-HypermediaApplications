@@ -292,6 +292,16 @@ export default{
 }
 </script>
 
+<script setup>
+useHead({
+    title:'Contact us',
+    meta: [{
+        name: 'description',
+        content: 'With this page is you can stay in touch with our company, follow us on the social and more.'
+    }]
+})
+</script>
+
 <style scoped>
   
     @keyframes open {
