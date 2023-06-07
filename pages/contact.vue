@@ -4,7 +4,7 @@
 <template>
     <main>
         <Breadcrumb :crumbs="[
-                    { label: 'Contact Us', link: '/contact' }]" />
+                    { label: 'Contact us', link: '/contact' }]" />
         <div class="flex flex-col justify-center px-x_padding_page_mobile lg:px-x_padding_page">
             <TitleWithImage title="Get in touch" subtitle="We appreciate your interest in reaching out to us. 
                 To ensure a smooth and efficient communication process, we kindly request you to fill out the form below with your relevant information. 

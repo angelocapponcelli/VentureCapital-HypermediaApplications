@@ -26,7 +26,7 @@
             </p>
           </div>
           <div class="flex justify-between">
-            <div v-if="previousProject" class="flex-1 flex flex-row justify-start">
+            <div v-if="previousProject" class="flex flex-row justify-start">
               <NuxtLink :to="'/portfolio/' + linkPrevious"
                 class="flex-1 text-color-1000 md:text-lg text-sm font-bold flex md:space-x-2 items-center 
                                                                                                       hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
@@ -49,7 +49,7 @@
               </svg>
             </NuxtLink>
 
-            <div v-if="nextProject" class="flex-1 flex flex-row justify-end">
+            <div v-if="nextProject" class="flex flex-row justify-end">
               <NuxtLink :to="'/portfolio/' + linkNext"
                 class="flex-1 justify-end text-primary-color md:text-lg text-sm font-bold flex space-x-2 items-center 
                                                                                                       hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
