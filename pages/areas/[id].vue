@@ -70,7 +70,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                         </svg>
                         <div class="text-left">
-                            <p class="text-color-700">Previous area</p>
+                            <p class="text-color-850">Previous area</p>
                             <h3 class="font-extrabold text-xl">{{ previousArea.name }}</h3>
                         </div>
                     </NuxtLink>
@@ -92,7 +92,7 @@
                     <NuxtLink :to="'/areas/' + nextArea.id" class="w-fit md:order-none order-0 flex justify-end text-primary-color text-lg font-bold space-x-2 items-center 
                             hover:transform hover:scale-101 hover:text-color-700 transition duration-200">
                         <div class="text-right">
-                            <p class="text-color-700">Next area</p>
+                            <p class="text-color-850">Next area</p>
                             <h3 class="font-extrabold text-xl">{{ nextArea.name }}</h3>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0"
