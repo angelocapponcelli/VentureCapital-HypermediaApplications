@@ -39,8 +39,8 @@
                                     <span class="pl-4 pb-2 flex text-red justify-start">{{ form_email.errormsg }}</span>
                                 </div>
                                 <div class="text-left md:mr-5">
-                                    <label class="p-3 font-bold text-lg">Company<span v-show="!isValid(form_company) && form_company.isModified" class="text-red">*</span></label><br>
-                                    <input v-model="form_company.value" class="p-3 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-5" :class="{'error':!isValid(form_company) && form_company.isModified}" type="text" placeholder="My company">
+                                    <label class="p-3 font-bold text-lg">Company<span v-show="!isValid(form_company, false) && form_company.isModified" class="text-red">*</span></label><br>
+                                    <input v-model="form_company.value" class="p-3 w-full rounded-3xl bg-color-400 hover:bg-color-500 active:bg-color-600 focus:outline-none focus:ring focus:ring-color-700 my-2 pl-5" :class="{'error':!isValid(form_company, false) && form_company.isModified}" type="text" placeholder="My company">
                                     <span class="pl-4 pb-2 flex text-red justify-start">{{ form_company.errormsg }}</span>
                                 </div>
                             </div>
@@ -180,7 +180,7 @@ export default{
             if(this.isValid(this.form_name) &&
                 this.isValid(this.form_surname) &&
                 this.isValid(this.form_email) &&
-                this.isValid(this.form_company) &&
+                this.isValid(this.form_company, false) &&
                 this.isValid(this.form_text)){
                 //here makes the ajax call if the response is 200 ok set isClosed=true, 
                 //we also can vue-link the message text and if there is an error it pop-ups a personalized error msg
@@ -221,7 +221,7 @@ export default{
         isRequired(object){
             return object.value.length===0 || !object.isModified; 
         }, 
-        isValid(object){
+        isValid(object, required=true){
             if(!object.isModified){
                 return false; 
             }
@@ -238,8 +238,10 @@ export default{
                     break; 
                 case 'short': 
                     if(object.value.replaceAll(" ", "").length<1){
-                        object.errormsg="Required";
-                        return false; 
+                        if(required){
+                            object.errormsg="Required";
+                        }
+                        return !required; 
                     }
                     if(object.value.replaceAll(" ", "").length>30){
                         object.errormsg="Is this a real name?"
