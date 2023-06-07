@@ -33,7 +33,7 @@
                                 </li>
                                 <li>
                                     <NuxtLink v-for="area in areas"
-                                        :to="'/portfolio/' + area.name.toLowerCase().replaceAll(' ', '-')"
+                                        :to="'/portfolio/' + area.name.replaceAll(' ', '-')"
                                         class="px-3 py-3 flex items-center border-l-4 border-transparent 
                                             hover:text-color-900 hover:border-primary-color transition ease-in-out duration-200">
                                         {{ area.name }} projects
