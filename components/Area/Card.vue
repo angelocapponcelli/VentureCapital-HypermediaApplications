@@ -37,9 +37,9 @@ export default {
     methods: {
         getBackgroundColor(index, areOdd) {
             if (areOdd) {
-                return index % 2 === 0 ? 'white' : '#F9F9FF';
+                return index % 2 === 0 ? 'white' : '#F2F1FA';
             } else {
-                return index % 2 === 0 ? '#F9F9FF' : 'white';
+                return index % 2 === 0 ? '#F2F1FA' : 'white';
             }
         },
     },

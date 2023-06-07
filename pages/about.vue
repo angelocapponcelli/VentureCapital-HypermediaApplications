@@ -16,13 +16,13 @@
         <div class="bg-no-repeat bg-top bg-cover w-full bg-color-white px-x_padding_page_mobile lg:px-x_padding_page">
             <h1 class="hiddenItem text-4xl py-8 md:py-20 md:text-5xl font-bold text-center"> Our values</h1>
             <div class="hiddenItem flex flex-col pb-10 md:pb-20 md:flex-row">
-                <ContactsCard title="Innovation" content="Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm."></ContactsCard>
-                <ContactsCard title="Collaboration" content="Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm."></ContactsCard>
-                <ContactsCard title="Impact" content="Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm."></ContactsCard>
+                <ContactsCard title="Innovation" content="Innovation is the catalyst that propels society forward, igniting transformation and opening new horizons. It sparks creativity, disrupts the status quo, and inspires breakthroughs. Embracing innovation leads to technological advancements, economic growth, and a world of endless possibilities. Let us embrace innovation and shape a brighter tomorrow."></ContactsCard>
+                <ContactsCard title="Collaboration" content="Collaboration is the key to success, fostering synergy and unlocking collective potential. By pooling diverse talents, ideas, and perspectives, we can achieve remarkable outcomes. Together, we innovate, solve complex challenges, and build bridges of understanding. Collaboration empowers us to create a harmonious and interconnected world, where progress knows no bounds."></ContactsCard>
+                <ContactsCard title="Impact" content="Impact is the ripple effect of our actions, shaping the world we inhabit. Every choice we make, big or small, holds the power to create meaningful change. Let us be conscious of our impact and strive to leave a positive legacy. Together, we can inspire, uplift, and make a difference that lasts."></ContactsCard>
             </div>      
         </div>
 
-        <div class="bg-no-repeat bg-top bg-cover w-full bg-color-500 px-x_padding_page_mobile lg:px-x_padding_page">
+        <div class="bg-no-repeat bg-top bg-cover w-full bg-color-400 px-x_padding_page_mobile lg:px-x_padding_page">
             <div class="hiddenItem p-6 md:pt-20 md:px-60">
                 <img class="rounded-3xl" :data-lazy="config.SUPABASE_ASSETS_URL + '/about/people.webp'" alt="Immagine" />
             </div>
@@ -130,4 +130,14 @@ export default{
         }, 500);
     }
 }
+</script>
+
+<script setup>
+useHead({
+    title:'About us',
+    meta: [{
+        name: 'description',
+        content: 'In this page we talk about company and our values'
+    }]
+})
 </script>

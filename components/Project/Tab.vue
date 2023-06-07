@@ -50,7 +50,8 @@
     </div>
     <div class="flex flex-col space-y-2 justify-start w-full">
       <NuxtLink v-for="area of links" :to="'/areas/' + area.id"
-        class="w-fit text-primary-color text-lg font-bold hover:text-color-700 transition duration-200">
+        class="w-fit text-primary-color text-lg font-bold 
+          hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
         {{ area.name }}
       </NuxtLink>
     </div>

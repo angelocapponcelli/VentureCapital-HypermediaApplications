@@ -243,7 +243,7 @@ function scroll(refName) {
     window.scrollTo({ top: y, behavior: 'smooth' });
 }*/
 
-const title = ref('Ventue Capital - Home')
+const title = ref('Venture Capital - Home')
 const description = ref('Welcome to Venture Capital Ventures - Your Gateway to Innovation and Growth. We are a leading venture capital firm investing in groundbreaking projects and empowering visionary entrepreneurs. Discover our diverse portfolio and explore investment opportunities in sectors such as health, sustainability, future technologies, and education. Join us in shaping the future of innovation and driving transformative change. Invest in the next generation of disruptors with Venture Capital Ventures.')
 
 useHead({
