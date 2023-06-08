@@ -35,11 +35,11 @@
                     <div v-else class="flex flex-col space-y-8">
                         <div class="flex flex-row justify-between">
                             <h1 class="lg:text-4xl text-2xl font-bold">
-                                Related projects
+                                Some related projects
                             </h1>
                             <NuxtLink :to="'/portfolio/' + area.name" class="flex flex-row items-center w-fit gap-2 font-bold text-primary-color
                                 hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
-                                <span>Learn more</span>
+                                <span>See more</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                                     stroke="currentColor" class="w-5 h-5">
                                     <path stroke-linecap="round" stroke-linejoin="round"
