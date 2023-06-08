@@ -39,7 +39,7 @@
                             </h1>
                             <NuxtLink :to="'/portfolio/' + area.name" class="flex flex-row items-center w-fit gap-2 font-bold text-primary-color
                                 hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
-                                <span>See more</span>
+                                <span>See more projects</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
                                     stroke="currentColor" class="w-5 h-5">
                                     <path stroke-linecap="round" stroke-linejoin="round"
