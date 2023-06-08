@@ -1,13 +1,25 @@
 import { serverSupabaseClient } from "#supabase/server";
 
+/*
+ *   This page is responsible for taking project data for the portfolio pages (which are of 3 types: 'All projects',
+ *   'Most relevant projects', '[area] projects'; for the individual project page; and for the people page for data
+ *   regarding related projects. Different data are returned depending on the parameters received.
+ *
+ *   The parameters received are 'id' and 'area'
+ */
 export default defineEventHandler(async (event) => {
   const client = serverSupabaseClient(event);
 
+  // Parameter parsing
   const id = event.context.params.id;
   const area = event.context.params.area.replaceAll("%20", " ");
 
+  //Case recognition according to parameters:
+  /*  Case 1: id = undefined, area = [area.name]
+   *   Get the data for the portfolio page of a specific area
+   *   Returns data on projects in a specific area useful for the overview in portfolio cards
+   */
   if (id == "undefined") {
-    // get the data for the areas page
     try {
       var { data: projects, error } = await client
         .from("project")
@@ -20,9 +32,12 @@ export default defineEventHandler(async (event) => {
       }
 
       projects = projects.filter((item) => item.area[0]);
+      //If there is at least one project
       if (projects.length > 0) {
         return projects;
-      } else {
+      }
+      //If there are no projects checks whether the area received as a parameter exists
+      else {
         var { data: areaId, error } = await client
           .from("area")
           .select("id, name")
@@ -41,7 +56,10 @@ export default defineEventHandler(async (event) => {
       });
     }
   } else if (area == "all") {
-    // get the data for the project page coming from the portfolio
+    /*  Case 2: id = [specific project id], area = 'all'
+     *  Get the data for the specific project page coming from the portfolio
+     *  Returns data on project with the id equal to the one specified, and returns the data of the previous and next project
+     */
     try {
       var { data: project, error } = await client
         .from("project")
@@ -67,6 +85,7 @@ export default defineEventHandler(async (event) => {
         .limit(1)
         .single();
 
+      //If the project was not found it could mean that it does not exist so set the variable to undefined
       if (error) {
         previousProject = undefined;
       }
@@ -79,6 +98,7 @@ export default defineEventHandler(async (event) => {
         .limit(1)
         .single();
 
+      //If the project was not found it could mean that it does not exist so set the variable to undefined
       if (error) {
         nextProject = undefined;
       }
@@ -114,7 +134,10 @@ export default defineEventHandler(async (event) => {
       });
     }
   } else if (area == "Most relevant projects") {
-    // get the data for the project page coming from the page of most relevant projects
+    /*  Case 3: id = [specific project id], area = 'Most relevant projects'
+     *  Get the data for the specific project page coming from the 'Most relevant projects' page
+     *  Returns data on project with the id equal to the one specified, and returns the data of the previous and next project
+     */
     var { data: project, error } = await client
       .from("project")
       .select(
@@ -142,6 +165,7 @@ export default defineEventHandler(async (event) => {
       .limit(1)
       .single();
 
+    //If the project was not found it could mean that it does not exist so set the variable to undefined
     if (error) {
       previousProject = undefined;
     }
@@ -155,19 +179,22 @@ export default defineEventHandler(async (event) => {
       .limit(1)
       .single();
 
+    //If the project was not found it could mean that it does not exist so set the variable to undefined
     if (error) {
       nextProject = undefined;
     }
 
     return { project, previousProject, nextProject };
   } else {
-    //get the data for the project page coming from the page of a specific area
+    /*  Case 4: id = [specific project id], area = '[area.name]'
+     *  Get the data for the specific project page coming from a specific area portfolio page
+     *  Returns data on project with the id equal to the one specified, and returns the data of the previous and next project
+     */
     var { data: project, error } = await client
       .from("project")
       .select(
         "id, title, overview, product, team, gallery, startup (id, name, headquarter, website), supervisor (id, full_name, position, image), area(id, name), gallery"
       )
-      //.eq("area.name", area)
       .eq("id", id)
       .limit(1)
       .single();
@@ -201,6 +228,7 @@ export default defineEventHandler(async (event) => {
       .limit(1)
       .single();
 
+    //If the project was not found it could mean that it does not exist so set the variable to undefined
     if (error || !previousProject.area[0]) {
       previousProject = undefined;
     }
@@ -214,6 +242,7 @@ export default defineEventHandler(async (event) => {
       .limit(1)
       .single();
 
+    //If the project was not found it could mean that it does not exist so set the variable to undefined
     if (error || !nextProject.area[0]) {
       nextProject = undefined;
     }
