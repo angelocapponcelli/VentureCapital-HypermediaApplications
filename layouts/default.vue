@@ -4,7 +4,7 @@
 <template>
     <div>
         <Navbar />
-        <slot/>
-        <TheFooter />
+        <slot />
+        <Footer />
     </div>
 </template>
