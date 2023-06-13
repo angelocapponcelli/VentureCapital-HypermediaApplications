@@ -136,7 +136,7 @@
                 <div class="grid md:grid-cols-3 md:gap-4 grid-cols-1 gap-4">
 
                     <NuxtLink v-for="j in Math.min(3, areas.length)" :to="'/areas/' + areas[j - 1].id"
-                        class="hiddenItem hiddenItemChild bg-white lg:p-6 p-2 rounded-xl text-center hover:shadow-md hover:transform hover:scale-101 transition duration-500">
+                        class="hiddenItem hiddenItemChild bg-white lg:p-6 p-2 rounded-xl text-center hover:shadow-md hover:transform hover:scale-101 transition duration-200">
                         <img class="rounded-xl aspect-video object-cover" alt="thumbnail area"
                             :data-lazy="config.SUPABASE_ASSETS_URL + '/areas/' + areas[j - 1].id + '.webp'" />
                         <h3 class="text-2xl font-semibold pt-4">{{ areas[j - 1].name }}</h3>
