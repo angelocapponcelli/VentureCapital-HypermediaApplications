@@ -1,12 +1,15 @@
+<!-- Area Card -->
 <template>
     <div class="flex lg:flex-row flex-col lg:py-y_padding_page lg:px-x_padding_page px-x_padding_page_mobile py-y_padding_page_mobile"
         :style="{ backgroundColor: getBackgroundColor(index, areOdd) }">
 
         <div class="flex flex-col pr-y_padding_title_text justify-between">
             <div>
+                <!-- Area name -->
                 <h1 class="lg:text-5xl text-4xl font-bold lg:text-left text-center">
                     {{ name }}
                 </h1>
+                <!-- Truncated Area description -->
                 <h2 class="text-color-900 pt-y_padding_title_text lg:text-left text-center">
                     {{ truncate(description, 200) }}
                 </h2>
@@ -35,6 +38,12 @@
 export default {
     props: ["areaId", "name", "description", "index", "areOdd",],
     methods: {
+        
+        /*
+        This logic allows to have the cards of the Area of alternating color.
+        In particular the last card is always white
+        to ensure that it is not gray like the footer
+        */
         getBackgroundColor(index, areOdd) {
             if (areOdd) {
                 return index % 2 === 0 ? 'white' : '#F2F1FA';
