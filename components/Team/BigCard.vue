@@ -54,8 +54,8 @@ and finally group links to the next and previous person and back to the Our Team
                     <div v-else class="w-1/3"></div>
 
                     <NuxtLink to="/team" 
-                    class="max-h-14 flex-none py-2 px-1 mx-auto items-center justify-center flex bg-white text-primary-color 
-                        hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+                    class="max-h-14 flex-none py-2 px-1 mx-auto items-center justify-center flex bg-primary-color text-white 
+                    hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
                         <span class="hidden lg:contents">Our Team</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                             class="w-6 h-6">
