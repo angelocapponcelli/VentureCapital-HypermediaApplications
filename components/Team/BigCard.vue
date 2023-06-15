@@ -1,10 +1,16 @@
+<!-- Card for the individual person page. Contains the person's image, name, position at the company, a short 1 line impactful description,
+links to the social media and linkedin accounts, a long description containing education information, past experiences and expertise,
+and finally group links to the next and previous person and back to the Our Team page. -->
+
 <template>
     <div class="flex flex-col items-center w-auto h-auto 2xl:max-w-screen-xl bg-white
         border border-solid border-[D4D2E3] rounded-[20px]">
         <div class="flex flex-col md:flex-row md:justify-between items-center w-full h-auto md:h-[540px] 2xl:max-w-screen-xl">
+            <!-- The person image contains the link to the supabase bucket in the data-lazy attribute, this is then used to lazy load it -->
             <img class="md:max-w-[50%] md:h-full bg-[F9F9FF] object-cover rounded-[20px]" :src="imageUrl" format="webp" :alt="'Thumbnail ' + name">
-            <!-- <div class="person-info-container"> -->
+            <!-- Container for the person's information -->
             <div class="flex flex-col justify-between space-y-5 w-full h-full p-5 md:pt-[130px] md:pr-[40px] md:pb-[50px] md:pl-[40px]">
+                <!-- Person's name and position -->
                 <div class="flex flex-col space-y-3">
                     <span class="font-['DM Sans'] not-italic font-bold text-[40px] lg:text-[44px] leading-[50px] text-[494850]">
                         {{ name }}
@@ -14,6 +20,7 @@
                     </span>
                 </div>
                 <div class="flex flex-col space-y-3">
+                    <!-- 1 line description and social media and linkedin links -->
                     <span class="person-description">
                         {{ logline }}
                     </span>
@@ -30,13 +37,8 @@
                             </svg>
                         </NuxtLink>
                     </div>
-                    <!-- <div class="flex flex-row justify-start">
-                        <NuxtLink :to="cvLink" class="font-sans font-bold leading-[30px] text-[15px] underline text-primary-color
-                        hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
-                            Personal CV
-                        </NuxtLink>
-                    </div> -->
                 </div>
+                <!-- Group links -->
                 <span class="flex flex-row justify-between w-auto h-[30px]">
                     <div v-if="id > 1" class="flex flex-row justify-start w-1/3">
                         <NuxtLink  :to = "'/team/' + (id-1)" class="flex flex-row items-center w-min font-bold text-color-1000
@@ -77,6 +79,7 @@
                 </span>
             </div>
         </div>
+        <!-- Long descriptions, divided into paragraphs to put emphasis on the first -->
         <div class="px-x_padding_page_mobile py-y_padding_page_mobile md:p-12 md:pb-4 text-xl">
             {{ descriptionArray[0] }}
         </div>

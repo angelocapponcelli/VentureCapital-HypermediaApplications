@@ -1,5 +1,7 @@
 <!--
-    Page description for a single person.
+    Page description for a single person. Contains the Big Person Card component to display the person's information
+    and a section for their related projects. The content of the section is dynamically loaded from Supabase and will
+    scale depending on how many projects are present. 
 -->
 <template>
     <main>
@@ -15,10 +17,8 @@
                 <h1 class="font-['DM Sans'] not-italic font-bold text-center text-3xl md:text-[44px] leading-[50px] text-[494850]">
                     Related projects
                 </h1>
-                <!-- <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-10"> -->
                 <div class="basis-4/5 grid gap-4 justify-center m-auto" 
-                :class="{ 'grid-cols-1 md:w-[350px]': small, 'md:grid-cols-2 md:w-[700px]': medium, 'md:grid-cols-3 w-full': large }">
-                    <!-- related projects cards class="md:w-96 md:h-[500px]" -->
+                :class="{ 'grid-cols-1 md:w-[350px]': small, 'md:grid-cols-2 md:w-[700px]': medium, 'md:grid-cols-3 md:w-full 2xl:w-[1200px]': large }">
                     <ProjectSmallCard v-for="project of relatedProjects" :title="project.title"
                         :overview="project.overview" :startupId="project.startup.id" :link="'/portfolio/' + project.id" :id="project.id" />
                 </div>
@@ -34,17 +34,20 @@
 </template>
 
 <script setup>
+    // The id of the person is fetched from the route
     const route = useRoute()
     const id = route.params.id
 
-    // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
+    // Using the id, the data is fetched from Supabase
     const { data: dataPerson } = await useFetch('/api/team/' + id)
     const person = dataPerson.value.person
     const nextPerson = dataPerson.value.nextPerson
 
+    // And his related projects
     const { data: dataProjects } = await useFetch('/api/portfolio/person/' + id)
     const relatedProjects = dataProjects.value.projects
 
+    // Based on the number of related projects the size of the section is calculated
     let small=false,medium=false, large=false;
     if (relatedProjects.length == 1) {
         small = true;
@@ -54,6 +57,7 @@
         large = true;
     }
 
+    // Title and meta description are set for accessibility and SEO
     const title = ref('Venture Capital - ' + person.full_name)
     useHead({
         title,

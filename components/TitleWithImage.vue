@@ -1,3 +1,5 @@
+<!-- Component used for the Title section of a page, can be modified to add an image as background. -->
+
 <template>
     <div class="relative text-center md:p-0 px-x_padding_page_mobile py-y_padding_page_mobile w-full h-auto">
         <!-- Uncomment this line to substitute the the background color with an image -->
