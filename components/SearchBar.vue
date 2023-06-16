@@ -1,3 +1,15 @@
+<!--
+    Is implemented on the portfolio and area pages. Specifically, it consists of a text field that, upon receiving input,
+    invokes the search() function, which retrieves the user's input and emits it as a value. Additionally, a useful
+    parameter, 'id', is provided for mobile display purposes.
+
+    PROPS:
+    - id: the input ield id (Uuseful for displaying the element correctly on mobile)
+    
+    EMITS:
+    - search-filter: keywods for filtering
+-->
+
 <template>
   <div class="flex bg-color-400 rounded-full">
     <input :id="id"
