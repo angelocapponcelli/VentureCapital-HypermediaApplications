@@ -1,5 +1,16 @@
+<!--
+    Gives an overview of the projects in the introduction pages to them (’Most relevant project’ page).
+    It has the link connecting it to a specific project, an image of the project startup, the title, and a short introductory text.
+
+    PROPS:
+    - title: main information to display
+    - overview: short introductory text for the specific project
+    - startupId: to get the image of the startup logo
+    - link: link to the single project
+-->
+
 <template>
-  <!-- TODO: add to link -->
+  <!-- link on card hover -->
   <NuxtLink :to="link"
     class="md:p-6 p-5 flex md:flex-row flex-col md:space-x-12 md:space-y-0 space-y-2 rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
 
@@ -35,5 +46,6 @@ export default {
 </script>
 
 <script setup>
+// To get variable SUPABASE_ASSETS_URL useful for link image
 const config = useRuntimeConfig();
 </script>
