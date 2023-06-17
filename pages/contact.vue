@@ -169,7 +169,7 @@ export default{
                     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                     req.send(json)
                 }
-            }
+            } //ajax call to send an async json object
 
             this.form_name.isModified=true;
             this.form_surname.isModified=true;
