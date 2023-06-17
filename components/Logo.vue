@@ -1,3 +1,8 @@
+<!-- 
+    Represents the organization's logo displayed in both the header and footer sections of the website.
+    It is designed to be responsive, adapting its size according to the dimensions of the layout.
+-->
+
 <template>
     <NuxtLink to="/" class="flex items-center space-x-3 md:my-7 my-3">
         <svg class="w-7 h-7" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
