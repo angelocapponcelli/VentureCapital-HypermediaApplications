@@ -1,8 +1,25 @@
+<!--
+    Used on the individual project page. 
+    There are two types: 
+      - one (tabType = 0) comprises startups and supervisors with an image, a title and subtitle, and a link on the entire tab; 
+      - the other (tabType = 1) encompasses correlated areas without an image, featuring a title, and links to different areas 
+        on the individual label (not on the entire tab).
+
+    PROPS:
+    - title: display the main tab information (startup name or supervisor name or area tab title),
+    - titleLabel: explains what the title refers to
+    - subtitle: display the secondary tab information (startup headquarter or supervisor role, in the area tab is not present)
+    - subtitleLabel: explains what the title refers to
+    - image: link of the image to be displayed (in the area tab is not present)
+    - links: link to other pages (startup website or supervisor page or area pages)
+-->
+
 <template>
+  <!-- tabType=0 for startup and supervisor -->
   <NuxtLink v-if="!tabType" :to="links.url"
     class="p-6 flex md:flex-row flex-col md:space-x-5 space-x-0 rounded-2xl bg-white border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
 
-    <!-- cover image TODO: :src="pathImage" -->
+    <!-- cover image -->
     <img class="object-center object-cover  md:w-40 w-full aspect-square rounded-xl"
       :src="config.SUPABASE_ASSETS_URL + image + '.webp'" alt="Image">
 
@@ -39,6 +56,7 @@
     </div>
   </NuxtLink>
 
+  <!-- tabType=1 for related areas -->
   <div v-else class="p-6 rounded-2xl bg-white border-2 border-color-700 flex flex-col space-y-2">
     <div>
       <h2 class="text-2xl font-extrabold">
@@ -49,9 +67,8 @@
       </p>
     </div>
     <div class="flex flex-col space-y-2 justify-start w-full">
-      <NuxtLink v-for="area of links" :to="'/areas/' + area.id"
-        class="w-fit text-primary-color text-lg font-bold 
-          hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
+      <NuxtLink v-for="area of links" :to="'/areas/' + area.id" class="w-fit text-primary-color text-lg font-bold 
+                  hover:transform hover:scale-105 hover:text-color-700 transition duration-200">
         {{ area.name }}
       </NuxtLink>
     </div>
@@ -67,5 +84,6 @@ export default {
 </script>
 
 <script setup>
+// To get variable SUPABASE_ASSETS_URL useful for link image
 const config = useRuntimeConfig();
 </script>

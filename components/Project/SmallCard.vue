@@ -1,4 +1,18 @@
+<!--
+    Gives an overview of the projects in the introduction pages to them ('All project' page and specific area projects page). 
+    Compact version of ProjectBigCard. It has the link connecting it to a specific project, the id useful
+    for filtering projects, an image of the project startup, the title, and a short introductory text.
+
+    PROPS:
+    - title: main information to display
+    - overview: short introductory text for the specific project
+    - startupId: to get the image of the startup logo
+    - link: link to the single project
+    - id: each card has a different id, that is used for filtering projects function (see SearchBar component)
+-->
+
 <template>
+  <!-- link on card hover -->
   <NuxtLink :to="link" :id="id"
     class="p-5 space-y-2 flex flex-col rounded-2xl bg-white justify-between border-2 border-color-700 hover:shadow-md hover:transform hover:scale-101 transition duration-500">
 
@@ -28,14 +42,12 @@
 
 
 <script>
-const supabaseUrl = import.meta.env.SUPABASE_URL
-
 export default {
   props: ['title', 'overview', 'startupId', 'link', 'id']
 };
-
 </script>
 
 <script setup>
+// To get variable SUPABASE_ASSETS_URL useful for link image
 const config = useRuntimeConfig();
 </script>
