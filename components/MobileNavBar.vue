@@ -50,7 +50,7 @@
         /* height: 100svh; */
         max-width: 200px;
         background-color: white;
-        top: 100%;
+        top: 48pt;
         right: 0;
         border-radius: 0% 0% 0% 5%;
         box-shadow: 5px;
@@ -62,11 +62,11 @@
 
     .mobile-nav-enter-from, .mobile-nav-leave-to {
         opacity: 0;
-        transform: translateX(100%);
+        /*transform: translateX(100%);*/
     }
 
     .mobile-nav-enter-to {
         opacity: 1;
-        transform: translateX(0);
+        /*transform: translateX(0);*/
     }
 </style>
