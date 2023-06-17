@@ -1,3 +1,8 @@
+<!-- 
+    Contains breadcrumbs, a title and a section with all the cards of the people working at the company. 
+    Card images are lazy loaded when the user scrolls on them. Lazy loading is implemented using the IntersectionObserver API.
+ -->
+
 <template>
     <main>
         <Breadcrumb :crumbs="[{ label: 'Our team', link: '/team' }]"/>
@@ -24,11 +29,6 @@
 </template>
 
 <script>
-/*
-    The defineNuxtComponent gets us access to the asyncData property.
-    This is the first function that is called by nuxt when the page is called.
-    We can use this to pre-load the data to make it available to the user.
-*/
 export default defineNuxtComponent({
     async asyncData() {
         // useRuntimeConfig provide us with environment variables set up in the nuxtconfig file
@@ -45,7 +45,9 @@ export default defineNuxtComponent({
                     // if the element is visible, we add the show class to it and remove the hiddenCard class
                     entry.target.classList.add('show');
                     entry.target.classList.remove('hiddenCard');
-                } /* else {
+                } 
+                // uncomment this else to make the cards disappear when they scroll out of view of the viewport
+                /* else {
                     // if the element is not visible, we add the hiddenCard class to it and remove the show class
                     entry.target.classList.add('hiddenCard');
                     entry.target.classList.remove('show');
@@ -53,6 +55,10 @@ export default defineNuxtComponent({
             });
         }, {
             rootMargin: '-20% 0px -20% 0px' // defines the area in which the observer will trigger
+            /* 
+            The area is defined a bit smaller in height with respect to the other observer in order to let the images load
+            before actually triggering the fading in animation of the card.
+            */
         });
 
         // we select all the elements with the hiddenCard class and add them to the observer
@@ -63,7 +69,7 @@ export default defineNuxtComponent({
             });
 
             const targets = document.querySelectorAll('img');
-            // we use the lazyLoad function to load the images only when they are visible in the viewport and unload them when they are not
+            // we use the lazyLoad function to load the images only when they are visible in the viewport and, optionally, unload them when they are not
             const lazyLoad = target => {
                 const io = new IntersectionObserver((entries, imgObserver) => {
                     /* console.log(entries) */
@@ -74,7 +80,7 @@ export default defineNuxtComponent({
                             const src = img.getAttribute('data-lazy');
                             img.setAttribute('src', src);
     
-                            // uncomment this line if you want the images to be loaded only once and not unloaded when they are not visible
+                            // comment/uncomment this line to enable/disable lazy unloading
                             imgObserver.disconnect();
                         }/* 
                         else {
@@ -95,6 +101,7 @@ export default defineNuxtComponent({
         }, 500);
 
     },
+    // Title and meta description are set for accessibility and SEO
     head(nuxtApp) {
         return {
             title: 'Venture Capital - Our Team',

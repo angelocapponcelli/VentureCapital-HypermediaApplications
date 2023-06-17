@@ -136,8 +136,8 @@
         <div v-else class="md:w-1/3"></div>
 
         <NuxtLink :to="linkBack"
-          class="max-h-14 md:order-none order-last flex-none h-fit py-3 px-4 mx-auto justify-center items-center flex space-x-2 bg-white text-primary-color 
-                                                                                                                      hover:text-white hover:bg-primary-color text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
+          class="max-h-14 md:order-none order-last flex-none h-fit py-3 px-4 mx-auto justify-center items-center flex space-x-2 bg-primary-color text-white 
+          hover:text-primary-color hover:bg-white text-sm border-2 border-primary-color rounded-full transition ease-in-out duration-200">
           <span>Return to Portfolio</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="w-6 h-6">
