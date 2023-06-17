@@ -14,9 +14,6 @@ export default {
     computed:{
         mapsPresent(){
             return this.maps!==undefined;
-        },
-        socialsPresent(){
-            return this.socials!==undefined;
         }
     }
 };
