@@ -1,8 +1,6 @@
 Link to the website: https://venture-capital.vercel.app/
 
-# T08 - Template (Vercel)
-
-This is the implementation of the project for Vercel + Supabase
+# Venture capital website - WAMM
 
 ## Preliminary steps
 As usual, the first things to do are:
@@ -46,25 +44,3 @@ This is why it's better to have two branches:
 In general, the command to build the "ready to deploy" project is:
    
     npm run build
-
-## Content
-The project contains:
-- 5 components
-  - Card
-  - SmallCard
-  - TextImage
-  - TheFooter
-  - TheHeader
-- 1 layout: default
-- 1 error page (currently it's not displayed properly when the project is generated)
-- 7 pages reachable at:
-  - /
-  - /contact
-  - /about
-  - /dogs
-  - /dogs/:id
-  - /locations
-  - /locations/:id
-- The server implemented using the serverless implementation with the Supabase functionality
-
-Most of the content is commented to explain how things works.
