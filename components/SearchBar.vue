@@ -1,8 +1,9 @@
 <template>
   <div class="flex bg-color-400 rounded-full">
-    <input class="w-80 pl-6 flex-initial bg-transparent rounded-full text-base text-color-1000 focus:outline-none"
-      type="search" name="search" placeholder="Search for projects...">
-    <button type="submit" class="flex-none pl-2 pr-6">
+    <input :id="id"
+      class="w-80 h-12 pl-6 flex-initial grow bg-transparent rounded-full text-base text-color-1000 focus:outline-none"
+      type="search" placeholder="Search for ..." @input="search">
+    <button type="submit" class="flex-none pl-2 pr-6" @click="search" aria-label="Search button">
       <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966"
         style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
@@ -12,3 +13,14 @@
     </button>
   </div>
 </template>
+
+<script>
+export default {
+  props: ['id'],
+  methods: {
+    search() {
+      this.$emit('search-filter', document.getElementById(this.id).value.toUpperCase());
+    }
+  }
+};
+</script>

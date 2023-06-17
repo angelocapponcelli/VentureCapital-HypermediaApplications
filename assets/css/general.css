@@ -7,11 +7,12 @@ html {
 }
 /*html, body
 {
-    height: 100%; 
-}
 
-body
-{
-    background-color: lightgoldenrodyellow;
-    margin: 0;
+    width: 100%;
+    overflow-x: hidden; //breaks sticky element
 }*/
+
+/* html.is-leaving, .transition-fade {
+    @apply transition-opacity duration-300 ease-in-out;
+}
+ */
